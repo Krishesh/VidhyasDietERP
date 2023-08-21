@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 
-from vidhyas_api.views import CustomObtainAuthToken
+from django.contrib import admin
+from vidhyas_api.views import ObtainAuthTokenView
 
 urlpatterns = [
-    path('login/', CustomObtainAuthToken.as_view(), name='login'),
+    path('admin/', admin.site.urls),
+    path('api/', include("vidhyas_api.urls")),
 ]
