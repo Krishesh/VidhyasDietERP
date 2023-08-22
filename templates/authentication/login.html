@@ -29,7 +29,7 @@
             <form id="LoginForm" onsubmit="return false">
                 {% csrf_token %}
                 <div class="input-group mb-3">
-                    <input type="text" id="Username" name="Username" class="form-control" placeholder="username"
+                    <input type="text" id="username" name="Username" class="form-control" placeholder="username"
                            required>
                     <div class="input-group-append">
                         <div class="input-group-text">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" id="Password" name="Password" class="form-control" placeholder="Password">
+                    <input type="password" id="password" name="Password" class="form-control" placeholder="Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -56,14 +56,11 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit"  id="login-button" class="btn btn-primary btn-block">Sign In</button>
                     </div>
                     <!-- /.col -->
                 </div>
-                <div id="BadLogin">
-                    <p>The login information you entered does not match
-                        an account in our records. Please try again.</p>
-                </div>
+
             </form>
 
 
@@ -87,69 +84,29 @@
 <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
 </body>
 
-<!--
 
-<script>
+    <script>
         $(document).ready(function () {
             $("#login-button").click(function () {
                 var username = $("#username").val();
                 var password = $("#password").val();
 
                 $.ajax({
-                    url: "/api/test_login/",
+                    url: "{% url 'vidhyas_api:api_login' %}",
                     type: "POST",
                     data: {
                         username: username,
                         password: password,
                     },
                     success: function (response) {
-                        $("#result").text("Login successful!"); // Modify this according to your response structure
+                        alert("ok");
                     },
                     error: function (xhr) {
-                        $("#result").text("Login failed!"); // Modify this according to your response structure
+                        alert("bad");
                     }
                 });
             });
         });
     </script>
--->
 
-<script>
-
-
-
-function loginResults() {
-var loggedIn = document.getElementById("LoggedIn");
-var badLogin = document.getElementById("BadLogin");
-if (xmlhttp.responseText.indexOf("failed") == -1) {
-   loggedIn.innerHTML = "Logged in as " + xmlhttp.responseText;
-   loggedIn.style.display = "block";
-   form.style.display = "none";
-} else {
-   badLogin.style.display = "block";
-   form.Username.select();
-   form.Username.className = "Highlighted";
-   setTimeout(function() {
-       badLogin.style.display = 'none';
-   }, 3000);
-}
-}
-
-function loginResults() {
-var loggedIn = document.getElementById("LoggedIn");
-var badLogin = document.getElementById("BadLogin");
-if (xmlhttp.responseText.indexOf("failed") == -1) {
-   loggedIn.innerHTML = "Logged in as " + xmlhttp.responseText;
-   loggedIn.style.display = "block";
-   form.style.display = "none";
-} else {
-   badLogin.style.display = "block";
-   form.Username.select();
-   form.Username.className = "Highlighted";
-   setTimeout(function() {
-       badLogin.style.display = 'none';
-   }, 3000);
-}
-}
-</script>
 </html>
