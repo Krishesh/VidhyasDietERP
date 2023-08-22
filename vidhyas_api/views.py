@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status  # Import the status module
 
 
 class ObtainAuthTokenView(APIView):
@@ -11,12 +12,12 @@ class ObtainAuthTokenView(APIView):
     def post(self, request):
         context = {}
         print(request.data)
-        username = request.data['username']
-        password = request.data['password']
+        username = request.data.get('username')
+        password = request.data.get('password')
         print(username)
         print(password)
-        account = authenticate(username=username, password=password)
-        if account:
+        account = authenticate(request, username=username, password=password)
+        if account is not None:
             context['response'] = 'Successfully authenticated.'
             context['pk'] = account.pk
             context['username'] = username
@@ -25,4 +26,5 @@ class ObtainAuthTokenView(APIView):
             context['response'] = 'Error'
             context['error_message'] = 'Invalid credentials'
         print(context)
-        return Response(context)
+        status_code = status.HTTP_200_OK if account else status.HTTP_401_UNAUTHORIZED
+        return Response(context, status=status_code)
