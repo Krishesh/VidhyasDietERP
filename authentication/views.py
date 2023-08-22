@@ -6,5 +6,3 @@ def login_page(request):
     return render(request, 'authentication/login.html',)
 
 
-def logoutUser(request):
-    return None
