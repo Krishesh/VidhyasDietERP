@@ -1,23 +1,30 @@
-from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
-from rest_framework import permissions
-
-from vidhyas_api.serializers import UserSerializer, GroupSerializer
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+from django.contrib.auth import authenticate
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status  # Import the status module
 
 
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
+class ObtainAuthTokenView(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def post(self, request):
+        context = {}
+        print(request.data)
+        username = request.data.get('username')
+        password = request.data.get('password')
+        print(username)
+        print(password)
+        account = authenticate(request, username=username, password=password)
+        if account is not None:
+            context['response'] = 'success'
+            context['pk'] = account.pk
+            context['username'] = username
+            context['password'] = password
+        else:
+            context['response'] = 'Error'
+            context['error_message'] = 'Invalid credentials'
+        print(context)
+        status_code = status.HTTP_200_OK if account else status.HTTP_401_UNAUTHORIZED
+        return Response(context, status=status_code)
