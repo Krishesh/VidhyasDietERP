@@ -1,3 +1,4 @@
-from django.test import TestCase
+from django.contrib.admin.utils import prepare_lookup_value
 
-# Create your tests here.
+
+prepare_lookup_value

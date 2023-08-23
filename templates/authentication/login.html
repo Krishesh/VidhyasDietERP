@@ -98,11 +98,15 @@
                         username: username,
                         password: password,
                     },
-                    success: function (response) {
-                        alert("ok");
+                    success: function (context) {
+
+                    if (context['response'] === "success") {
+                            window.location.href = "{% url 'index:index' %}"; // Redirect to index.html
+                        }
                     },
                     error: function (xhr) {
-                        alert("bad");
+                    $("#result").text("Login failed!");
+                    alert("invalid id pw..")
                     }
                 });
             });

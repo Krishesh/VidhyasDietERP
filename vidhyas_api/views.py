@@ -18,7 +18,7 @@ class ObtainAuthTokenView(APIView):
         print(password)
         account = authenticate(request, username=username, password=password)
         if account is not None:
-            context['response'] = 'Successfully authenticated.'
+            context['response'] = 'success'
             context['pk'] = account.pk
             context['username'] = username
             context['password'] = password
