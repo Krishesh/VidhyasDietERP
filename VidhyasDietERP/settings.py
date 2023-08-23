@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     
-    "authentication"
+    "authentication",
+    "inquiry",
+    "humanresource",
 ]
 
 MIDDLEWARE = [
