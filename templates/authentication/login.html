@@ -19,17 +19,17 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Admin</b>LTE</a>
+        <a href="#"><b>VIDHYAS</b>DIET</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form id="LoginForm" onsubmit="return false">
+            <form method="POST" action="">
                 {% csrf_token %}
                 <div class="input-group mb-3">
-                    <input type="text" id="username" name="Username" class="form-control" placeholder="username"
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Username"
                            required>
                     <div class="input-group-append">
                         <div class="input-group-text">
@@ -38,38 +38,30 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" id="password" name="Password" class="form-control" placeholder="Password">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">
-                                Remember Me
-                            </label>
+                {% if messages %}
+                    <div class="row">
+                        <div class="col-12">
+                            <span style="color: red">USERNAME or PASSWORD is incorrect</span>
                         </div>
                     </div>
+                {% endif %}
+                <div class="row">
+
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit"  id="login-button" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                     </div>
                     <!-- /.col -->
                 </div>
 
             </form>
-
-
-            <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
-            </p>
-            <p class="mb-0">
-                <a href="#" class="text-center">Register a new membership</a>
-            </p>
         </div>
         <!-- /.login-card-body -->
     </div>
@@ -85,32 +77,32 @@
 </body>
 
 
-    <script>
-        $(document).ready(function () {
-            $("#login-button").click(function () {
-                var username = $("#username").val();
-                var password = $("#password").val();
+<script>
+    $(document).ready(function () {
+        $("#login-button").click(function () {
+            var username = $("#username").val();
+            var password = $("#password").val();
 
-                $.ajax({
-                    url: "{% url 'vidhyas_api:api_login' %}",
-                    type: "POST",
-                    data: {
-                        username: username,
-                        password: password,
-                    },
-                    success: function (context) {
+            $.ajax({
+                url: "{% url 'vidhyas_api:api_login' %}",
+                type: "POST",
+                data: {
+                    username: username,
+                    password: password,
+                },
+                success: function (context) {
 
                     if (context['response'] === "success") {
-                            window.location.href = "{% url 'index:index' %}"; // Redirect to index.html
-                        }
-                    },
-                    error: function (xhr) {
+                        window.location.href = "{% url 'index:index' %}"; // Redirect to index.html
+                    }
+                },
+                error: function (xhr) {
                     $("#result").text("Login failed!");
                     alert("invalid id pw..")
-                    }
-                });
+                }
             });
         });
-    </script>
+    });
+</script>
 
 </html>

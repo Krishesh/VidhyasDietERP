@@ -6,7 +6,8 @@
   <title>AdminLTE 3 | Modals & Alerts</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- SweetAlert2 -->
@@ -160,7 +161,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
-      <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -887,8 +889,8 @@
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-success">
                   Launch Success Modal
                 </button>
-                <br />
-                <br />
+                <br/>
+                <br/>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-sm">
                   Launch Small Modal
                 </button>
@@ -898,8 +900,8 @@
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl">
                   Launch Extra Large Modal
                 </button>
-                <br />
-                <br />
+                <br/>
+                <br/>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-overlay">
                   Launch Modal with Overlay
                 </button>
@@ -934,8 +936,8 @@
                 <button type="button" class="btn btn-default toastsDefaultNotFixed">
                   Launch Default Toasts with not fixed
                 </button>
-                <br />
-                <br />
+                <br/>
+                <br/>
                 <button type="button" class="btn btn-default toastsDefaultTopLeft">
                   Launch Default Toast (topLeft)
                 </button>
@@ -945,8 +947,8 @@
                 <button type="button" class="btn btn-default toastsDefaultBottomLeft">
                   Launch Default Toast (bottomLeft)
                 </button>
-                <br />
-                <br />
+                <br/>
+                <br/>
                 <button type="button" class="btn btn-success toastsDefaultSuccess">
                   Launch Success Toast
                 </button>
@@ -1057,7 +1059,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="overlay">
-                <i class="fas fa-2x fa-sync fa-spin"></i>
+              <i class="fas fa-2x fa-sync fa-spin"></i>
             </div>
             <div class="modal-header">
               <h4 class="modal-title">Default Modal</h4>
@@ -1319,7 +1321,7 @@
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
-  $(function() {
+  $(function () {
     var Toast = Swal.mixin({
       toast: true,
       position: 'top-end',
@@ -1327,78 +1329,78 @@
       timer: 3000
     });
 
-    $('.swalDefaultSuccess').click(function() {
+    $('.swalDefaultSuccess').click(function () {
       Toast.fire({
         icon: 'success',
         title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.swalDefaultInfo').click(function() {
+    $('.swalDefaultInfo').click(function () {
       Toast.fire({
         icon: 'info',
         title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.swalDefaultError').click(function() {
+    $('.swalDefaultError').click(function () {
       Toast.fire({
         icon: 'error',
         title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.swalDefaultWarning').click(function() {
+    $('.swalDefaultWarning').click(function () {
       Toast.fire({
         icon: 'warning',
         title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.swalDefaultQuestion').click(function() {
+    $('.swalDefaultQuestion').click(function () {
       Toast.fire({
         icon: 'question',
         title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
 
-    $('.toastrDefaultSuccess').click(function() {
+    $('.toastrDefaultSuccess').click(function () {
       toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
     });
-    $('.toastrDefaultInfo').click(function() {
+    $('.toastrDefaultInfo').click(function () {
       toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
     });
-    $('.toastrDefaultError').click(function() {
+    $('.toastrDefaultError').click(function () {
       toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
     });
-    $('.toastrDefaultWarning').click(function() {
+    $('.toastrDefaultWarning').click(function () {
       toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
     });
 
-    $('.toastsDefaultDefault').click(function() {
+    $('.toastsDefaultDefault').click(function () {
       $(document).Toasts('create', {
         title: 'Toast Title',
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultTopLeft').click(function() {
+    $('.toastsDefaultTopLeft').click(function () {
       $(document).Toasts('create', {
         title: 'Toast Title',
         position: 'topLeft',
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultBottomRight').click(function() {
+    $('.toastsDefaultBottomRight').click(function () {
       $(document).Toasts('create', {
         title: 'Toast Title',
         position: 'bottomRight',
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultBottomLeft').click(function() {
+    $('.toastsDefaultBottomLeft').click(function () {
       $(document).Toasts('create', {
         title: 'Toast Title',
         position: 'bottomLeft',
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultAutohide').click(function() {
+    $('.toastsDefaultAutohide').click(function () {
       $(document).Toasts('create', {
         title: 'Toast Title',
         autohide: true,
@@ -1406,14 +1408,14 @@
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultNotFixed').click(function() {
+    $('.toastsDefaultNotFixed').click(function () {
       $(document).Toasts('create', {
         title: 'Toast Title',
         fixed: false,
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultFull').click(function() {
+    $('.toastsDefaultFull').click(function () {
       $(document).Toasts('create', {
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
         title: 'Toast Title',
@@ -1421,7 +1423,7 @@
         icon: 'fas fa-envelope fa-lg',
       })
     });
-    $('.toastsDefaultFullImage').click(function() {
+    $('.toastsDefaultFullImage').click(function () {
       $(document).Toasts('create', {
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
         title: 'Toast Title',
@@ -1430,7 +1432,7 @@
         imageAlt: 'User Picture',
       })
     });
-    $('.toastsDefaultSuccess').click(function() {
+    $('.toastsDefaultSuccess').click(function () {
       $(document).Toasts('create', {
         class: 'bg-success',
         title: 'Toast Title',
@@ -1438,7 +1440,7 @@
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultInfo').click(function() {
+    $('.toastsDefaultInfo').click(function () {
       $(document).Toasts('create', {
         class: 'bg-info',
         title: 'Toast Title',
@@ -1446,7 +1448,7 @@
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultWarning').click(function() {
+    $('.toastsDefaultWarning').click(function () {
       $(document).Toasts('create', {
         class: 'bg-warning',
         title: 'Toast Title',
@@ -1454,7 +1456,7 @@
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultDanger').click(function() {
+    $('.toastsDefaultDanger').click(function () {
       $(document).Toasts('create', {
         class: 'bg-danger',
         title: 'Toast Title',
@@ -1462,7 +1464,7 @@
         body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.toastsDefaultMaroon').click(function() {
+    $('.toastsDefaultMaroon').click(function () {
       $(document).Toasts('create', {
         class: 'bg-maroon',
         title: 'Toast Title',
