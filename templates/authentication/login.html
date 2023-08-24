@@ -77,32 +77,6 @@
 </body>
 
 
-<script>
-    $(document).ready(function () {
-        $("#login-button").click(function () {
-            var username = $("#username").val();
-            var password = $("#password").val();
 
-            $.ajax({
-                url: "{% url 'vidhyas_api:api_login' %}",
-                type: "POST",
-                data: {
-                    username: username,
-                    password: password,
-                },
-                success: function (context) {
-
-                    if (context['response'] === "success") {
-                        window.location.href = "{% url 'index:index' %}"; // Redirect to index.html
-                    }
-                },
-                error: function (xhr) {
-                    $("#result").text("Login failed!");
-                    alert("invalid id pw..")
-                }
-            });
-        });
-    });
-</script>
 
 </html>

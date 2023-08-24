@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
+from django.contrib.auth import logout
+
 
 # Create your views here.
 def login_page(request):
@@ -24,6 +26,10 @@ def login_page(request):
                 print(messages)
 
         context = {}
-        return render(request, 'authentication/login.html',)
+        return render(request, 'authentication/login.html', )
 
 
+def logout_page(request):
+    logout(request)
+
+    return render(request, 'authentication/login.html', )

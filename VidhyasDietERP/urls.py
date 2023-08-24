@@ -8,4 +8,5 @@ urlpatterns = [
     path('api/', include("vidhyas_api.urls")),  # include api
     path('', include("authentication.urls")),   # include auth
     path('', include('index.urls')),             # include index
-]
+    path('', include('humanresource.urls')),  # Use 'department/' as the path
+    ]
