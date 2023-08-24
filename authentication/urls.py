@@ -6,7 +6,6 @@ app_name = 'authentication'
 
 urlpatterns = [
     path('login/', views.login_page, name='login'),
-    path('api/login/', LoginView.as_view(), name='login'),
 
 
 ]

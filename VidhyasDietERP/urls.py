@@ -7,5 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),            # default admin
     path('api/', include("vidhyas_api.urls")),  # include api
     path('', include("authentication.urls")),   # include auth
+    path('', include("humanresource.urls")),   # include auth
     path('', include('index.urls')),             # include index
 ]
