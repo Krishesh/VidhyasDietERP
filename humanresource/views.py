@@ -3,9 +3,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-# Create your views here.
-class department_api(APIView):
-    def get(self, request):
-        departments = Department.objects.all()
-        serialized_departments = [{'name': department.name} for department in departments]
-        return Response(serialized_departments)
+from humanresource.models import Department
+
+
+def department_list(request):
+    print(Department.objects.all())
+    context = {
+        'department': Department.objects.all()
+    }
+    return render(request, 'humanresource/department/department.html',context )

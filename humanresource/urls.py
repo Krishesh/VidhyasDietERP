@@ -1,12 +1,10 @@
 from django.urls import path
-from .views import department_api
 from django.views.generic.base import TemplateView  # Import TemplateView
-
+from . import views
 
 app_name = 'humanresource'
 
 urlpatterns = {
-    path('api/departments/', department_api.as_view(), name='department_api'),  # Use 'department_api' as the name
-    path('department/', TemplateView.as_view(template_name='department/department.html'), name='department_template'),
+    path('department/', views.department_list, name='department_list'),
     # Use TemplateView directly
 }
