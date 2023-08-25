@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from humanresource.models import Department, Employee, Salary, Payslip, PlaySlip_Code
-from humanresource.models import Employee
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:

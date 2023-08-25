@@ -7,8 +7,9 @@
             <li>{{ department.name }}</li>
         {% endfor %}
     </ul>
-    
+    {% csrf_token %}
     <form id="departmentForm">
+        {% csrf_token %}
         <style>
             fieldset {
               background-color: #eeeeee;
@@ -42,11 +43,12 @@
         "name": formData.get("name") // Get the value from the input field
     };
 
-        const apiUrl = '/vidhyas_api/'; // Correct API endpoint
+        const apiUrl = '/api/departments/'; // Correct API endpoint
         console.log(JSON.stringify(jsonData))
         fetch(apiUrl, {
             method: 'POST',
             headers: {
+                "X-CSRFToken": '{{csrf_token}}' ,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(jsonData),

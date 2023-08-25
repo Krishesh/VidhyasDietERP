@@ -9,15 +9,15 @@ from .views import PlaySlip_CodeListView, PlaySlip_CodeDetailView
 app_name = 'vidhyas_api'
 
 urlpatterns = [
-    path('test_login', ObtainAuthTokenView.as_view(), name="api_login"),
-    path('departments', DepartmentListView.as_view(), name='department-create'),
-    path('departments/<int:pk>/', DepartmentDetailView.as_view(), name='department-create'),
-    path('employees/', EmployeeListView.as_view(), name='employee-list'),
-    path('employees/<int:pk>/', EmployeeDetailView.as_view(), name='employee-detail'),
-    path('salary/', SalaryListView.as_view(), name='salary-list'),
-    path('salary/<int:pk>/', SalaryDetailView.as_view(), name='salary-detail'),
-    path('payslip/', PayslipListView.as_view(), name='payslip-list'),
-    path('payslip/<int:pk>/', PayslipDetailView.as_view(), name='payslip-detail'),
-    path('playSlip_Code/', PlaySlip_CodeListView.as_view(), name='playSlip_Code-list'),
-    path('playSlip_Code/<int:pk>/', PlaySlip_CodeDetailView.as_view(), name='playSlip_Code-detail'),
+    path('api/test_login', ObtainAuthTokenView.as_view(), name="api_login"),
+    path('api/departments/', DepartmentListView.as_view(), name='departments'),
+    path('api/departments/<int:pk>/', DepartmentDetailView.as_view(), name='department-create'),
+    path('api/employees/', EmployeeListView.as_view(), name='employee-list'),
+    path('api/employees/<int:pk>/', EmployeeDetailView.as_view(), name='employee-detail'),
+    path('api/salary/', SalaryListView.as_view(), name='salary-list'),
+    path('api/salary/<int:pk>/', SalaryDetailView.as_view(), name='salary-detail'),
+    path('api/payslip/', PayslipListView.as_view(), name='payslip-list'),
+    path('api/payslip/<int:pk>/', PayslipDetailView.as_view(), name='payslip-detail'),
+    path('api/playSlip_Code/', PlaySlip_CodeListView.as_view(), name='playSlip_Code-list'),
+    path('api/playSlip_Code/<int:pk>/', PlaySlip_CodeDetailView.as_view(), name='playSlip_Code-detail'),
 ]
