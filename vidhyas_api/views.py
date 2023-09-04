@@ -65,7 +65,7 @@ class DepartmentDetailView(APIView):
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
-        snippet = self.get_object(pk)
+        department = self.get_object(pk)
         serializer = DepartmentSerializer(snippet, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -73,8 +73,8 @@ class DepartmentDetailView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
-        snippet = self.get_object(pk)
-        snippet.delete()
+        department = self.get_object(pk)
+        department.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 # for employ

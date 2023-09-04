@@ -12,8 +12,10 @@ urlpatterns = [
     path('api/test_login', ObtainAuthTokenView.as_view(), name="api_login"),
     path('api/departments/', DepartmentListView.as_view(), name='departments'),
     path('api/departments/<int:pk>/', DepartmentDetailView.as_view(), name='department-create'),
+  
     path('api/employees/', EmployeeListView.as_view(), name='employee-list'),
     path('api/employees/<int:pk>/', EmployeeDetailView.as_view(), name='employee-detail'),
+  
     path('api/salary/', SalaryListView.as_view(), name='salary-list'),
     path('api/salary/<int:pk>/', SalaryDetailView.as_view(), name='salary-detail'),
     path('api/payslip/', PayslipListView.as_view(), name='payslip-list'),
