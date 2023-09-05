@@ -60,13 +60,13 @@ class DepartmentDetailView(APIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        snippet = self.get_object(pk)
-        serializer = DepartmentSerializer(snippet)
+        department = self.get_object(pk)
+        serializer = DepartmentSerializer(department)
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
         department = self.get_object(pk)
-        serializer = DepartmentSerializer(snippet, data=request.data)
+        serializer = DepartmentSerializer(department, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
