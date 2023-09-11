@@ -1,54 +1,114 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Employee Information</h1>
-<table>
-    {% csrf_token %}
-    <tr>
-        <th>SN</th>
-        <th>Employee Name</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    {% for employee in employee %}
-    <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{ employee.name }}</td>
-        <td><button class="edit-button" data-id="{{ employee.id }}">Edit</button></td>
-        <td><button class="delete-button" data-id="{{ employee.id }}">Delete</button></td>
-    </tr>
-    {% endfor %}
-</table>
+    <h1>Employee Information</h1>
+    <table>
+        {% csrf_token %}
+        <tr>
+            <th>SN</th>
+            <th>Employee Name</th>
+            <th>Employee department</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for employee in employee %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.department }}</td>
+                <td>
+                    <button class="edit-button" data-id="{{ employee.id }}">Edit</button>
+                </td>
+                <td>
+                    <button class="delete-button" data-id="{{ employee.id }}">Delete</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
 
-<!-- Add Employee Button -->
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#">
-    LCreate new employee
-  </button>
+    <!-- Add Employee Button -->
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addEmployee">
+        LCreate new employee
+    </button>
 
-  <div class="modal fade" id="addEmployee">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Default Modal</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="modal fade" id="addEmployee">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Employee Model</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="employeeform">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control " id="name" name="name"
+                                       placeholder="Enter name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <div class="input-group">
+                                    <select class="custom-select  form-control-border" name="department"
+                                            id="department">
+                                        {% for department in department %}
+                                            <option value="{{ department.id }}">{{ department }}</option>    {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" id="save-btn-employee" name="save-btn-employee" class="btn btn-primary">
+                            Save
+                            changes
+                        </button>
+
+                    </div>
+
+                </form>
+            </div>
+            <!-- /.modal-content -->
         </div>
-        <div class="modal-body">
-          <p>One fine body&hellip;</p>
-        </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
+        <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
+    <!-- /.modal -->
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const apiUrl = "/api/employees/";
 
+        $(document).ready(function () {
+
+            // Event listener for the "Save changes" button in the modal
+            $('#employeeform').submit(function (e) {
+
+                e.preventDefault();
+                var formData = $(this).serialize();
+
+                {# var formData = $("#addEmployeeform").serialize();#}
+                console.log(formData)
+                console.log(apiUrl)
+                $.ajax({
+                    url: apiUrl,
+                    method: 'POST',
+                    data: formData,
+                    success: function () {
+                        location.reload();
+                        alert('Your form has been sent successfully.');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+        });
+    </script>
 
 {% endblock %}

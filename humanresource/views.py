@@ -17,6 +17,7 @@ def department_list(request):
 def employee_list(request):
     print(Employee.objects.all())
     context = {
+        'department': Department.objects.all(),
         'employee': Employee.objects.all()
     }
     return render(request, 'humanresource/employee/employee.html',context )
