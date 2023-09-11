@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block top-menu-content %}
+
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Inquiry List</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'inquiry:add_inquiry' %}" class="nav-link">Add New Inquiry</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <section class="content">
+        <div class="container-fluid">
+            <h1>inquiry page</h1>
+        </div>
+    </section>
+{% endblock %}

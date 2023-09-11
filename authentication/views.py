@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 
@@ -21,9 +21,11 @@ def login_page(request):
                 return redirect('index:index')
             else:
                 messages.info(request, 'USERNAME or PASSWORD is incorrect')
-                print(messages)
 
         context = {}
         return render(request, 'authentication/login.html',)
 
 
+def logout_link(request):
+    logout(request)
+    return redirect('/login/')

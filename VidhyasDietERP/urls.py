@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include("authentication.urls")),   # include auth
     path('', include("humanresource.urls")),   # include auth
     path('', include('index.urls')),             # include index
+    path('', include('inquiry.urls')),             # include index
 ]
