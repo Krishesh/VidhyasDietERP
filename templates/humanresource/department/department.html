@@ -1,38 +1,33 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
 
-<!-- Content Header (Page header) -->
+
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
 <div class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1 class="m-0">
           Department
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="modal"
-            data-target="#addModal"
-          >
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
             <i class="fas fa-plus"></i>
           </button>
         </h1>
       </div>
-      <!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
           <li class="breadcrumb-item active">Dashboard v1</li>
         </ol>
       </div>
-      <!-- /.col -->
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container-fluid -->
 </div>
-<!-- /.content-header -->
 
-<!-- Main content -->
 <section class="content">
   <div class="container-fluid">
     <table class="table table-hover">
@@ -51,22 +46,12 @@
           <td>{{ forloop.counter }}</td>
           <td>{{ department.name }}</td>
           <td>
-            <button
-              type="button"
-              class="btn btn-primary edit-btn"
-              data-id="{{ department.id }}"
-              data-value="{{ department.name }}"
-            >
+            <button type="button" class="btn btn-primary edit-btn" data-id="{{ department.id }}" data-value="{{ department.name }}">
               Edit
             </button>
           </td>
           <td>
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="delete-btn"
-              data-id="{{ department.id }}"
-            >
+            <button type="button" class="btn btn-primary delete-btn" data-id="{{ department.id }}">
               Delete
             </button>
           </td>
@@ -74,100 +59,47 @@
         {% endfor %}
       </tbody>
     </table>
-    <!-- Button trigger modal -->
   </div>
-  <!-- /.container-fluid -->
 </section>
-<!-- /.content -->
 
-<!--add modal -->
-<div
-  class="modal fade"
-  id="addModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="addModalCenter"
-  aria-hidden="true"
->
-  <!-- update modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalCenter" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <!-- header            -->
       <div class="modal-header">
         <h5 class="modal-title" id="addModalTitle">New department</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
-      <!-- body -->
       <div class="modal-body">
-        <input
-          type="name"
-          class="form-control"
-          id="newDepartmentData"
-          placeholder="Enter department name:"
-        />
+        <input type="text" class="form-control" id="newDepartmentData" placeholder="Enter department name:" />
       </div>
-
-      <!-- footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Cancel
-        </button>
-        <button type="submit" class="btn btn-primary" id="createBtn">
-          Create
-        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="createBtn">Create</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- edit modal -->
-<div
-  class="modal fade"
-  id="editModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="editModalCenter"
-  aria-hidden="true"
->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalCenter" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <!-- header            -->
       <div class="modal-header">
         <h5 class="modal-title" id="editModalTitle">Edit department</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
-      <!-- body -->
       <div class="modal-body">
         {% csrf_token %}
         <input type="hidden" id="editDepartmentId" name="id" />
         <label for="updatedDepartmentName">Department Name:</label>
         <input type="text" id="updatedDepartmentName" name="name" required /><br /><br />
       </div>
-
-      <!-- footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Cancel
-        </button>
-        <button type="button" class="btn btn-primary" id="updateBtn">
-          Update
-        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="updateBtn">Update</button>
       </div>
     </div>
   </div>
@@ -182,15 +114,12 @@
 
       console.log("Data:", departmentName);
 
-      // Send a POST request to the server
       $.ajax({
         url: "/api/departments/",
         type: "POST",
         data: JSON.stringify({ name: departmentName }),
         contentType: "application/json",
-        headers: {
-          "X-CSRFToken": "{{ csrf_token }}",
-        },
+        headers: { "X-CSRFToken": "{{ csrf_token }}" },
         success: function (response) {
           console.log("Department added successfully:", response);
           location.reload();
@@ -202,7 +131,7 @@
     });
 
     // Handle delete button click and reload
-    $(document).on("click", "#delete-btn", function () {
+    $(document).on("click", ".delete-btn", function () {
       const departmentId = $(this).data("id");
       console.log("Delete button clicked for department ID: " + departmentId);
       // Handle delete button click (e.g., show a confirmation dialog)
@@ -225,7 +154,6 @@
     });
 
     // Edit Modal and reload
-    // Edit button
     $(".edit-btn").click(function () {
       const departmentId = $(this).data("id");
       const departmentName = $(this).data("value");
@@ -233,40 +161,34 @@
       $("#editDepartmentId").val(departmentId);
       $("#updatedDepartmentName").val(departmentName);
 
-      // Store departmentId in a data attribute of the update button
       $("#updateBtn").data("departmentId", departmentId);
 
       $("#editModal").modal("show");
     });
 
-    //update button
-    $("#updateBtn").click(function () {
-  // Retrieve departmentId from the data attribute
-  const departmentId = $(this).data("departmentId");
-  const departmentName = $("#updatedDepartmentName").val();
-  const updatedData = { id: departmentId, name: departmentName };
-  console.log("Data:", updatedData);
+    // Update button
+    $("#updateBtn").click(function (event) {
+      event.preventDefault();
 
-  // Send a PUT request to update the department
-  $.ajax({
-    url: `/api/departments/${departmentId}/`,  // Use backticks for string interpolation    
-    type: "PUT",
-    data: updatedData,  // Use the correct variable
-    contentType: "application/json",
-    headers: {
-      "X-CSRFToken": "{{ csrf_token }}",
-    },
-    success: function (response) {
-      console.log("Department updated successfully. Response:", response);
-      location.reload();
-    },
-    error: function (error) {
-      console.error("Error updating department:", error);
-    },
-  });
-});
+      const departmentId = $(this).data("departmentId");
+      const departmentName = $("#updatedDepartmentName").val();
+      const updatedData = { id: departmentId, name: departmentName };
 
-
+      $.ajax({
+        url: `/api/departments/${departmentId}/`,
+        type: "PUT",
+        data: JSON.stringify(updatedData),
+        contentType: "application/json",
+        headers: { "X-CSRFToken": "{{ csrf_token }}" },
+        success: function (response) {
+          console.log("Department updated successfully. Response:", response);
+          location.reload();
+        },
+        error: function (error) {
+          console.error("Error updating department:", error);
+        },
+      });
+    });
   });
 </script>
 
