@@ -1,35 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <h1>Employee Information</h1>
-    <table>
-        {% csrf_token %}
-        <tr>
-            <th>SN</th>
-            <th>Employee Name</th>
-            <th>Employee department</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        {% for employee in employee %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ employee.name }}</td>
-                <td>{{ employee.department }}</td>
-                <td>
-                    <button class="edit-button" data-id="{{ employee.id }}">Edit</button>
-                </td>
-                <td>
-                    <button class="delete-button" data-id="{{ employee.id }}">Delete</button>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
 
-    <!-- Add Employee Button -->
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addEmployee">
-        LCreate new employee
+<div class="container-fluid">
+    <div class="row">
+        
+    <h1>Employee Information</h1>
+    <table class="table table-hover">
+        <thead >
+            {% csrf_token %}
+            <tr>
+                <th>SN</th>
+                <th>Employee Name</th>
+                <th>Employee department</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEmployee" data-id="{{ employee.id }}" > Edit </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary delete-button" data-id="{{ employee.id }}"> Delete </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <div class="row">
+                <!-- Add Employee Button -->
+    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#addEmployee">
+        Create new employee
     </button>
+            
+        </div>
+    
+    
+</div>
 
     <div class="modal fade" id="addEmployee">
         <div class="modal-dialog">
