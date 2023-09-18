@@ -53,12 +53,10 @@
           <td>
             <button
               type="button"
-              class="btn btn-primary"
-
-              data-toggle="modal"
-              data-target="#editModal"
-              data-id="{{ department.id }}" 
-              id="editBtn" > 
+              class="btn btn-primary edit-btn"
+              data-id="{{ department.id }}"
+              data-value="{{ department.name }}"
+            >
               Edit
             </button>
           </td>
@@ -112,7 +110,7 @@
         <input
           type="name"
           class="form-control"
-          id="departmentData"
+          id="newDepartmentData"
           placeholder="Enter department name:"
         />
       </div>
@@ -157,18 +155,9 @@
       <!-- body -->
       <div class="modal-body">
         {% csrf_token %}
-
-        <input type="hidden" 
-        id="editDepartmentId" 
-        name="id" 
-        value="" />
-
-        <input
-          type="text"
-          class="addDepartmentform"
-          id="updateDepartment"
-          name="name"
-        />
+        <input type="hidden" id="editDepartmentId" name="id" />
+        <label for="updatedDepartmentName">Department Name:</label>
+        <input type="text" id="updatedDepartmentName" name="name" required /><br /><br />
       </div>
 
       <!-- footer -->
@@ -189,8 +178,7 @@
   $(document).ready(function () {
     // Add Modal and reload
     $("#createBtn").click(function () {
-      // Retrieve the data from the input field
-      const departmentName = $("#departmentData").val();
+      const departmentName = $("#newDepartmentData").val();
 
       console.log("Data:", departmentName);
 
@@ -198,48 +186,16 @@
       $.ajax({
         url: "/api/departments/",
         type: "POST",
-        data: JSON.stringify({ name: departmentName }), // Send the data as an object        contentType: "application/json",
+        data: JSON.stringify({ name: departmentName }),
         contentType: "application/json",
         headers: {
-          "X-CSRFToken": "{{ csrf_token }}", // Replace with your Django CSRF token
+          "X-CSRFToken": "{{ csrf_token }}",
         },
         success: function (response) {
-          // Handle success (e.g., close modal and refresh department list)
           console.log("Department added successfully:", response);
-          location.reload(); // Reload the page or update the department list dynamically
+          location.reload();
         },
         error: function (error) {
-          // Handle errors (e.g., display error message)
-          console.error("Error adding department:", error);
-        },
-      });
-    });
-
-    // Add Modal and reload
-
-    $("#editBtn").click(function () {});
-    $("#updateBtn").click(function () {
-      // Retrieve the data from the input field
-      const departmentName = $("#departmentData").val();
-
-      console.log("Data:", departmentName);
-
-      // Send a POST request to the server
-      $.ajax({
-        url: "/api/departments/",
-        type: "POST",
-        data: JSON.stringify({ name: departmentName }), // Send the data as an object        contentType: "application/json",
-        contentType: "application/json",
-        headers: {
-          "X-CSRFToken": "{{ csrf_token }}", // Replace with your Django CSRF token
-        },
-        success: function (response) {
-          // Handle success (e.g., close modal and refresh department list)
-          console.log("Department added successfully:", response);
-          location.reload(); // Reload the page or update the department list dynamically
-        },
-        error: function (error) {
-          // Handle errors (e.g., display error message)
           console.error("Error adding department:", error);
         },
       });
@@ -267,6 +223,50 @@
         });
       }
     });
+
+    // Edit Modal and reload
+    // Edit button
+    $(".edit-btn").click(function () {
+      const departmentId = $(this).data("id");
+      const departmentName = $(this).data("value");
+
+      $("#editDepartmentId").val(departmentId);
+      $("#updatedDepartmentName").val(departmentName);
+
+      // Store departmentId in a data attribute of the update button
+      $("#updateBtn").data("departmentId", departmentId);
+
+      $("#editModal").modal("show");
+    });
+
+    //update button
+    $("#updateBtn").click(function () {
+  // Retrieve departmentId from the data attribute
+  const departmentId = $(this).data("departmentId");
+  const departmentName = $("#updatedDepartmentName").val();
+  const updatedData = { id: departmentId, name: departmentName };
+  console.log("Data:", updatedData);
+
+  // Send a PUT request to update the department
+  $.ajax({
+    url: `/api/departments/${departmentId}/`,  // Use backticks for string interpolation    
+    type: "PUT",
+    data: updatedData,  // Use the correct variable
+    contentType: "application/json",
+    headers: {
+      "X-CSRFToken": "{{ csrf_token }}",
+    },
+    success: function (response) {
+      console.log("Department updated successfully. Response:", response);
+      location.reload();
+    },
+    error: function (error) {
+      console.error("Error updating department:", error);
+    },
+  });
+});
+
+
   });
 </script>
 
