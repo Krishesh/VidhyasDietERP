@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "inquiry",
     "customer",
     "humanresource",
+    "registration",
 ]
 
 MIDDLEWARE = [

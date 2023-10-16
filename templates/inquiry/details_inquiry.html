@@ -1,0 +1,294 @@
+{% extends 'inquiry/inquiry_base.html' %}
+{% load static %}
+
+
+{% block sub-content %}
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Inquiry Details of {{ inquiry.customer_name }}</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Basic Customer Details Info</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="ticket_info" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <td width="50">
+                                        <table border="0" cellspacing="" cellpadding="4" width="100%">
+                                            <tbody>
+                                            <tr>
+                                                <th width="200">Status:</th>
+                                                <td>                  {{ inquiry.inquiry_status }}
+
+                                                    {% comment %}<a
+                                                            class="btn btn-focus btn-xs"
+                                                            data-title="Delete"
+                                                            data-val="{{ calls.id }}"
+                                                            data-target="#call_status_update"
+                                                            data-toggle="modal"
+                                                    ><span
+                                                            class="glyphicon glyphicon-trash"></span></a>{% endcomment %}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Customer:</th>
+                                                <td>{{ inquiry.customer_name }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Age:</th>
+                                                <td>{{ inquiry.customer_name.age }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Gender:</th>
+                                                <td>{{ inquiry.customer_name.gender }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Profession:</th>
+                                                <td>{{ inquiry.customer_name.profession }} </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td width="50%">
+                                        <table border="0" cellspacing="" cellpadding="4" width="100%">
+                                            <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Contact number:</th>
+                                                <td>{{ inquiry.customer_name.contact_number }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Social number:</th>
+                                                <td>{{ inquiry.customer_name.social_number }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email:</th>
+                                                <td>{{ inquiry.customer_name.email }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Address:</th>
+                                                <td>{{ inquiry.customer_name.address }} </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer Stats</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="table  table-bordered"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <td>Entry date</td>
+                                    <td>Weight</td>
+                                    <td>Height</td>
+                                    <td>BMI</td>
+                                    <td>Waist</td>
+                                    <td>HIP</td>
+                                    <td>WHR</td>
+                                </tr>
+                                {% for customer_stats in customer_stats %}
+                                    <tr>
+                                        <td>{{ customer_stats.entry_date }}</td>
+                                        <td>{{ customer_stats.weight }}</td>
+                                        <td>{{ customer_stats.height }}</td>
+                                        <td>{{ customer_stats.bmi }}
+                                            {% if customer_stats.bmi < 18.5 %}
+                                                (Underweight)
+                                            {% elif customer_stats.bmi > 18.5 and customer_stats.bmi < 24.9 %}
+                                                (Normal)
+                                            {% elif customer_stats.bmi > 24.9 and customer_stats.bmi < 29.9 %}
+                                                (OverWeight)
+                                            {% elif customer_stats.bmi > 29.9 and customer_stats.bmi < 34.9 %}
+                                                (Obese I)
+                                            {% elif customer_stats.bmi > 34.9 and customer_stats.bmi < 39.9 %}
+                                                (Obese II)
+                                            {% elif customer_stats.bmi > 39.9 %}
+                                                (Obese III)
+                                            {% endif %}
+                                        </td>
+                                        <td>{{ customer_stats.waist }}</td>
+                                        <td>{{ customer_stats.hip }}</td>
+                                        <td>{{ customer_stats.whr }}
+                                            {% if inquiry.customer_name.gender == "Male" %}
+                                                {% if customer_stats.whr < .95 %}
+                                                    (LOW)
+                                                {% elif customer_stats.whr > 0.95 and  customer_stats.whr < 1 %}
+                                                    (MODERATE)
+                                                {% else %}
+                                                    (HIGH)
+                                                {% endif %}
+                                            {% else %}
+                                                {% if customer_stats.whr < .80 %}
+                                                    (LOW)
+                                                {% elif customer_stats.whr > 0.80 and  customer_stats.whr < 0.85 %}
+                                                    (MODERATE)
+                                                {% else %}
+                                                    (HIGH)
+                                                {% endif %}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Some inquiry Questions </h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <label for="customer_health_state">1. How would you Describe your present state of
+                                        health? </label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_health_state }}</label>
+                                    <hr>
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="">2. Are you taking any prescription medication</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_any_prescription }}</label>
+                                    <hr>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="">3. Have you ever had your full body check-up?</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_had_full_body_check_up }}</label>
+                                    <hr>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="customer_suffered_any_disease">4. Do you suffer from any
+                                        disease?</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_suffered_any_disease }}</label>
+                                    <hr>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="">5. Family history of Disease?
+
+                                    </label>
+                                    <table class="table table-bordered" id="entry_family_disease">
+                                        <tr>
+                                            <th>Disease</th>
+                                            <th>Relation</th>
+                                            <th>Age</th>
+                                            <th>Note</th>
+
+                                        </tr>
+                                        {% for disease in inquiry.customer_family_disease.all %}
+                                            <tr>
+                                                <td>{{ disease.disease }}</td>
+                                                <td>{{ disease.relation }}</td>
+                                                <td>{{ disease.age }}</td>
+                                                <td>{{ disease.note }}</td>
+                                            </tr>
+                                        {% endfor %}
+
+                                    </table>
+                                    <hr>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="">6. What do you think how important it is to work out and eat
+                                        healthy food in our life?</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_thought_about_workout }}</label>
+                                    <hr>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="">if it is important, what have you done for your health and
+                                        fitness?</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_activity_level }}</label>
+                                    <hr>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="customer_any_symptoms">7. Any Symptoms</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_any_symptoms }}</label>
+                                                <hr>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="customer_lifestyle">8. What is your lifestyle ?</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_lifestyle }}</label>
+                                    <hr>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <label for="">9. Do you Smoke Or take alcohol or any?</label>
+                                    <br>
+                                    <label>Answer : {{ inquiry.customer_smoke_alcohol }}</label>
+                                    <hr>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="note">Note: {{ inquiry.note }}</label>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- /.card-body -->
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

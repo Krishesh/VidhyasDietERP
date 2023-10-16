@@ -1,0 +1,520 @@
+{% extends 'inquiry/inquiry_base.html' %}
+{% load static %}
+
+{% block page_script %}
+    <!--selectize 2 -->
+    <link href="{% static 'dist/css/selectize.bootstrap4.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'dist/js/select-js/standalone/selectize.js' %}"></script>
+
+    <script>
+        // Delete row on delete button click
+        $(document).on("click", ".delete", function () {
+            let $target = $(this)
+                .parents("tr");
+            if (confirm('Delete this row?')) {
+                $target.closest("tr").next().find("div").parent().remove();
+                $target.remove();
+            }
+        });
+        $(document).ready(function () {
+            $("#add_rows_test").click(function () {
+                console.log("success")
+
+                let markup = `<tr>
+<td><input name='disease[]'class='form-control' placeholder="name of Disease" ></td>
+<td> <input name='relation[]' class='form-control' placeholder="your relation"></td>
+<td> <input name='age[]' class='form-control' placeholder="his/her age"></td>
+<td> <input name='disease_note[]' class='form-control'></td>
+<td> <a class="delete" title="" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+      </td>
+      </tr>`;
+                $("#entry_family_disease").append(markup);
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('.select_me').selectize({
+                create: true,
+                sortField: {
+                    field: 'text',
+                    direction: 'asc'
+                },
+                dropdownParent: 'body'
+            });
+        });
+
+    </script>
+
+{% endblock %}
+{% block sub-content %}
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Inquiry Form</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <form action="{% url 'inquiry:add_inquiry' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="col-md-12">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Basic Info</h3>
+                            </div>
+                            <!-- /.card-header -->
+
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="customer_name">NAME</label>
+                                            <input type="text" class="form-control" id="customer_name"
+                                                   name="customer_name" value="{{ inquiry.customer_name }}"
+                                                   placeholder="Enter name">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="customer_age">AGE</label>
+                                            <input type="text" class="form-control" id="customer_age"
+                                                   name="customer_age"value="{{ inquiry.customer_age }}"
+                                                   placeholder="Enter age">
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label for="customer_gender">GENDER </label>
+                                            <select class="form-control" id="customer_gender"
+                                                    name="customer_gender">
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Other</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="customer_profession">PROFESSION</label>
+                                            <input type="text" class="form-control" id="customer_profession"
+                                                   name="customer_profession"value="{{ inquiry.customer_profession }}"
+                                                   placeholder="Enter profession">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="customer_contact_number">Contact Number</label>
+                                            <input type="text" class="form-control select_me"
+                                                   id="customer_contact_number"value="{{ inquiry.customer_contact_number }}"
+                                                   name="customer_contact_number"
+                                                   placeholder="Enter Contact Number">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="customer_social_number">Social Number</label>
+                                            <input type="text" class="form-control select_me"
+                                                   id="customer_social_number"
+                                                   name="customer_social_number"value="{{ inquiry.customer_social_number }}"
+                                                   placeholder="Whatsapp/viber">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="customer_address">Address</label>
+                                            <input type="text" class="form-control" id="customer_address"
+                                                   name="customer_address"value="{{ inquiry.customer_address }}"
+                                                   placeholder="Enter address">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="customer_email">Email </label>
+                                            <input type="text" class="form-control select_me" id="customer_email"
+                                                   name="customer_email"value="{{ inquiry.customer_email }}"
+                                                   placeholder="Enter Email">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label for="customer_weight">WEIGHT</label>
+                                            <input type="text" class="form-control" id="customer_weight"
+                                                   name="customer_weight"value="{{ inquiry.customer_weight }}"
+                                                   placeholder="Enter WEIGHT">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="customer_height">HEIGHT</label>
+                                            <input type="text" class="form-control" id="customer_height"
+                                                   name="customer_height"value="{{ inquiry.customer_name.age }}"
+                                                   placeholder="Enter HEIGHT">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="customer_bmi">BMI</label>
+                                            <input type="text" class="form-control" id="customer_bmi"
+                                                   name="customer_bmi"value="{{ inquiry.customer_name }}"
+                                                   placeholder="Enter BMI">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="customer_annual_income">ANNUAL INCOME</label>
+                                            <input type="text" class="form-control" id="customer_annual_income"
+                                                   name="customer_annual_income"value="{{ inquiry.customer_name }}"
+                                                   placeholder="Enter ANNUAL income">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="customer_whr">WHR</label>
+                                            <input type="text" class="form-control" id="customer_whr"
+                                                   name="customer_whr"value="{{ inquiry.customer_name }}"
+                                                   placeholder="Enter WHR">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Some Questions </h3>
+                            </div>
+                            <!-- /.card-header -->
+
+                            <div class="card-body">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="customer_health_state">1. How would you Describe your present
+                                                state
+                                                of health?</label>
+                                            <input type="text" class="form-control select_me" id="customer_health_state"
+                                                   name="customer_health_state"
+                                                   placeholder="Enter Health State">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">2. Are you taking any prescription medication</label>
+                                            <div class=" row">
+                                                <div class=" form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               id="customer_any_prescription_Yes"
+                                                               name="customer_any_prescription"
+                                                               value="Yes">
+                                                        <label class="custom-control-label"
+                                                               for="customer_any_prescription_Yes">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_any_prescription"
+                                                               id="customer_any_prescription_No" value="No">
+                                                        <label class="custom-control-label"
+                                                               for="customer_any_prescription_No">No</label>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">3. Have you ever had your full body check-up?</label>
+                                            <div class=" row">
+                                                <div class=" form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               id="customer_had_full_body_check_up_Yes"
+                                                               name="customer_had_full_body_check_up"
+                                                               value="Yes">
+                                                        <label class="custom-control-label"
+                                                               for="customer_had_full_body_check_up_Yes">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_had_full_body_check_up"
+                                                               id="customer_had_full_body_check_up_No" value="No">
+                                                        <label class="custom-control-label"
+                                                               for="customer_had_full_body_check_up_No">No</label>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="customer_suffered_any_disease">4. Do you suffer from any
+                                                disease?</label>
+                                            <input type="text" class="form-control select_me"
+                                                   id="customer_suffered_any_disease"
+                                                   name="customer_suffered_any_disease"
+                                                   placeholder="Do you suffer from any
+                                            disease">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">5. Family history of Disease?
+
+                                            </label> <a class="" id="add_rows_test" title="">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                            <table class="table table-bordered" id="entry_family_disease">
+                                                <tr>
+                                                    <th>Disease</th>
+                                                    <th>Relation</th>
+                                                    <th>Age</th>
+                                                    <th>Note</th>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">6. What do you think how important it is to work out and eat
+                                                healthy food in our life?</label>
+                                            <div class=" row">
+                                                <div class=" form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio" id="VImportant"
+                                                               name="customer_thought_about_workout"
+                                                               value="Very Important">
+                                                        <label class="custom-control-label" for="VImportant">Very
+                                                            Important</label></div>
+
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_thought_about_workout"
+                                                               id="Important" value="Important">
+                                                        <label class="custom-control-label"
+                                                               for="Important">Important</label>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_thought_about_workout"
+                                                               id="NSImportant" value="Not So Important">
+                                                        <label class="custom-control-label"
+                                                               for="NSImportant">Not So Important</label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">if it is important, what have you done for your health and
+                                                fitness?</label>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: center">Sno</th>
+                                                    <th>Activity Level:</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">
+                                                        <label>
+                                                            <input type="radio"
+                                                                   name="customer_activity_level"
+                                                                   value="1. sedentary,little or no physical activities">
+                                                        </label>
+                                                    </td>
+                                                    <td>sedentary,little or no physical activities</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center"><label>
+                                                        <input type="radio"
+                                                               name="customer_activity_level"
+                                                               value="2. light activity or exercise: light-intensity exercise 1-3 days per
+                                                    week">
+                                                    </label></td>
+                                                    <td>light activity or exercise: light-intensity exercise 1-3 days
+                                                        per
+                                                        week
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center"><label>
+                                                        <input type="radio"
+                                                               name="customer_activity_level"
+                                                               value="3. moderate activities/exercise:moderate-vigorous intensity exercise
+                                                    3-5 days per week">
+                                                    </label></td>
+                                                    <td>moderate activities/exercise:moderate-vigorous intensity
+                                                        exercise
+                                                        3-5 days per week
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">
+                                                        <label>
+                                                            <input type="radio"
+                                                                   name="customer_activity_level"
+                                                                   value="4. heavy activity/exercise:moderate-to-vigorous intensity exercise 6-7
+                                                    days per week">
+                                                        </label>
+                                                    </td>
+                                                    <td>heavy activity/exercise:moderate-to-vigorous intensity exercise
+                                                        6-7
+                                                        days per week
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">
+                                                        <label>
+                                                            <input type="radio"
+                                                                   name="customer_activity_level"
+                                                                   value="5. very heavy activity/exercise:vigorous training two times a day or
+                                                    job requiring hard physical labor">
+                                                        </label>
+                                                    </td>
+                                                    <td>very heavy activity/exercise:vigorous training two times a day
+                                                        or
+                                                        job requiring hard physical labor
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="customer_any_symptoms">7. Any Symptoms</label>
+                                            <input type="text" class="form-control select_me" id="customer_any_symptoms"
+                                                   name="customer_any_symptoms"
+                                                   placeholder="Enter Symptoms">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="customer_lifestyle">8. What is your lifestyle ?</label>
+                                            <input type="text" class="form-control select_me" id="customer_lifestyle"
+                                                   name="customer_lifestyle"
+                                                   placeholder="Enter your lifestyle">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">9. Do you Smoke Or take alcohol or any?</label>
+                                            <div class=" row">
+                                                <div class=" form-check">
+                                                    <div class="custom-control custom-radio">
+
+                                                        <input class="custom-control-input" type="radio"
+                                                               id="customer_smoke_alcohol_yes"
+                                                               name="customer_smoke_alcohol"
+                                                               value="Yes">
+                                                        <label class="custom-control-label"
+                                                               for="customer_smoke_alcohol_yes">Yes</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_smoke_alcohol"
+                                                               id="customer_smoke_alcohol_no" value="No">
+                                                        <label class="custom-control-label"
+                                                               for="customer_smoke_alcohol_no">No</label>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_smoke_alcohol"
+                                                               id="customer_smoke_alcohol_sometime" value="Sometime">
+                                                        <label class="custom-control-label"
+                                                               for="customer_smoke_alcohol_sometime">Sometime</label>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_smoke_alcohol"
+                                                               id="customer_smoke_alcohol_smokes_only"
+                                                               value="Smoke Only">
+                                                        <label class="custom-control-label"
+                                                               for="customer_smoke_alcohol_smokes_only">Smoke
+                                                            Only</label>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                                <div class="form-check">
+                                                    <div class="custom-control custom-radio">
+                                                        <input class="custom-control-input" type="radio"
+                                                               name="customer_smoke_alcohol"
+                                                               id="customer_smoke_alcohol_drinks_only"
+                                                               value="Drinks Only">
+                                                        <label class="custom-control-label"
+                                                               for="customer_smoke_alcohol_drinks_only">Drinks
+                                                            Only</label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="note">Note</label>
+                                            <input type="text" class="form-control select_me" id="note"
+                                                   name="note"
+                                                   placeholder="Any Note">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

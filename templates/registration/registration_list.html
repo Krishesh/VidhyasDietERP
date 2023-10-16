@@ -1,0 +1,175 @@
+{% extends 'inquiry/inquiry_base.html' %}
+{% load static %}
+{% block page_css %}
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+
+{% endblock %}
+
+{% block sub-content %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+
+                    <h1>Inquiry List</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-primary">
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="id_datatable" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Registration Number</th>
+                                    <th>Customer</th>
+                                    <th>Package</th>
+                                    <th>Employee</th>
+                                    <th>Action</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for inquiry in inquiry reversed %}
+                                    <tr>
+
+                                        <th scope="row">{{ forloop.counter }}</th>
+
+                                        <td>{{ inquiry.customer_name }}</td>
+                                        <td>{{ inquiry.customer_name.age }}</td>
+                                        <td>{{ inquiry.customer_name.gender }}</td>
+                                        <td>{{ inquiry.customer_name.contact_number }}</td>
+                                        <td>
+                                            <div class="btn-group">
+
+                                                <a href="{% url 'inquiry:details_inquiry' %}?id={{ inquiry.id }}"
+                                                   style="margin-right: 2px">
+                                                    <button title="Details" type="button" class="btn btn-warning">
+                                                        <i class="fa fa-arrow-circle-right"></i>
+                                                    </button>
+                                                </a>
+                                                {% comment %}   <a href="{% url 'inquiry:edit_inquiry_form' %}?id={{ inquiry.id }}"
+                                                   style="margin-right: 2px">
+                                                    <button type="button" class="btn btn-info" data-toggle="modal"
+                                                            title="Edit">
+                                                        <i class="fa fa-edit"></i></button>
+                                                </a>{% endcomment %}
+                                                <a style="margin-right: 2px">
+                                                    <button title="Trash" type="button" class="btn btn-danger"
+                                                            data-toggle="modal"
+                                                            data-target="#trash_transaction"
+                                                            data-id="{{ inquiry.id }}">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </a>
+
+                                                <a href="#" style="margin-right: 2px">
+                                                    <button title="Register to Client" type="button"
+                                                            class="btn btn-info">
+                                                        <i class="fa fa-exchange-alt"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                        <th>Sno</th>
+                                    <th>Registration Number</th>
+                                    <th>Customer</th>
+                                    <th>Package</th>
+                                    <th>Employee</th>
+                                    <th>Action</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="trash_transaction">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger">
+                <div class="modal-header">
+                    <h4 class="modal-title">Trash Inquiry</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="form-horizontal" action="{% url 'inquiry:trash_inquiry' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <label for="trash_id"> </label><input type="text" hidden class="form-control" id="trash_id"
+                                                              name="trash_id">
+                    </div>
+
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-light">Move To Trash</button>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+{% endblock %}
+{% block page_script %}
+    <!-- DataTables  & Plugins -->
+    <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/jszip/jszip.min.js' %}"></script>
+    <script src="{% static 'plugins/pdfmake/pdfmake.min.js' %}"></script>
+    <script src="{% static 'plugins/pdfmake/vfs_fonts.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+
+    <script>
+        $(function () {
+            $("#id_datatable").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#id_datatable_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#trash_transaction').on('show.bs.modal', function (event) {
+                document.getElementById("trash_id").value = $(event.relatedTarget).data('id');
+            });
+        });
+    </script>
+{% endblock %}

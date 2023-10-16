@@ -50,7 +50,7 @@ class Customer(models.Model):
     website = models.CharField(max_length=100, blank=True, default='')
     note = models.CharField(max_length=500, blank=True, default='')
 
-    diet_plan = models.ForeignKey(Diet_Plan_Package, on_delete=models.DO_NOTHING, default='')
+    diet_plan = models.ForeignKey(Diet_Plan_Package, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     # for clients
     tag = models.CharField(max_length=100, blank=True, default='')
@@ -61,10 +61,13 @@ class Customer(models.Model):
 
 class Customer_Stats(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, default='')
-    weight = models.CharField(max_length=100, blank=True, default='')
-    height = models.CharField(max_length=100, blank=True, default='')
-    bmi = models.CharField(max_length=100, blank=True, default='')
-    whr = models.CharField(max_length=100, blank=True, default='')
+    weight = models.CharField(max_length=100, null=True, blank=True, default='')
+    height = models.CharField(max_length=100, null=True, blank=True, default='')
+    waist = models.CharField(max_length=100, null=True, blank=True, default='')
+    hip = models.CharField(max_length=100, null=True, blank=True, default='')
+    bmi = models.FloatField(max_length=100, null=True, blank=True, default='')
+    whr = models.FloatField(max_length=100, null=True, blank=True, default='')
+    entry_date = models.DateField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.customer.name
