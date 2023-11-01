@@ -2,9 +2,9 @@
 {% load static %}
 {% block top-menu-content %}
 
-    <li class="nav-item d-none d-sm-inline-block">
+  {% comment %}  <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Home</a>
-    </li>
+    </li>{% endcomment %}
     <li class="nav-item d-none d-sm-inline-block">
         <a href="{% url 'inquiry:inquiry_list' %}" class="nav-link">Inquiry List</a>
     </li>
@@ -12,7 +12,7 @@
         <a href="{% url 'inquiry:add_inquiry_form' %}" class="nav-link">Add New Inquiry</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'inquiry:add_inquiry_form' %}" class="nav-link">आलु</a>
+        <a href="{% url 'registration:registration_list' %}" class="nav-link">Registration List</a>
     </li>
 {% endblock %}
 

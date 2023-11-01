@@ -15,6 +15,9 @@ class Customer_Family_Disease(models.Model):
 
 # Create your models here.
 class Inquiry(models.Model):
+    inquiry_id = models.CharField(max_length=255, blank=True, default='')
+    created_date = models.DateTimeField(null=True, blank=True)
+
     customer_name = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, blank=True, default='')
 
     trash = models.BooleanField(default=False)

@@ -1,0 +1,354 @@
+{% load static %}
+<!DOCTYPE  html >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>VidhyasDiet Registration - {{ registration.registration_id }} - {{ registration.customer.name }}</title>
+    <meta name="author" content="user"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+
+        .s1 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 14pt;
+        }
+
+        h1 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 16pt;
+        }
+
+        .s2 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+
+        .s4 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 15pt;
+        }
+
+        h4 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12.5pt;
+        }
+
+        .p, p {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12.5pt;
+            margin: 0pt;
+        }
+
+        h3 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        h2 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 13pt;
+        }
+
+        table, tbody {
+            vertical-align: top;
+            overflow: visible;
+        }
+    </style>
+    <style>
+        #page1-div {
+
+        }
+
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+                color-adjust: exact !important; /*Firefox*/
+            }
+        }
+    </style>
+     <script type="text/javascript">
+        alert("Note for printing or exporting system created registration form: \n" +
+            "\n" +
+            "Please print or export in A4 Size with margins 'None' for right formant");
+    </script>
+</head>
+<body>
+<div id="page1-div"
+     style="position:relative;width:892px;height:1230px; background-image: url({% static 'dist/img/company/letterhead.jpeg' %})!important;
+             background-size:contain;background-repeat: no-repeat; background-position: top  ">
+
+
+    <p class="s1" style="padding-top: 120pt;padding-left: 9pt;text-indent: 0pt;text-align: left;"><a
+            name="bookmark0">S.No.:{{ registration.registration_id }}</a></p>
+    <h1 style="padding-top: 6pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">New Registration/Renew Form</h1>
+    <p class="s1" style="padding-top: 10pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">
+        Date : {{ registration.registration_date }}</p>
+    <table width="100%" style="border-collapse:collapse;margin-left:5.8883pt" cellspacing="0">
+        <tr style="height:21pt">
+            <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Name:
+                </p>
+            </td>
+            <td style="width:175pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.customer.name }}
+                </p>
+            </td>
+            <td style="width:114pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Gender:
+                </p>
+            </td>
+            <td style="width:153pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.customer.gender }}
+                </p></td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Address
+                </p>
+            </td>
+            <td style="width:175pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.customer.address }}
+                </p></td>
+            <td style="width:114pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Date of Birth
+                </p></td>
+            <td style="width:153pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.customer.date_of_birth }}
+                </p></td>
+        </tr>
+        <tr style="height:22pt">
+            <td style="width:71pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Contact No.
+                </p>
+            </td>
+            <td style="width:175pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.customer.contact_number }}
+                </p></td>
+            <td style="width:114pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Emergency Contact
+                </p></td>
+            <td style="width:153pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.customer.contact_number }}
+                </p></td>
+        </tr>
+    </table>
+    <table width="100%" style="border-collapse:collapse;margin-left:5.8883pt;margin-top:5.8883pt" cellspacing="0">
+        <tr style="height:22pt">
+            <td style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                colspan="">
+                <p class="s2" style="padding-top: 3pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Package Booked
+                </p>
+            </td>
+            <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.package_booked }}
+                </p>
+            </td>
+            <td style="width:97pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 3pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Package Cost
+                </p>
+            </td>
+            <td style="width:117pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                 {{ registration.package_cost }}
+                </p></td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                colspan="1">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Package Service
+                </p>
+            </td>
+            <td style="width:371pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                colspan="3">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    {{ registration.package_service }}
+                </p>
+            </td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                colspan="2">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Therapy Package Validity
+                </p>
+            </td>
+            <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">Start From:
+                    <span>
+                        {{ registration.therapy_package_start }}
+                    </span>
+                </p>
+            </td>
+            <td style="width:214pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">Ending by:
+                    <span>
+                       {{ registration.therapy_package_end }}
+                    </span>
+                </p>
+            </td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"
+                colspan="2">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">
+                    Gym Package Validity
+                </p>
+            </td>
+            <td style="width:157pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">Start From:
+                    <span>
+                       {{ registration.gym_package_start }}
+                    </span>
+                </p>
+            </td>
+            <td style="width:214pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+                <p class="s2" style="padding-top: 2pt;padding-left: 3pt;text-indent: 0pt;text-align: left;">Ending by:
+                    <span>
+                        {{ registration.gym_package_end }}
+                    </span>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <p class="s4" style="padding-top: 5pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">Terms and
+        Conditions
+    </p>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Program Description:
+        <span class="p">
+    Vidhyas Diet and Fitness Center Program are designed to provide participants with personalized diet and fitness for your guide to healthy lifestyle.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Client Responsibility:
+        <span class="p">By enrolling in the Program, Client acknowledges that any changes to their diet plan, Therapy or exercise routine come with inherent risks. Client is responsible for consulting and takes assessment with Vidhyas diet and fitness center team.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Medical Advice:
+        <span class="p">The information provided in the Pro gram is for general educational purposes only and is not a substitute for professional medical advice.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: left;">
+        Results:
+        <span class="p">Results from the Program may vary based on individual factors, including but not limited to genetics, medical history, adherence to recommendat ions and personal circumstances. Vidhya s Diet and Fitness does not guarantee specific outcomes or results.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Confidentiality:
+        <span class="p">Any personal information shared during the Program, including health history and goals, will be kept confidential and used solely for the purpose of providing personalized guidance. Participants&#39; information will not be shared with third parties without consent.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Liability:
+        <span class="p">Vidhyas Diet and Fitness, its employees, contractors, and affiliates shall not be held liable for any injuries, damages, or losses arising from participation in the Program. Participants voluntarily assume all risks associated with following the Program&#39;s advice.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Payment and Refunds:
+        <span class="p">Client agrees to pay the specified fees for the Program as outlined during th e enrollment process. Fees are non-refundable once the Program has commenced.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Cancellation and Rescheduling: <span
+            class="p">Client may request to cancel or reschedule appointments as per the cancell ation policy provided not more than three months from joining date. Failure to provide adequate notice may result in missed sessions.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Validity Period: Therapy Session of the package valid for 45 days, whereas Monthly Gym Session valid for a month
+        only as mentioned valid date.</h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Intellectual Property:
+        <span class="p">All materials provided as part of the Program, including guides, meal plans, and exercise routines, are for personal use only and may not be shared, reproduced, or distributed without permission from Vidhyas Diet and Fitness.</span>
+    </h4>
+    <h4 style="padding-left: 16pt;text-indent: 0pt;text-align: justify;">
+        Modification of Terms:
+        <span class="p">Vidhyas Diet and Fitness Center reserves the right to modify these terms and conditions at any time. Participants will be notified of any changes.</span>
+    </h4>
+    <h3 style="padding-top: 12pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">
+        By enrolling in the Vidhya's Diet
+        and Fitness Program, Client acknowledgement and agreed to these terms and conditions.</h3>
+
+    <table width="100%" style="margin-left: 16pt;margin-top:10pt;{% comment %}border:5px solid black{% endcomment %}">
+        <tr style="height:21pt">
+            <td colspan="3"><h2>Client Name : {{ registration.customer.name}} </h2></td>
+
+            <td colspan="3"><h2>Employee Name : {{ registration.employee.name }} </h2></td>
+
+        </tr>
+        <tr style="height:21pt">
+            <td colspan="3"><h2>Signature :</h2></td>
+            <td colspan="3"><h2>Signature :</h2></td>
+        </tr>
+        <tr style="height:21pt">
+            <td colspan="3"><h2>Date : {{ registration.registration_date}}</h2></td>
+            <td colspan="3"><h2>From Vidhyas Diet and fitness Center P. Ltd. </h2></td>
+        </tr>
+        <tr style="height:21pt">
+            <td colspan="6"><h2><u>Administrative Block</u></h2></td>
+        </tr>
+        <tr style="height:21pt">
+            <td colspan="6"><h2>Received amount (In Word): {{ registration.received_amount}}</h2></td>
+        </tr>
+        <tr style="height:21pt">
+            <td colspan="2"><h2>Due Amount : {{ registration.due_amount}}</h2></td>
+
+
+            <td colspan="2"><h2>Receipt Bill No. : {{ registration.receipt_bill_no}}</h2></td>
+
+
+            <td colspan="2"><h2>Accounting by : {{ registration.account_by}}</h2></td>
+
+
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

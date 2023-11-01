@@ -1,0 +1,309 @@
+{% extends 'inquiry/inquiry_base.html' %}
+{% load static %}
+
+{% block page_script %}
+    <!--selectize 2 -->
+    <link href="{% static 'dist/css/selectize.bootstrap4.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'dist/js/select-js/standalone/selectize.js' %}"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css' %}">
+    <script src="{% static 'plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            //Bootstrap Duallistbox
+            $('.duallistbox').bootstrapDualListbox()
+
+            $('.select_me').selectize({
+                create: true,
+                sortField: {
+                    field: 'text',
+                    direction: 'asc'
+                },
+                dropdownParent: 'body'
+            });
+        });
+        $(document).ready(function () {
+            $('#package_booked_select').change(function () {
+                var selectedValue = $(this).val();
+                console.log(selectedValue)
+                $.ajax({
+                    method: "GET",
+                    url: "/api/diet_plan/" + selectedValue,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        var todayDate = new Date().toISOString().slice(0, 10);
+                        console.log(todayDate);
+
+                        //let date = new Date().toLocaleString("en-IN", {timeZone: "Asia/Kathmandu"}).split(',')[0]
+                        //let today = date.split('/').reverse().join('-');
+
+                        let end = new Date();
+                        let valid = parseInt(data['package_validity_time'])
+                        end.setMonth(end.getMonth() + valid);
+                        let end_date = new Date(end).toISOString().slice(0, 10);
+                        console.log("start")
+                        console.log(todayDate)
+                        console.log('end')
+                        console.log(end_date)
+
+                        document.getElementById("package_booked").value = data['package_name'].toString();
+                        document.getElementById("package_cost").value = data['package_cost'];
+                        document.getElementById("package_service").value = data['package_service'];
+                        document.getElementById("therapy_package_start").value = todayDate;
+                        document.getElementById("gym_package_start").value = todayDate;
+                        document.getElementById("therapy_package_end").value = end_date;
+                        document.getElementById("gym_package_end").value = end_date;
+                        //get json data and populate html form
+
+                    }
+                })
+            });
+        });
+    </script>
+
+{% endblock %}
+{% block sub-content %}
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Edit Registration Form</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <form action="{% url 'registration:edit_registration' %}?id={{ registration.id }}" method="POST">
+                {% csrf_token %}
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Basic Info</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="customer_name">NAME</label>
+
+                                        <input type="text" class="form-control" id="customer_name"
+                                               name="customer_name" value="{{ registration.customer.name }}"
+                                               readonly placeholder="Enter name">
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="customer_gender">GENDER </label>
+                                        <select class="form-control" id="customer_gender"
+                                                name="customer_gender">
+                                            <option selected>{{ registration.customer.gender }}</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="customer_date_of_birth">Date of Birth (DD/MM/YYYY) </label>
+                                        <input type="text" class="form-control" id="customer_date_of_birth"
+                                               name="customer_date_of_birth"readonly
+                                               value="{{ registration.customer.date_of_birth }}"
+                                               placeholder="DOB">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="customer_contact_number">Contact Number</label>
+                                        <input type="text" class="form-control "
+                                               id="customer_contact_number"
+                                               name="customer_contact_number"readonly
+                                               value="{{ registration.customer.contact_number }}"
+                                               placeholder="Enter Contact Number">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="customer_social_number">Social / Emergency Number</label>
+                                        <input type="text" class="form-control "
+                                               id="customer_social_number"
+                                               name="customer_social_number"readonly
+                                               value="{{ registration.customer.social_number }}"
+                                               placeholder="Whatsapp/viber">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="customer_address">Address</label>
+                                        <input type="text" class="form-control" id="customer_address"readonly
+                                               name="customer_address" value="{{ registration.customer.address }}"
+                                               placeholder="Enter address">
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Package Info </h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="row">
+
+
+                                    <div class="col-md-3">
+                                        <label for="package_booked_select">Select Package</label>
+                                        <select class="form-control" id="package_booked_select"
+                                                name="package_booked_select">
+                                            <option value="0" selected>{{ registration.package_booked }}</option>
+                                            {% for package in diet_plan %}
+                                                <option value="{{ package.id }}">{{ package.package_name }}</option>
+                                            {% endfor %}
+
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="package_booked">Package Booked</label>
+                                        <input type="text"
+                                               class="form-control "
+                                               id="package_booked"
+                                               name="package_booked"
+                                               readonly required value="{{ registration.package_booked }}"
+                                               placeholder="package_booked">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="package_cost">Package Amount</label>
+                                        <input type="text" class="form-control"
+                                               id="package_cost"
+                                               name="package_cost" value="{{ registration.package_cost }}"
+                                               placeholder="package_cost">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="package_service">Package Service</label>
+                                        <input type="text" class="form-control" id="package_service"
+                                               name="package_service" value="{{ registration.package_service }}"
+                                               placeholder="package_service ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="therapy_package_start">Therapy Package Start Form </label>
+                                        <input type="date" class="form-control " id="therapy_package_start"
+                                               name="therapy_package_start"
+                                               value="{{ registration.therapy_package_start | safe }}"
+                                               placeholder="Enter therapy_package_start">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="therapy_package_end">Therapy Package Ends Form </label>
+                                        <input type="date" class="form-control " id="therapy_package_end"
+                                               name="therapy_package_end"
+                                               value="{{ registration.therapy_package_end | safe }}"
+                                               placeholder="Enter therapy_package_end">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="gym_package_start">Gym Package Start Form </label>
+                                        <input type="date" class="form-control " id="gym_package_start"
+                                               name="gym_package_start"
+                                               value="{{ registration.gym_package_start | safe }}"
+                                               placeholder="Enter gym_package_start">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="gym_package_end">Gym Package End Form </label>
+                                        <input type="date" class="form-control " id="gym_package_end"
+                                               name="gym_package_end" value="{{ registration.gym_package_end |safe }}"
+                                               placeholder="Enter gym_package_end">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- /.card-body -->
+
+
+                    </div>
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Administrative block </h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="received_amount">Received Amount</label>
+                                        <input type="text" class="form-control "
+                                               id="received_amount"
+                                               name="received_amount" value="{{ registration.received_amount }}"
+                                               placeholder="received_amount">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="due_amount">Due Amount</label>
+                                        <input type="text" class="form-control "
+                                               id="due_amount"
+                                               name="due_amount" value="{{ registration.due_amount }}"
+                                               placeholder="due_amount">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="bill_number">Receipt Bill No </label>
+                                        <input type="text" class="form-control" id="bill_number"
+                                               name="bill_number" value="{{ registration.receipt_bill_no }}"
+                                               placeholder="bill_number">
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="account_by">Account By </label>
+                                        <select class="form-control" id="account_by"
+                                                name="account_by">
+                                            <option value="{{ registration.employee.id }}"> {{ registration.employee.name }}</option>
+                                            {% for employee in employee %}
+                                                <option value="{{ employee.id }}">{{ employee.name }}</option>
+                                            {% endfor %}
+
+
+                                        </select>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+
+
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+
+{% endblock %}

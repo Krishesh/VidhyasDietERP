@@ -12,7 +12,7 @@ class Diet_Plan_Package(models.Model):
     package_visibility = models.BooleanField(default=True)
     package_validity = models.BooleanField(default=True)
 
-    package_validity_time = models.CharField(max_length=555, unique=True)
+    package_validity_time = models.CharField(max_length=555)
 
     # package_validity_time_start = models.DateField(null=True, blank=True)
     # package_validity_time_end = models.DateField(null=True, blank=True)

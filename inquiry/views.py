@@ -64,6 +64,11 @@ def add_inquiry(request):
 
         inquiry = Inquiry()
         inquiry.customer_name = customer
+
+        today = date.today()
+        print(today)
+        inquiry.created_date = today
+        
         inquiry.customer_health_state = request.POST.get('customer_health_state')
         inquiry.customer_any_prescription = request.POST.get('customer_any_prescription')
         inquiry.customer_had_full_body_check_up = request.POST.get('customer_had_full_body_check_up')
@@ -75,6 +80,8 @@ def add_inquiry(request):
         inquiry.customer_any_symptoms = request.POST.get('customer_any_symptoms')
         inquiry.customer_lifestyle = request.POST.get('customer_lifestyle')
         inquiry.note = request.POST.get('note')
+        inquiry.save()
+        inquiry.inquiry_id = 'VDF-PKR-' + str(inquiry.pk) + 'E'
         inquiry.save()
 
         disease = request.POST.getlist('disease[]')
@@ -146,6 +153,7 @@ def edit_inquiry(request):
         inquiry.customer_any_symptoms = request.POST.get('customer_any_symptoms')
         inquiry.note = request.POST.get('note')
         inquiry.save()
+
 
         disease = request.POST.getlist('disease[]')
         relation = request.POST.getlist('relation[]')

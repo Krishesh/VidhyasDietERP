@@ -16,7 +16,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
 
-                    <h1>Inquiry List</h1>
+                    <h1>Registration List</h1>
                 </div>
 
             </div>
@@ -35,52 +35,86 @@
                                 <thead>
                                 <tr>
                                     <th>Sno</th>
-                                    <th>Registration Number</th>
-                                    <th>Customer</th>
-                                    <th>Package</th>
-                                    <th>Employee</th>
+
+                                    <th>Id</th>
+                                    <th>status</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Gender</th>
+                                    <th>Customer Address</th>
+                                    <th>Customer DOB</th>
+                                    <th>Customer Contact Number</th>
+                                    <th>Customer Emergency Number</th>
+                                    <th>Package Booked</th>
+                                    <th>Package Cost</th>
+                                    <th>Package Services</th>
+                                    <th>Therapy Package Validity</th>
+                                    <th>GYM Package Validity</th>
+                                    <th>Created By</th>
+                                    <th>Received Amount</th>
+                                    <th>Due Amount</th>
+                                    <th>Receipt Bill No</th>
+                                    <th>Accounting By</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for inquiry in inquiry reversed %}
+                                {% for registration in registration reversed %}
                                     <tr>
 
                                         <th scope="row">{{ forloop.counter }}</th>
 
-                                        <td>{{ inquiry.customer_name }}</td>
-                                        <td>{{ inquiry.customer_name.age }}</td>
-                                        <td>{{ inquiry.customer_name.gender }}</td>
-                                        <td>{{ inquiry.customer_name.contact_number }}</td>
+                                        <td> {{ registration.registration_date |date }}<br>
+                                         {{ registration.registration_id }}</td>
+                                        <td>{{ registration.registration_status }}</td>
+                                        <td>{{ registration.customer }}</td>
+                                        <td>{{ registration.customer.gender }}</td>
+                                        <td>{{ registration.customer.address }}</td>
+                                        <td>{{ registration.customer.date_of_birth }}</td>
+                                        <td>{{ registration.customer.contact_number }}</td>
+                                        <td>{{ registration.customer.social_number }}</td>
+                                        <td>{{ registration.package_booked }}</td>
+                                        <td>{{ registration.package_cost }}</td>
+                                        <td>{{ registration.package_service }}</td>
+                                        <td>{{ registration.therapy_package_start }}
+                                            to {{ registration.therapy_package_end }}</td>
+                                        <td>{{ registration.gym_package_start }}
+                                            to {{ registration.gym_package_end }}</td>
+                                        <td>{{ registration.employee.name }}</td>
+                                        <td>{{ registration.received_amount }}</td>
+                                        <td>{{ registration.due_amount }}</td>
+                                        <td>{{ registration.receipt_bill_no }}</td>
+                                        <td>{{ registration.account_by.name }}</td>
                                         <td>
                                             <div class="btn-group">
 
-                                                <a href="{% url 'inquiry:details_inquiry' %}?id={{ inquiry.id }}"
+                                                {% comment %} <a href="{% url 'inquiry:details_inquiry' %}?id={{ inquiry.id }}"
                                                    style="margin-right: 2px">
                                                     <button title="Details" type="button" class="btn btn-warning">
                                                         <i class="fa fa-arrow-circle-right"></i>
                                                     </button>
-                                                </a>
-                                                {% comment %}   <a href="{% url 'inquiry:edit_inquiry_form' %}?id={{ inquiry.id }}"
+                                                </a>{% endcomment %}
+                                                <a href="{% url 'registration:edit_registration_form' %}?id={{ registration.id }}"
                                                    style="margin-right: 2px">
                                                     <button type="button" class="btn btn-info" data-toggle="modal"
                                                             title="Edit">
                                                         <i class="fa fa-edit"></i></button>
-                                                </a>{% endcomment %}
+                                                </a>
                                                 <a style="margin-right: 2px">
                                                     <button title="Trash" type="button" class="btn btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#trash_transaction"
-                                                            data-id="{{ inquiry.id }}">
+                                                            data-id="{{ registration.id }}">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </a>
 
-                                                <a href="#" style="margin-right: 2px">
-                                                    <button title="Register to Client" type="button"
+                                                <a href="{% url 'registration:registration_print' registration.pk %}"
+                                                   target="_blank"
+                                                   style="margin-right: 2px">
+                                                    <button title="Print" type="button"
                                                             class="btn btn-info">
-                                                        <i class="fa fa-exchange-alt"></i>
+                                                        <i class="fa fa-print"></i>
                                                     </button>
                                                 </a>
                                             </div>
@@ -93,11 +127,25 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                        <th>Sno</th>
-                                    <th>Registration Number</th>
-                                    <th>Customer</th>
-                                    <th>Package</th>
-                                    <th>Employee</th>
+                                    <th>Sno</th>
+                                    <th>Id</th>
+                                    <th>status</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Gender</th>
+                                    <th>Customer Address</th>
+                                    <th>Customer DOB</th>
+                                    <th>Customer Contact Number</th>
+                                    <th>Customer Emergency Number</th>
+                                    <th>Package Booked</th>
+                                    <th>Package Cost</th>
+                                    <th>Package Services</th>
+                                    <th>Therapy Package Validity</th>
+                                    <th>GYM Package Validity</th>
+                                    <th>Created By</th>
+                                    <th>Received Amount</th>
+                                    <th>Due Amount</th>
+                                    <th>Receipt Bill No</th>
+                                    <th>Accounting By</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
@@ -117,16 +165,17 @@
         <div class="modal-dialog">
             <div class="modal-content bg-danger">
                 <div class="modal-header">
-                    <h4 class="modal-title">Trash Inquiry</h4>
+                    <h4 class="modal-title">Trash registration</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="{% url 'inquiry:trash_inquiry' %}" method="POST">
+                <form class="form-horizontal" action="{% url 'registration:trash_registration' %}" method="POST">
                     {% csrf_token %}
                     <div class="modal-body">
-                        <label for="trash_id"> </label><input type="text" hidden class="form-control" id="trash_id"
-                                                              name="trash_id">
+                        <label for="registration_id"> </label><input type="text" hidden class="form-control"
+                                                                     id="registration_id"
+                                                                     name="registration_id">
                     </div>
 
                     <div class="modal-footer justify-content-between">
@@ -161,14 +210,97 @@
         $(function () {
             $("#id_datatable").DataTable({
                 "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+                buttons: [
+                    {
+                        extend: 'copy',
+                    },
+                    {
+                        extend: 'excel',
+                    },
+                    {
+                        extend: 'pdf',
+                    },
+                    {
+                        extend: 'print',
+                    },
+                    {
+                        extend: 'colvis',
+                        postfixButtons: ['colvisRestore']
+                    },
+                    {
+                        extend: 'colvisGroup',
+                        text: 'Customer info',
+                        show: [1, 3, 4, 5, 6, 7, 8, 19],
+                        hide: [2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+                    },
+                    {
+                        extend: 'colvisGroup',
+                        text: 'Package info',
+                        show: [1, 3, 9, 10, 11, 12, 13, 19],
+                        hide: [2, 4, 5, 6, 7, 8, 14, 15, 16, 17, 18]
+                    },
+                    {
+                        extend: 'colvisGroup',
+                        text: 'Administrative info',
+                        show: [1, 14, 15, 16, 17, 18, 19],
+                        hide: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+                    },
+                    {
+                        extend: 'colvisGroup',
+                        text: 'Show all',
+                        show: ':hidden'
+                    }
+                ],
+                columnDefs: [
+                    {
+                        targets: -2,
+                        visible: false,
+                        //searchable : false
+                    }, {
+                        targets: -3,
+                        visible: false,
+
+                    },
+                    {
+                        targets: -4,
+                        visible: false
+                    },
+                    {
+                        targets: -6,
+                        visible: false
+                    },
+                    {
+                        targets: -7,
+                        visible: false
+                    },
+                    {
+                        targets: -8,
+                        visible: false
+                    },
+                    {
+                        targets: -9,
+                        visible: false
+                    },
+                    {
+                        targets: -12,
+                        visible: false
+                    }, {
+                        targets: -14,
+                        visible: false
+                    }, {
+                        targets: -15,
+                        visible: false
+                    },
+                ]
+
             }).buttons().container().appendTo('#id_datatable_wrapper .col-md-6:eq(0)');
+
         });
     </script>
     <script>
         $(function () {
             $('#trash_transaction').on('show.bs.modal', function (event) {
-                document.getElementById("trash_id").value = $(event.relatedTarget).data('id');
+                document.getElementById("registration_id").value = $(event.relatedTarget).data('id');
             });
         });
     </script>
