@@ -41,6 +41,7 @@ def inquiry_to_registration(request):
         from datetime import date
         registration.registration_date = date.today()
 
+        registration.client_status = 'Registered'
         registration.registration_status = 'CREATED'
         inquiry = Inquiry.objects.get(id=request.POST.get('inquiry_id'))
         customer = inquiry.customer_name
@@ -128,3 +129,57 @@ def edit_registration(request):
 
         registration.save()
         return redirect('/registration_list/')
+def registration_to_rebook_form(request):
+    context = {
+        'registration': Registration.objects.get(id=request.GET.get('id')),
+        'diet_plan': Diet_Plan_Package.objects.all(),
+        'employee': Employee.objects.all(),
+        'config': config
+    }
+    return render(request, 'registration/registration_to_rebook.html', context)
+
+
+def registration_to_rebook(request):
+    if request.method == 'POST':
+
+        registration = Registration.objects.get(id=request.GET.get('id'))
+
+        from datetime import date
+        registration.registration_date = date.today()
+
+        registration.client_status = 'Re-Booked'
+        registration.registration_status = 'CREATED'
+        customer = Customer.objects.get(id=registration.customer.id)
+
+        package_booked = Diet_Plan_Package.objects.get(id=request.POST.get('package_booked_select'))
+
+
+        customer.diet_plan = package_booked
+        customer.save()
+
+
+
+        registration.employee = request.user.profile.employee
+        registration.account_by = Employee.objects.get(id=request.POST.get('account_by'))
+
+
+        registration.discount_amount = request.POST.get('discount')
+        registration.total_amount = request.POST.get('total_amount')
+
+        registration.received_amount = request.POST.get('received_amount')
+        registration.due_amount = request.POST.get('due_amount')
+        registration.receipt_bill_no = request.POST.get('bill_number')
+
+        registration.package_booked = request.POST.get('package_booked')
+        registration.package_cost = request.POST.get('package_cost')
+        registration.package_service = request.POST.get('package_service')
+        registration.therapy_package_start = request.POST.get('therapy_package_start')
+        registration.therapy_package_end = request.POST.get('therapy_package_end')
+        registration.gym_package_start = request.POST.get('gym_package_start')
+        registration.gym_package_end = request.POST.get('gym_package_end')
+        registration.registration_id =registration.registration_id +'-rebooked'
+        registration.save()
+    
+        return redirect('/registration_list/')
+
+

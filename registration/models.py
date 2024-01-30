@@ -7,7 +7,7 @@ from inquiry.models import Inquiry
 
 # Create your models here.
 class Registration(models.Model):
-
+    client_status = models.CharField(max_length=255, blank=True, default='')
     registration_id = models.CharField(max_length=255, blank=True, default='')
     registration_date = models.DateTimeField(null=True, blank=True)
 
@@ -19,6 +19,7 @@ class Registration(models.Model):
     trash = models.BooleanField(default=False)
 
     registration_status = models.CharField(max_length=255, blank=True, default='')
+
 
     discount_amount = models.CharField(max_length=5000, blank=True, default='')
     total_amount = models.CharField(max_length=5000, blank=True, default='')

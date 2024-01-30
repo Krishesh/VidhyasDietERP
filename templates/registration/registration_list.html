@@ -66,7 +66,7 @@
 
                                         <td> {{ registration.registration_date |date }}<br>
                                          {{ registration.registration_id }}</td>
-                                        <td>{{ registration.registration_status }}</td>
+                                        <td>{{ registration.registration_status }}<br>{{ registration.client_status }}</td>
                                         <td>{{ registration.customer }}</td>
                                         <td>{{ registration.customer.gender }}</td>
                                         <td>{{ registration.customer.address }}</td>
@@ -115,6 +115,14 @@
                                                     <button title="Print" type="button"
                                                             class="btn btn-info">
                                                         <i class="fa fa-print"></i>
+                                                    </button>
+                                                </a>
+                                                 <a href="{% url 'registration:registration_to_rebook_form' %}?id={{ registration.pk }}"
+
+                                                   style="margin-right: 2px">
+                                                    <button title="Re-book" type="button"
+                                                            class="btn btn-file">
+                                                        <i class="fa fa-exchange-alt"></i>
                                                     </button>
                                                 </a>
                                             </div>

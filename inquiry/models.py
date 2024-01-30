@@ -26,6 +26,7 @@ class Inquiry(models.Model):
 
     customer_health_state = models.CharField(max_length=500, blank=True, default='')
     customer_any_prescription = models.CharField(max_length=500, blank=True, default='')
+    customer_prescription_list = models.CharField(max_length=500, blank=True, default='')
     customer_had_full_body_check_up = models.CharField(max_length=500, blank=True, default='')
     customer_suffered_any_disease = models.CharField(max_length=500, blank=True, default='')
 

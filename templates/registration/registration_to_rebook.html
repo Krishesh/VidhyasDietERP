@@ -117,7 +117,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Registration Form</h1>
+                    <h1>Rebook Form</h1>
                 </div>
 
             </div>
@@ -127,7 +127,7 @@
     <section class="content">
         <div class="container-fluid">
 
-            <form action="{% url 'registration:inquiry_to_registration' %}" method="POST">
+            <form action="{% url 'registration:registration_to_rebook' %}?id={{ registration.id }}" method="POST">
                 {% csrf_token %}
                 <div class="col-md-12">
                     <div class="card card-primary">
@@ -140,12 +140,12 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="inquiry_id">Inquiry Details(Inquiry_id - created_date - Customer )</label>
+                                        <label for="inquiry_id">Registration Details</label>
 
                                         <select class="form-control" id="inquiry_id"
                                                 name="inquiry_id">
-                                            <option value="{{ inquiry.id }}" selected>{{ inquiry.inquiry_id }}
-                                                - {{ inquiry.created_date  | date }} - {{ inquiry.customer_name }}
+                                            <option value="{{ registration.id }}" selected>{{ registration.registration_id }}
+
                                                </option>
 
                                         </select>
@@ -156,7 +156,7 @@
                                         <label for="customer_name">NAME</label>
 
                                         <input type="text" class="form-control" id="customer_name"
-                                               name="customer_name" value="{{ inquiry.customer_name.name }}"
+                                               name="customer_name" value="{{ registration.customer.name }}"
                                                placeholder="Enter name">
                                     </div>
 
@@ -164,7 +164,7 @@
                                         <label for="customer_gender">GENDER </label>
                                         <select class="form-control" id="customer_gender"
                                                 name="customer_gender">
-                                            <option selected>{{ inquiry.customer_name.gender }}</option>
+                                            <option selected>{{ registration.customer.gender }}</option>
                                             <option>Male</option>
                                             <option>Female</option>
                                             <option>Other</option>
@@ -175,7 +175,7 @@
                                         <label for="customer_date_of_birth">Date of Birth (DD/MM/YYYY) </label>
                                         <input type="text" class="form-control" id="customer_date_of_birth"
                                                name="customer_date_of_birth"
-                                               value="{{ inquiry.customer_name.date_of_birth }}"
+                                               value="{{ registration.customer.date_of_birth }}"
                                                placeholder="DOB">
                                     </div>
 
@@ -189,7 +189,7 @@
                                         <input type="text" class="form-control select_me"
                                                id="customer_contact_number"
                                                name="customer_contact_number"
-                                               value="{{ inquiry.customer_name.contact_number }}"
+                                               value="{{ registration.customer.contact_number }}"
                                                placeholder="Enter Contact Number">
                                     </div>
                                     <div class="col-md-4">
@@ -197,13 +197,13 @@
                                         <input type="text" class="form-control select_me"
                                                id="customer_social_number"
                                                name="customer_social_number"
-                                               value="{{ inquiry.customer_name.social_number }}"
+                                               value="{{ registration.customer.social_number }}"
                                                placeholder="Whatsapp/viber">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="customer_address">Address</label>
                                         <input type="text" class="form-control" id="customer_address"
-                                               name="customer_address" value="{{ inquiry.customer_name.address }}"
+                                               name="customer_address" value="{{ registration.customer.address }}"
                                                placeholder="Enter address">
                                     </div>
 
@@ -231,7 +231,7 @@
                                         <label for="package_booked_select">Select Package</label>
                                         <select class="form-control" id="package_booked_select"
                                                 name="package_booked_select">
-                                            <option selected></option>
+                                        <option selected></option>
                                             {% for package in diet_plan %}
                                                 <option value="{{ package.id }}">{{ package.package_name }}</option>
                                             {% endfor %}

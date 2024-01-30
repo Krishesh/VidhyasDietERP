@@ -52,8 +52,16 @@ def add_inquiry(request):
         customer_Stats.waist = waist
         customer_Stats.hip = hip
 
-        bmi = float(weight) / ((float(height)/100) * (float(height)/100))
-        whr = float(waist) / float(hip)
+        try:
+            bmi = float(weight) / ((float(height) / 100) * (float(height) / 100))
+        except ZeroDivisionError:
+            bmi = 0
+        try:
+            whr = float(waist) / float(hip)
+        except ZeroDivisionError:
+            whr = 0
+
+
         print('bmi' + str(bmi))
         print('whr' + str(whr))
         customer_Stats.bmi = round(bmi, 2)
@@ -68,13 +76,13 @@ def add_inquiry(request):
         today = date.today()
         print(today)
         inquiry.created_date = today
-        
+
         inquiry.customer_health_state = request.POST.get('customer_health_state')
         inquiry.customer_any_prescription = request.POST.get('customer_any_prescription')
+        inquiry.customer_prescription_list = request.POST.get('customer_prescription_list')
         inquiry.customer_had_full_body_check_up = request.POST.get('customer_had_full_body_check_up')
-        inquiry.customer_any_prescription = request.POST.get('customer_any_prescription')
         print(request.POST.getlist('customer_suffered_any_disease[]'))
-        inquiry.customer_suffered_any_disease = request.POST.getlist('customer_suffered_any_disease[]pagal')
+        inquiry.customer_suffered_any_disease = request.POST.getlist('customer_suffered_any_disease[]')
         inquiry.customer_thought_about_workout = request.POST.get('customer_thought_about_workout')
         inquiry.customer_activity_level = request.POST.get('customer_activity_level')
         inquiry.customer_any_symptoms = request.POST.get('customer_any_symptoms')
@@ -129,9 +137,15 @@ def edit_inquiry(request):
         customer_Stats.height = height
         customer_Stats.waist = waist
         customer_Stats.hip = hip
+        try:
+            bmi = float(weight) / (float(height) * float(height))
+        except ZeroDivisionError:
+            bmi = 0
+        try:
+            whr = float(waist) / float(hip)
+        except ZeroDivisionError:
+            whr = 0
 
-        bmi = float(weight) / (float(height) * float(height))
-        whr = float(waist) / float(hip)
         print('bmi' + bmi)
         print('whr' + whr)
         customer_Stats.bmi = bmi
@@ -153,7 +167,6 @@ def edit_inquiry(request):
         inquiry.customer_any_symptoms = request.POST.get('customer_any_symptoms')
         inquiry.note = request.POST.get('note')
         inquiry.save()
-
 
         disease = request.POST.getlist('disease[]')
         relation = request.POST.getlist('relation[]')

@@ -151,26 +151,26 @@
                                         <div class="col-md-2">
                                             <label for="customer_weight">WEIGHT in kg</label>
                                             <input type="number" step="0.01" class="form-control" id="customer_weight"
-                                                   name="customer_weight"
+                                                   name="customer_weight"value="0"
                                                    placeholder="Enter WEIGHT">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="customer_height">HEIGHT in cm</label>
-                                            <input type="number"  step="0.01" class="form-control" id="customer_height"
-                                                   name="customer_height"
+                                            <input type="number" step="0.01" class="form-control" id="customer_height"
+                                                   name="customer_height"value="0"
                                                    placeholder="Enter HEIGHT">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="customer_waist">WAIST in cm</label>
                                             <input type="number" step="0.01" class="form-control" id="customer_waist"
-                                                   name="customer_waist"
+                                                   name="customer_waist" value="0"
                                                    placeholder="Enter waist size">
                                         </div>
 
                                         <div class="col-md-2">
                                             <label for="customer_hip">HIP in cm</label>
-                                            <input type="number"  step="0.01" class="form-control" id="customer_hip"
-                                                   name="customer_hip"
+                                            <input type="number" step="0.01" class="form-control" id="customer_hip"
+                                                   name="customer_hip"value="0"
                                                    placeholder="Enter hip size">
                                         </div>
                                         <div class="col-md-4">
@@ -262,7 +262,8 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">2. Are you taking any prescription medication</label>
+                                            <label for="prescription">2. Are you taking any prescription
+                                                medication?</label>
                                             <div class=" row">
                                                 <div class=" form-check">
                                                     <div class="custom-control custom-radio">
@@ -286,6 +287,17 @@
                                                     </div>
                                                 </div>
 
+
+                                            </div>
+                                            <div class=" row">
+                                                <div class="form-check col-md-12">
+
+                                                    <input type="text"
+                                                           class="form-control select_me"
+                                                           id="prescription"
+                                                           name="customer_prescription_list"
+                                                           placeholder="prescription if yes">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -325,7 +337,8 @@
                                                 disease?</label>
 
 
-                                            <select id="customer_suffered_any_disease" class="duallistbox" name="customer_suffered_any_disease[]" size="5"
+                                            <select id="customer_suffered_any_disease" class="duallistbox"
+                                                    name="customer_suffered_any_disease[]" size="5"
                                                     multiple="multiple">
                                                 <option>Diabetes</option>
                                                 <option>Hypertension</option>
@@ -350,8 +363,8 @@
 
                                             </label>
                                             <a class="" id="add_rows_test" title="">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
+                                                <i class="fa fa-plus"></i>
+                                            </a>
                                             <table class="table table-bordered" id="entry_family_disease">
                                                 <tr>
                                                     <th>Disease</th>
