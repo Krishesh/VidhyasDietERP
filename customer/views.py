@@ -1,14 +1,74 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.shortcuts import render, redirect
 
-from customer.models import Diet_Plan_Package, Customer
+from customer.form import CustomerForm
+from customer.models import Diet_Plan_Package, Customer, Customer_Stats
 from customer.serializers import Diet_Plan_Package_Serializer, Customer_Serializer
+from inquiry.models import Inquiry
+from registration.models import Registration
 
 
 # Create your views here.
+
+def customer_list(request):
+    context = {
+        'customers': Customer.objects.filter(trashed=False),
+    }
+    return render(request, 'customer/customer_list.html', context)
+
+
+def customer_detail(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    inquiry = Inquiry.objects.all().filter(customer_name=customer)
+    print(Inquiry.objects.filter(customer_name__pk=customer.pk))
+    context = {
+        'customer': customer,
+        'inquiry': inquiry,
+        'customer_stats': Customer_Stats.objects.filter(customer=customer),
+        'registration': Registration.objects.filter(customer=customer)
+
+    }
+    return render(request, 'customer/customer_detail.html', context)
+
+
+def add_customer(request):
+    if request.method == 'POST':
+        form = CustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('customer:customer_list')
+        else:
+            # Handle the error
+            print(form.errors)
+    else:
+        form = CustomerForm()
+    return render(request, 'customer/add_customer.html', {'form': form})
+
+
+def edit_customer(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    if request.method == 'POST':
+        form = CustomerForm(request.POST, instance=customer)
+        if form.is_valid():
+            form.save()
+            return redirect('customer:customer_list')
+        else:
+            # Handle the error
+            print(form.errors)
+    else:
+        form = CustomerForm(instance=customer)
+    return render(request, 'customer/edit_customer.html', {'form': form, 'customer': customer})
+
+
+def trash_customer(request):
+    customer = get_object_or_404(Customer, pk=request.POST.get("trash_id"))
+    customer.trashed = True
+    customer.save()
+    return redirect('customer:customer_list')
 
 
 class DietPlanAPI(APIView):

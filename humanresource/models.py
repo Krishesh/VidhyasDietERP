@@ -67,6 +67,8 @@ class Employee(models.Model):
     specialization = models.CharField(max_length=3000, blank=True, null=True, default='')
     terms_and_condition = models.CharField(max_length=3000, blank=True, null=True, default='')
 
+    trashed = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
 

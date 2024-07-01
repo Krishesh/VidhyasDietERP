@@ -11,7 +11,7 @@ from constance import config
 # Create your views here.
 def registration_list(request):
     context = {
-        'registration': Registration.objects.all().filter(trash=False)
+        'registration': Registration.objects.all().filter(trash=False).order_by('registration_date')
     }
     return render(request, 'registration/registration_list.html', context)
 

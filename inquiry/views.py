@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
 from customer.models import Customer, Customer_Stats
 from inquiry.models import Inquiry, Customer_Family_Disease
@@ -7,7 +9,7 @@ from inquiry.models import Inquiry, Customer_Family_Disease
 # Create your views here.
 def inquiry_list(request):
     context = {
-        'inquiry': Inquiry.objects.all().filter(trash=False)
+        'inquiry': Inquiry.objects.all().filter(trash=False).order_by('created_date')
     }
     return render(request, 'inquiry/inquiry_list.html', context)
 
@@ -25,6 +27,18 @@ def edit_inquiry_form(request):
 
 def add_inquiry(request):
     if request.method == 'POST':
+        customer_name = request.POST.get('customer_name')
+        customer_contact_number = request.POST.get('customer_contact_number')
+
+        existing_customer = Customer.objects.filter(name=customer_name, contact_number=customer_contact_number).first()
+        print(customer_name)
+        print(customer_contact_number)
+        print(existing_customer)
+        if existing_customer:
+            # Show toast message
+
+            messages.error(request, existing_customer.id)
+            return redirect("inquiry:add_inquiry_form")
         # create customer First
         customer = Customer()
         customer.name = request.POST.get('customer_name')
@@ -61,9 +75,6 @@ def add_inquiry(request):
         except ZeroDivisionError:
             whr = 0
 
-
-        print('bmi' + str(bmi))
-        print('whr' + str(whr))
         customer_Stats.bmi = round(bmi, 2)
         customer_Stats.whr = round(whr, 2)
         customer_Stats.save()
@@ -106,11 +117,14 @@ def add_inquiry(request):
             customer_Family_Disease.save()
             inquiry.customer_family_disease.add(customer_Family_Disease)
 
-    return redirect("/inquiry_list")
+    return redirect("inquiry:inquiry_list")
 
 
 def edit_inquiry(request):
     if request.method == 'POST':
+
+        # Check if customer already exists
+
         # create customer First
         customer = Customer()
         customer.name = request.POST.get('customer_name')
@@ -182,7 +196,7 @@ def edit_inquiry(request):
             customer_Family_Disease.save()
             inquiry.customer_family_disease.add(customer_Family_Disease)
 
-    return redirect("/inquiry_list")
+    return redirect("inquiry:inquiry_list")
 
 
 def trash_inquiry(request):

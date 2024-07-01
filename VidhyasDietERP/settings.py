@@ -41,11 +41,13 @@ INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
 
-    "authentication",
+    "user_authentication",
     "inquiry",
     "customer",
     "humanresource",
     "registration",
+    "account.apps.AccountConfig",
+    "diet.apps.DietConfig"
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ WSGI_APPLICATION = "VidhyasDietERP.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "db_system.sqlite3",
     }
 }
 

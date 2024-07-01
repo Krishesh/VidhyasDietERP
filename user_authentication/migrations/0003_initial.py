@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ("humanresource", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("authentication", "0002_delete_test"),
+        ("user_authentication", "0002_delete_test"),
     ]
 
     operations = [

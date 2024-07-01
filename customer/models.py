@@ -1,6 +1,7 @@
 from django.db import models
-
-
+choose_gender = (
+    ('Male', ' Male'), ('Female', 'Female'), ('Other', 'Other')
+)
 # Create your models here.
 
 # Create your models here.
@@ -30,7 +31,7 @@ class Customer(models.Model):
     contact_person = models.CharField(max_length=500, blank=True, default='')
 
     age = models.CharField(max_length=100, blank=True, default='')
-    gender = models.CharField(max_length=100, blank=True, default='')
+    gender = models.CharField(max_length=100,choices=choose_gender, blank=True, default='')
     date_of_birth = models.CharField(max_length=100, blank=True, default='')
     profession = models.CharField(max_length=100, blank=True, default='')
 
@@ -54,6 +55,8 @@ class Customer(models.Model):
 
     # for clients
     tag = models.CharField(max_length=100, blank=True, default='')
+
+    trashed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

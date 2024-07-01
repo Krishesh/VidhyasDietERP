@@ -1,0 +1,241 @@
+{% extends 'customer/customer_base.html' %}
+{% load static %}
+
+s
+{% block sub-content %}
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer Detail</h3>
+                           {% comment %} <div>
+                                <a href="{% url 'customer:edit_customer' customer.pk %}"
+                                   class="btn btn-primary">Edit</a>
+                                <a href="{% url 'customer:customer_list' %}" class="btn btn-secondary">Back to List</a>
+                            </div>{% endcomment %}
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <td width="50">
+                                        <table border="0" cellspacing="" cellpadding="4" width="100%">
+                                            <tbody>
+                                            <tr>
+                                                <th width="200">Name:</th>
+                                                <td>                  {{ customer.name }}
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Age:</th>
+                                                <td>{{ customer.age }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Gender:</th>
+                                                <td>{{ customer.gender }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date of Birth:</th>
+                                                <td> {{ customer.date_of_birth }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Contact Person:</th>
+                                                <td> {{ customer.contact_person }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Note:</th>
+                                                <td> {{ customer.note }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td width="50%">
+                                        <table border="0" cellspacing="" cellpadding="4" width="100%">
+                                            <tbody>
+                                            <tr>
+                                                <th width="200">Phone Numebr:</th>
+                                                <td>{{ customer.phone_number }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Contact Number:</th>
+                                                <td>
+                                                    {{ customer.contact_number }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Social Number:</th>
+                                                <td>{{ customer.social_number }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email:</th>
+                                                <td>{{ customer.email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Website:</th>
+                                                <td>{{ customer.website }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Address:</th>
+                                                <td>{{ customer.address }} {{ customer.landmark }} {{ customer.city }} {{ customer.state }} {{ customer.country }}</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                    <div class="card card-secondary collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Inquiry and Registration Details</h3>
+                            <div class="card-tools">
+                <button type="button" class="btn btn-tool " data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <td>Inquiry List</td>
+                                    <td> |{% for inquiry in inquiry %}
+                                        <a href="{% url 'inquiry:details_inquiry' %}?id={{ inquiry.id }}">{{ inquiry.inquiry_id }} </a>
+                                        |
+                                    {% endfor %}</td>
+
+                                </tr>
+                                   <tr>
+                                    <td>Registration List</td>
+                                    <td> |{% for registration in registration %}
+                                        <a href="{% url 'inquiry:details_inquiry' %}?id={{ registration.id }}">{{ registration.registration_id }} </a>
+                                        |
+                                    {% endfor %}</td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer Stats</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="table  table-bordered"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <td>Entry date</td>
+                                    <td>Weight</td>
+                                    <td>Height</td>
+                                    <td>BMI</td>
+                                    <td>Waist</td>
+                                    <td>HIP</td>
+                                    <td>WHR</td>
+                                </tr>
+                                {% for customer_stats in customer_stats %}
+                                    <tr>
+                                        <td>{{ customer_stats.entry_date }}</td>
+                                        <td>{{ customer_stats.weight }}</td>
+                                        <td>{{ customer_stats.height }}</td>
+                                        <td>{{ customer_stats.bmi }}
+                                            {% if customer_stats.bmi < 18.5 %}
+                                                (Underweight)
+                                            {% elif customer_stats.bmi > 18.5 and customer_stats.bmi < 24.9 %}
+                                                (Normal)
+                                            {% elif customer_stats.bmi > 24.9 and customer_stats.bmi < 29.9 %}
+                                                (OverWeight)
+                                            {% elif customer_stats.bmi > 29.9 and customer_stats.bmi < 34.9 %}
+                                                (Obese I)
+                                            {% elif customer_stats.bmi > 34.9 and customer_stats.bmi < 39.9 %}
+                                                (Obese II)
+                                            {% elif customer_stats.bmi > 39.9 %}
+                                                (Obese III)
+                                            {% endif %}
+                                        </td>
+                                        <td>{{ customer_stats.waist }}</td>
+                                        <td>{{ customer_stats.hip }}</td>
+                                        <td>{{ customer_stats.whr }}
+                                            {% if inquiry.customer_name.gender == "Male" %}
+                                                {% if customer_stats.whr < .95 %}
+                                                    (LOW)
+                                                {% elif customer_stats.whr > 0.95 and  customer_stats.whr < 1 %}
+                                                    (MODERATE)
+                                                {% else %}
+                                                    (HIGH)
+                                                {% endif %}
+                                            {% else %}
+                                                {% if customer_stats.whr < .80 %}
+                                                    (LOW)
+                                                {% elif customer_stats.whr > 0.80 and  customer_stats.whr < 0.85 %}
+                                                    (MODERATE)
+                                                {% else %}
+                                                    (HIGH)
+                                                {% endif %}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+{% endblock sub-content %}

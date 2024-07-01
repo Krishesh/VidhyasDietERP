@@ -6,7 +6,40 @@
     <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
 
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'plugins/datatables-select/css/select.bootstrap4.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-select/css/dataTables.dataTables.css' %}">
+    <style>
+        .dataTables_wrapper .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .dataTables_wrapper .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .dataTables_wrapper .dataTables_length,
+        .dataTables_wrapper .dataTables_filter {
+            margin: 0;
+        }
+
+        .dataTables_wrapper .dt-buttons {
+            margin-left: auto;
+        }
+
+        .dataTables_wrapper .dataTables_paginate,
+        .dataTables_wrapper .dataTables_info {
+            margin: 0;
+        }
+
+
+    </style>
+{% endblock page_css %}
 
 {% block sub-content %}
 
@@ -31,12 +64,12 @@
 
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="id_datatable" class="table table-bordered table-hover">
+                            <table id="dtable2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>Sno</th>
+                                    <th></th>
 
-                                    <th>Id</th>
+                                    <th></th>
                                     <th>status</th>
                                     <th>Customer Name</th>
                                     <th>Customer Gender</th>
@@ -62,11 +95,12 @@
                                 {% for registration in registration reversed %}
                                     <tr>
 
-                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <td></td>
 
                                         <td> {{ registration.registration_date |date }}<br>
-                                         {{ registration.registration_id }}</td>
-                                        <td>{{ registration.registration_status }}<br>{{ registration.client_status }}</td>
+                                            {{ registration.registration_id }}</td>
+                                        <td>{{ registration.registration_status }}<br>{{ registration.client_status }}
+                                        </td>
                                         <td>{{ registration.customer }}</td>
                                         <td>{{ registration.customer.gender }}</td>
                                         <td>{{ registration.customer.address }}</td>
@@ -87,13 +121,41 @@
                                         <td>{{ registration.account_by.name }}</td>
                                         <td>
                                             <div class="btn-group">
+                                                <button type="button"
+                                                        class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                                        data-toggle="dropdown">Action
+                                                </button>
 
-                                                {% comment %} <a href="{% url 'inquiry:details_inquiry' %}?id={{ inquiry.id }}"
+                                                <div class="dropdown-menu" role="menu">
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'registration:edit_registration_form' %}?id={{ registration.id }}">
+                                                        Edit</a>
+                                                    <a class="dropdown-item" href="#"
+                                                       data-toggle="modal"
+                                                       data-target="#trash_transaction"
+                                                       data-id="{{ registration.id }}">Trash
+
+                                                    </a>
+
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'registration:registration_print' registration.pk %}">Print
+                                                    </a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'registration:registration_to_rebook_form' %}?id={{ registration.pk }}">
+                                                        Re-book
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            {% comment %} <div class="btn-group">
+
+                                                 <a href="{% url 'inquiry:details_inquiry' %}?id={{ inquiry.id }}"
                                                    style="margin-right: 2px">
                                                     <button title="Details" type="button" class="btn btn-warning">
                                                         <i class="fa fa-arrow-circle-right"></i>
                                                     </button>
-                                                </a>{% endcomment %}
+                                                </a>
                                                 <a href="{% url 'registration:edit_registration_form' %}?id={{ registration.id }}"
                                                    style="margin-right: 2px">
                                                     <button type="button" class="btn btn-info" data-toggle="modal"
@@ -117,7 +179,7 @@
                                                         <i class="fa fa-print"></i>
                                                     </button>
                                                 </a>
-                                                 <a href="{% url 'registration:registration_to_rebook_form' %}?id={{ registration.pk }}"
+                                                <a href="{% url 'registration:registration_to_rebook_form' %}?id={{ registration.pk }}"
 
                                                    style="margin-right: 2px">
                                                     <button title="Re-book" type="button"
@@ -125,7 +187,7 @@
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </button>
                                                 </a>
-                                            </div>
+                                            </div>{% endcomment %}
                                         </td>
 
                                     </tr>
@@ -135,7 +197,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>Sno</th>
+                                    <th></th>
                                     <th>Id</th>
                                     <th>status</th>
                                     <th>Customer Name</th>
@@ -198,8 +260,9 @@
         <!-- /.modal-dialog -->
     </div>
 
-{% endblock %}
+{% endblock sub-content %}
 {% block page_script %}
+    <!-- DataTables  & Plugins -->
     <!-- DataTables  & Plugins -->
     <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
     <script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
@@ -214,97 +277,130 @@
     <script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
     <script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
 
+    <script src="{% static 'plugins/datatables-select/js/dataTables.select.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-select/js/select.bootstrap4.min.js' %}"></script>
+
     <script>
         $(function () {
-            $("#id_datatable").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
-                buttons: [
+            var table = $("#dtable2").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": true,
+                "dom": '<"top"fB>rt<"bottom"ilp><"clear">',
+                "buttons": [
                     {
-                        extend: 'copy',
+                        text: 'Delete Selected',
+                        className: 'btn btn-primary delete-selected',
+                        action: function () {
+                            var selectedRows = table.rows({selected: true}).data();
+                            var ids = [];
+                            for (var i = 0; i < selectedRows.length; i++) {
+                                ids.push(selectedRows[i][1]); // Assuming the ID is in the second column
+                            }
+                            if (ids.length > 0) {
+                                // Implement your delete logic here
+                                console.log('Delete these IDs:', ids);
+                                // Example: Make an AJAX call to delete
+                                // $.post('/delete-url/', { ids: ids }, function(response) {
+                                //     table.rows('.selected').remove().draw(false);
+                                // });
+                            } else {
+                                alert('No rows selected');
+                            }
+                        },
+                        enabled: false
                     },
                     {
-                        extend: 'excel',
-                    },
-                    {
-                        extend: 'pdf',
-                    },
-                    {
-                        extend: 'print',
+                        extend: 'collection',
+                        text: 'Info',
+                        className: 'btn btn-primary',
+                        buttons: [
+                            {
+                                extend: 'colvisGroup',
+                                text: 'Customer info',
+                                show: [1, 3, 4, 5, 6, 7, 8, 19],
+                                hide: [2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+                            },
+                            {
+                                extend: 'colvisGroup',
+                                text: 'Package info',
+                                show: [1, 3, 9, 10, 11, 12, 13, 19],
+                                hide: [2, 4, 5, 6, 7, 8, 14, 15, 16, 17, 18]
+                            },
+                            {
+                                extend: 'colvisGroup',
+                                text: 'Administrative info',
+                                show: [1, 14, 15, 16, 17, 18, 19],
+                                hide: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+                            },
+                            {
+                                extend: 'colvisGroup',
+                                text: 'Show all',
+                                show: ':hidden'
+                            },
+
+                        ]
                     },
                     {
                         extend: 'colvis',
+                        text: 'Column visibility',
+                        className: 'btn btn-secondary',
                         postfixButtons: ['colvisRestore']
+                    }, {
+                        extend: 'collection',
+                        text: 'Export',
+                        className: 'btn btn-primary',
+                        buttons: [
+                            {extend: 'copy', className: 'btn btn-primary'},
+                            {extend: 'csv', className: 'btn btn-primary'},
+                            {extend: 'excel', className: 'btn btn-primary'},
+                            {extend: 'pdf', className: 'btn btn-primary'},
+                            {extend: 'print', className: 'btn btn-primary'}
+                        ]
                     },
-                    {
-                        extend: 'colvisGroup',
-                        text: 'Customer info',
-                        show: [1, 3, 4, 5, 6, 7, 8, 19],
-                        hide: [2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-                    },
-                    {
-                        extend: 'colvisGroup',
-                        text: 'Package info',
-                        show: [1, 3, 9, 10, 11, 12, 13, 19],
-                        hide: [2, 4, 5, 6, 7, 8, 14, 15, 16, 17, 18]
-                    },
-                    {
-                        extend: 'colvisGroup',
-                        text: 'Administrative info',
-                        show: [1, 14, 15, 16, 17, 18, 19],
-                        hide: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-                    },
-                    {
-                        extend: 'colvisGroup',
-                        text: 'Show all',
-                        show: ':hidden'
-                    }
+
+
                 ],
-                columnDefs: [
-                    {
-                        targets: -2,
-                        visible: false,
-                        //searchable : false
-                    }, {
-                        targets: -3,
-                        visible: false,
+                "columnDefs": [
+                    {orderable: false, className: 'select-checkbox', targets: 0},
+                    {targets: -2, visible: false},
+                    {targets: -3, visible: false},
+                    {targets: -4, visible: false},
+                    {targets: -6, visible: false},
+                    {targets: -7, visible: false},
+                    {targets: -8, visible: false},
+                    {targets: -9, visible: false},
+                    {targets: -12, visible: false},
+                    {targets: -14, visible: false},
+                    {targets: -15, visible: false}
+                ],
+                "select": {
+                    style: 'multi',
+                    selector: 'td:first-child'
+                },
 
-                    },
-                    {
-                        targets: -4,
-                        visible: false
-                    },
-                    {
-                        targets: -6,
-                        visible: false
-                    },
-                    {
-                        targets: -7,
-                        visible: false
-                    },
-                    {
-                        targets: -8,
-                        visible: false
-                    },
-                    {
-                        targets: -9,
-                        visible: false
-                    },
-                    {
-                        targets: -12,
-                        visible: false
-                    }, {
-                        targets: -14,
-                        visible: false
-                    }, {
-                        targets: -15,
-                        visible: false
-                    },
-                ]
+            });
 
-            }).buttons().container().appendTo('#id_datatable_wrapper .col-md-6:eq(0)');
+            table.on('select deselect', function () {
+                var selectedRows = table.rows({selected: true}).count();
+                table.button(0).enable(selectedRows > 0);
+                if (selectedRows > 0) {
+                    $('.delete-selected').show();
+                } else {
+                    $('.delete-selected').hide();
+                }
+            });
 
+            // Initially hide the "Delete Selected" button
+            $('.delete-selected').hide();
+
+            // Append buttons to the DataTable container
+            table.buttons().container().appendTo('#id_datatable_wrapper .col-md-6:eq(0)');
         });
     </script>
+
+
+
     <script>
         $(function () {
             $('#trash_transaction').on('show.bs.modal', function (event) {
@@ -312,4 +408,4 @@
             });
         });
     </script>
-{% endblock %}
+{% endblock page_script %}

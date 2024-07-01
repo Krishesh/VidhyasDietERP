@@ -1,0 +1,139 @@
+{% extends 'customer/customer_base.html' %}
+{% load static %}
+
+{% block page_script %}
+    <!--selectize 2 -->
+    <link href="{% static 'dist/css/selectize.bootstrap4.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'dist/js/select-js/standalone/selectize.js' %}"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css' %}">
+    <script src="{% static 'plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js' %}"></script>
+    <script>
+        // Delete row on delete button click
+        $(document).on("click", ".delete", function () {
+            let $target = $(this)
+                .parents("tr");
+            if (confirm('Delete this row?')) {
+                $target.closest("tr").next().find("div").parent().remove();
+                $target.remove();
+            }
+        });
+        $(document).ready(function () {
+            $("#add_rows_test").click(function () {
+                console.log("success")
+
+                let markup = `<tr>
+<td><input name='disease[]'class='form-control' placeholder="name of Disease" ></td>
+<td> <input name='relation[]' class='form-control' placeholder="your relation"></td>
+<td> <input name='age[]' class='form-control' placeholder="his/her age"></td>
+<td> <input name='disease_note[]' class='form-control'></td>
+<td> <a class="delete" title="" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+      </td>
+      </tr>`;
+                $("#entry_family_disease").append(markup);
+            });
+        });
+
+
+        $(document).ready(function () {
+            //Bootstrap Duallistbox
+            $('.duallistbox').bootstrapDualListbox()
+
+            $('.select_me').selectize({
+                create: true,
+                sortField: {
+                    field: 'text',
+                    direction: 'asc'
+                },
+                dropdownParent: 'body'
+            });
+        });
+
+    </script>
+
+{% endblock page_script %}
+{% block sub-content %}
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <form action="{% url 'customer:edit_customer' customer.id %}" method="POST" class="form-horizontal">
+                        {% csrf_token %}
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">Edit Customer</h3>
+                            </div>
+                            <div class="card-body">
+                                {% if form.non_field_errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ form.non_field_errors }}
+                                    </div>
+                                {% endif %}
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        {% for field in form %}
+                                            {% if forloop.counter0|divisibleby:2 %}
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">{{ field.label_tag }}</label>
+                                                    <div class="col-sm-8">
+                                                        {{ field }}
+                                                        {% if field.errors %}
+                                                            <div class="invalid-feedback d-block">
+                                                                {{ field.errors }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {% for field in form %}
+                                            {% if not forloop.counter0|divisibleby:2 %}
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">{{ field.label_tag }}</label>
+                                                    <div class="col-sm-8">
+                                                        {{ field }}
+                                                        {% if field.errors %}
+                                                            <div class="invalid-feedback d-block">
+                                                                {{ field.errors }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary">Update</button>
+                                <a href="{% url 'customer:add_customer' %}" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+{% endblock sub-content %}

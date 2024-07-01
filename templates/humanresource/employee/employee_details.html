@@ -1,0 +1,407 @@
+{% extends 'humanresource/hr_base.html' %}
+{% load static %}
+
+{% block sub-content %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-card mb-3 card">
+                        <div class="col-sm-12 modal-header">
+                            <h4 class="col-sm-6 ">Employee Details</h4>
+                            <div class="col-sm-3 ">
+                                <h5 class="">Branch : {{ employee.branch }}</h5>
+                            </div>
+                            <div class="col-sm-3 row">
+                                <div class="col-sm-6" align="right">
+                                    <a href="/edit_employee_form/?id={{ employee.id }}" class="btn btn-info"
+                                       data-toggle="modal">
+                                        <span>Edit</span></a>
+                                </div>
+                                <div class="col-sm-6" align="right">
+                                    <a href="/employee/" class="btn btn-success" data-toggle="modal">
+                                        <span>View All </span></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Name: <span style="color:deepskyblue;"> {{ employee.name }}</span></h5>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <h5>Date of birth (Y-M-D) : <span
+                                            style="color:deepskyblue;">{{ employee.date_of_birth }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Blood group :<span style="color:deepskyblue;"> {{ employee.blood_group }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Nationality : <span style="color:deepskyblue;">{{ employee.nationality }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+
+                                <div class="col-sm-6 ">
+                                    <h5>Gender<span style="color:deepskyblue;"> {{ employee.gender }}</span></h5>
+                                </div>
+                                <div class="col-sm-6 pull-right">
+                                    <h5>Marital :<span style="color:deepskyblue;"> {{ employee.marital }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+
+                                <div class="col-sm-6 pull-right">
+                                    <h5>Employee Type: <span
+                                            style="color:deepskyblue;">{{ employee.employee_type }}</span></h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Employee Note: <span
+                                            style="color:deepskyblue;">{{ employee.employee_note }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Pan Number :<span style="color:deepskyblue;"> {{ employee.pan_number }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Citizen Number : <span
+                                            style="color:deepskyblue;">{{ employee.citizen_number }}</span></h5>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!--contact info-->
+                    <div class="main-card mb-3 card">
+                        <div class="col-sm-12 modal-header">
+                            <h4 class="col-sm-11 ">Contact Information </h4>
+
+                            <div class="col-sm-1 row">
+
+
+                            </div>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5>Address: <span style="color:deepskyblue;"> {{ employee.address }}</span></h5>
+                                </div>
+
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Contact :<span style="color:deepskyblue;"> {{ employee.contact }}</span></h5>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>Email: <span style="color:deepskyblue;">{{ employee.email }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Work Phone Number : <span
+                                            style="color:deepskyblue;">{{ employee.work_phone_number }}</span></h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Work Email<span style="color:deepskyblue;"> {{ employee.work_email }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+
+
+                        </div>
+                    </div>
+
+                    <!--gardain info-->
+                    <div class="main-card mb-3 card">
+                        <div class="col-sm-12 modal-header">
+                            <h4 class="col-sm-11 ">Gardian Information</h4>
+
+                            <div class="col-sm-1 row">
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5>Guardian Name: <span
+                                            style="color:deepskyblue;"> {{ employee.guardian_name }}</span></h5>
+                                </div>
+
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12 ">
+                                    <h5>Guardian Address :<span
+                                            style="color:deepskyblue;"> {{ employee.guardian_address }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Guardian Relation: <span
+                                            style="color:deepskyblue;">{{ employee.guardian_relation }}</span></h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Guardian Phone Number : <span
+                                            style="color:deepskyblue;">{{ employee.guardian_phone_number }}</span>
+                                    </h5>
+                                </div>
+
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <!--job responsibility-->
+                    <div class="main-card mb-3 card">
+                        <div class="col-sm-12 modal-header">
+                            <h4 class="col-sm-11 ">Job Responsibility</h4>
+
+                            <div class="col-sm-1 row">
+
+
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Job Position: <span
+                                            style="color:deepskyblue;"> {{ employee.job_position }}</span></h5>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Department: <span style="color:deepskyblue;">{{ employee.department }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>join_date :<span style="color:deepskyblue;"> {{ employee.join_date }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Branch : <span style="color:deepskyblue;">{{ employee.branch }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-4 ">
+                                    <h5>Grade : <span style="color:deepskyblue;">{{ employee.grade }}</span></h5>
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <h5>Ratings : <span style="color:deepskyblue;">{{ employee.ratings }}</span></h5>
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <h5>Stay In Quarters : <span
+                                            style="color:deepskyblue;">{{ employee.stay_in_quarters }}</span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--salary details-->
+                    <div class="main-card mb-3 card">
+                        <div class="col-sm-12 modal-header">
+                            <h4 class="col-sm-11 ">Salary Details</h4>
+                            <div class="col-sm-1 row">
+
+
+                            </div>
+                        </div>
+
+                        <div class="modal-body">
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Basic Salary: <span style="color:deepskyblue;"> {{ salary.basic_salary }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-3">
+                                    <h5>Room Allowance: <span
+                                            style="color:deepskyblue;">{{ salary.room_allowance }}</span></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Food Allowance :<span
+                                            style="color:deepskyblue;"> {{ salary.food_allowance }}</span></h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Overtime Allowance : <span
+                                            style="color:deepskyblue;">{{ salary.overtime_allowance }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+
+                                <div class="col-sm-6 ">
+                                    <h5>Intensive : <span style="color:deepskyblue;">{{ salary.intensive }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Festival Bonus : <span
+                                            style="color:deepskyblue;">{{ salary.festival_bonus }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Other Allowance : <span
+                                            style="color:deepskyblue;">{{ salary.other_allowance }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Provident Fund : <span
+                                            style="color:deepskyblue;">{{ salary.provident_fund }}</span>
+                                    </h5>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--employee payment methods-->
+                    <div class="main-card mb-3 card">
+                        <div class="col-sm-12 modal-header">
+                            <h4 class="col-sm-11 ">Payment Info</h4>
+
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5>Payment Method: <span
+                                            style="color:deepskyblue;"> {{ salary.payment_method }}</span></h5>
+                                </div>
+
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>Bank Name: <span style="color:deepskyblue;">{{ salary.bank_name }}</span></h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Bank Branch :<span style="color:deepskyblue;"> {{ salary.bank_branch }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Bank Account Name : <span
+                                            style="color:deepskyblue;">{{ salary.bank_account_name }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Bank Account Number : <span
+                                            style="color:deepskyblue;">{{ salary.bank_account_number }}</span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-6 ">
+                                    <h5>Tax Payer Employee : <span
+                                            style="color:deepskyblue;">{{ salary.tax_payer_employee }}</span>
+                                    </h5>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <h5>Tax Rate : <span style="color:deepskyblue;">{{ salary.tax_rate }}</span>
+                                    </h5>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="trash_transaction">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Department</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="form-horizontal" action="{% url 'humanresource:delete_department' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <label for="trash_id"> </label><input type="text" hidden class="form-control" id="trash_id"
+                                                              name="trash_id">
+                    </div>
+
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-light">Delete</button>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+{% endblock sub-content %}

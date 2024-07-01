@@ -51,16 +51,23 @@
 
     </script>
 
-{% endblock %}
+{% endblock page_script %}
 {% block sub-content %}
-    <!-- Content Wrapper. Contains page content -->
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Inquiry Form</h1>
+                <div class="col-sm-12">
+                    <h1>Inquiry Form </h1>
+
+                    <h4> {% if messages %}
+                        {% for message in messages %}
+                            Message: Customer already registered.<br>
+                            <a href="{% url 'customer:customer_detail'  message %}">Check Customer Details</a>
+                        {% endfor %}
+                    {% endif %}</h4>
+
+
                 </div>
 
             </div>
@@ -73,7 +80,7 @@
                 <form action="{% url 'inquiry:add_inquiry' %}" method="POST">
                     {% csrf_token %}
                     <div class="col-md-12">
-                        <div class="card card-primary">
+                        <div class="card card-secondary">
                             <div class="card-header">
                                 <h3 class="card-title">Basic Info</h3>
                             </div>
@@ -151,13 +158,13 @@
                                         <div class="col-md-2">
                                             <label for="customer_weight">WEIGHT in kg</label>
                                             <input type="number" step="0.01" class="form-control" id="customer_weight"
-                                                   name="customer_weight"value="0"
+                                                   name="customer_weight" value="0"
                                                    placeholder="Enter WEIGHT">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="customer_height">HEIGHT in cm</label>
                                             <input type="number" step="0.01" class="form-control" id="customer_height"
-                                                   name="customer_height"value="0"
+                                                   name="customer_height" value="0"
                                                    placeholder="Enter HEIGHT">
                                         </div>
                                         <div class="col-md-2">
@@ -170,7 +177,7 @@
                                         <div class="col-md-2">
                                             <label for="customer_hip">HIP in cm</label>
                                             <input type="number" step="0.01" class="form-control" id="customer_hip"
-                                                   name="customer_hip"value="0"
+                                                   name="customer_hip" value="0"
                                                    placeholder="Enter hip size">
                                         </div>
                                         <div class="col-md-4">
@@ -186,7 +193,7 @@
 
 
                         </div>
-                        <div class="card card-primary">
+                        <div class="card card-secondary">
                             <div class="card-header">
                                 <h3 class="card-title">Some Questions </h3>
                             </div>
@@ -579,15 +586,12 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-secondary">Submit</button>
                                 </div>
 
                             </div>
                             <!-- /.card-body -->
-
-
                         </div>
-
                     </div>
                 </form>
             </div>
@@ -595,4 +599,4 @@
     </section>
 
 
-{% endblock %}
+{% endblock sub-content %}

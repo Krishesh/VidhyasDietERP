@@ -1,0 +1,408 @@
+{% extends 'humanresource/hr_base.html' %}
+{% load static %}
+
+
+{% block sub-content %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-12 card">
+                    <form action="{% url 'humanresource:add_employee' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add New Employee</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Branch</label>
+                                        <input autofocus="autofocus" type="text"
+                                               name="branch" class="form-control" value="POKHARA">
+
+
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Department</label>
+                                        <select
+                                                name="department" id="service" class="form-control">
+
+                                            {% for department in department %}
+
+                                                <option>{{ department.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Basic info </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Employee Name</label>
+                                        <span style="color: red"> *required</span>
+                                        <input
+                                                name="name"
+                                                placeholder="Name"
+                                                type="text"
+                                                required
+                                                class="form-control">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Date Of Birth
+                                        (Y-M-D)</label>
+                                        <input
+                                                name="date_of_birth"
+                                                placeholder="Date of Birth"
+                                                type="text"
+                                                class="form-control">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="position-relative form-group col-md-6 "><label class="">Blood Group</label>
+                                    <input
+                                            name="blood_group"
+                                            type="text"
+                                            class="form-control"
+                                    >
+                                </div>
+                                <div class="position-relative form-group col-md-6"><label class="">Nationality</label>
+                                    <input
+                                            name="nationality"
+                                            type="text"
+                                            class="form-control"
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Gender</label>
+                                        <select
+                                                name="gender"
+
+                                                class="form-control ">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="position-relative form-group col-md-6"><label class=""> Marital
+                                    Status</label>
+                                    <select
+                                            name="marital"
+                                            type="text"
+
+                                            class="form-control ">
+                                        <option>Single</option>
+                                        <option>Married</option>
+                                        <option>Legal Cohabitant</option>
+                                        <option>Widower</option>
+                                        <option>Divorced</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group">
+                                        <label class="">Pan Number</label>
+                                        <input
+                                                name="pan_number"
+                                                type="text"
+
+                                                class="form-control"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group">
+                                        <label class="">Citizen Number </label>
+                                        <input
+                                                name="citizen_number"
+                                                type="text"
+
+                                                class="form-control"
+                                        >
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group">
+                                        <label class="">Employee Type</label><span style="color: red"> *required</span>
+                                        <input
+                                                name="employee_type"
+                                                type="text"
+                                                required
+                                                value="Permanent"
+                                                class="form-control"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group">
+                                        <label class="">Employee Note </label>
+                                        <input
+                                                name="employee_note"
+                                                type="text"
+
+                                                class="form-control"
+                                        >
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Contact info </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+
+                                <div class="position-relative form-group col-md-12 "><label class="">Address</label>
+                                    <input
+                                            name="address"
+                                            type="text"
+                                            class="form-control"
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="position-relative form-group col-md-6"><label class="">Personal Contact
+                                    Number</label><span style="color: red"> *required</span>
+                                    <input
+                                            name="contact"
+                                            placeholder="Phone Number"
+                                            type="text" required
+                                            class="form-control select_me">
+
+
+                                </div>
+                                <div class="position-relative form-group col-md-6"><label class="">Employee Personal
+                                    Email</label>
+                                    <input
+                                            name="email"
+                                            type="text"
+
+                                            class="form-control select_me"
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Work Phone
+                                        Number</label><span style="color: red"> *required</span>
+                                        <input
+                                                name="work_phone_number"
+                                                placeholder="Phone Number"
+                                                required
+                                                class="form-control select_me">
+
+                                    </div>
+                                </div>
+                                <div class="position-relative form-group col-md-6"><label class=""> Work Email</label>
+                                    <input
+                                            name="work_email"
+                                            placeholder="Email"
+                                            type="text"
+
+                                            class="form-control select_me">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Guardian info </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Guardian Name</label>
+                                        <input
+                                                name="guardian_name"
+                                                placeholder="Name"
+                                                type="text"
+                                                class="form-control">
+
+                                    </div>
+                                </div>
+                                <div class="position-relative form-group col-md-6"><label class="">Guardian
+                                    Relation</label>
+                                    <input
+                                            name="guardian_relation"
+                                            placeholder="guardian_relation"
+                                            type="text"
+                                            class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="position-relative form-group col-md-6 "><label class="">Guardian
+                                    Address</label>
+                                    <input
+                                            name="guardian_address"
+                                            type="text"
+                                            class="form-control"
+                                    >
+                                </div>
+                                <div class="position-relative form-group col-md-6"><label class="">Guardian Phone
+                                    Number</label>
+                                    <input
+                                            name="guardian_phone_number"
+                                            type="text"
+                                            class="form-control select_me"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Job Responsibility info </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group"><label class="">Job Position </label><span
+                                            style="color: red"> *required</span>
+                                        <input
+                                                name="job_position"
+                                                placeholder="job_position"
+                                                type="text" required
+                                                class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="position-relative form-group">
+                                        <label class="">Join Date </label><span style="color: red"> *required</span>
+                                        <input
+                                                name="join_date"
+                                                type="date" required
+                                                class="form-control"
+                                        >
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <div class="form-row">
+                                <div class="position-relative form-group col-md-5"><label class="">Grade</label>
+                                    <input
+                                            name="grade"
+                                            id="text"
+                                            class="form-control ">
+
+
+                                </div>
+                                <div class="position-relative form-group col-md-5 "><label class="">Ratings</label>
+                                    <input
+                                            name="ratings"
+                                            type="text"
+                                            class="form-control"
+                                    >
+                                </div>
+                                <div class="position-relative form-group col-md-2 "><label class="">Stay in
+                                    Quarters</label><br>
+                                    <input type="radio" name="stay_in_quarters" value=True>
+                                    <label>Yes</label><br>
+                                    <input type="radio" name="stay_in_quarters" checked value=False>
+                                    <label>No</label><br>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="" align="left">
+                                <a href="/employee/"><input type="button" class="btn btn-default" data-dismiss="modal"
+                                                            value="Cancel">
+                                </a> <input type="submit" class="btn btn-success" value="Add">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="trash_transaction">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Department</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="form-horizontal" action="{% url 'humanresource:delete_department' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <label for="trash_id"> </label><input type="text" hidden class="form-control" id="trash_id"
+                                                              name="trash_id">
+                    </div>
+
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-light">Delete</button>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+{% endblock sub-content %}
+{% block page_script %}
+    <!--selectize 2 -->
+    <link href="{% static 'dist/css/selectize.bootstrap4.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'dist/js/select-js/standalone/selectize.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.select_me').selectize({
+                create: true,
+                sortField: {
+                    field: 'text',
+                    direction: 'asc'
+                },
+                dropdownParent: 'body'
+            });
+        });
+    </script>
+{% endblock page_script %}

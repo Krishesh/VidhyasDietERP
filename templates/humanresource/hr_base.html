@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block top-menu-content %}
+
+    {% comment %}  <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Home</a>
+    </li>{% endcomment %}
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'humanresource:department_list' %}" class="nav-link">Department</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'humanresource:employee_list' %}" class="nav-link">Employee</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'humanresource:add_employee_form' %}" class="nav-link">Add Employee</a>
+    </li>
+
+{% endblock top-menu-content %}
+
+{% block content %}
+    {% block sub-content %}
+
+    {% endblock sub-content %}
+
+{% endblock content %}

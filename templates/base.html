@@ -15,26 +15,12 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     {% block page_css %}
 
-    {% endblock %}
-    {% comment %}
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-          href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">{% endcomment %}
-    {% comment %}
-     <!-- iCheck -->
-    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">{% endcomment %}
-    {% comment %}
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">{% endcomment %}
+    {% endblock page_css %}
+
     <!-- Theme style -->
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
-    {% comment %} <!-- Daterange picker -->
-    <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
-    <!-- summernote -->
-    <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">{% endcomment %}
-
 </head>
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
 <div class="wrapper">
@@ -47,23 +33,18 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             {% block top-menu-content %}
-
-
-            {% endblock %}
-
+            {% endblock top-menu-content %}
         </ul>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-
-
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-widget="sign-out" href="{% url 'authentication:logout_link' %}" role="button">
+                <a class="nav-link" data-widget="sign-out" href="{% url 'user_authentication:login' %}" role="button">
                     <i class="fa fa-sign-out-alt"></i>
                 </a>
             </li>
@@ -98,9 +79,9 @@
                         </a>
 
                     </li>
-                   {% comment %}     <li class="nav-item">
+                    <li class="nav-item">
                         <a href="{% url 'humanresource:department_list' %}" class="nav-link">
-                            <i class="nav-icon fas fa-book"></i>
+                            <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Employee
 
@@ -108,16 +89,36 @@
                         </a>
 
                     </li>
-                <li class="nav-item">
-                        <a href="{% url 'registration:registration_list' %}" class="nav-link">
-                            <i class="nav-icon fas fa-book"></i>
+                    <li class="nav-item">
+                        <a href="{% url 'customer:customer_list' %}" class="nav-link">
+                            <i class="nav-icon fas fa-user-friends"></i>
                             <p>
-                                Registration
+                                Customer
 
                             </p>
                         </a>
 
-                    </li>{% endcomment %}
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'registration:registration_list' %}" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Diet
+
+                            </p>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'registration:registration_list' %}" class="nav-link">
+                            <i class="nav-icon fas fa-dollar-sign"></i>
+                            <p>
+                                Account
+
+                            </p>
+                        </a>
+
+                    </li>
 
 
                 </ul>
@@ -136,7 +137,7 @@
 
 
 
-        {% endblock %}
+        {% endblock content %}
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -188,7 +189,7 @@
 
 {% block page_script %}
 
-{% endblock %}
+{% endblock page_script %}
 
 </body>
 </html>

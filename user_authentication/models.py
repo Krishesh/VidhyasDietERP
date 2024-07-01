@@ -11,6 +11,14 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.DO_NOTHING, blank=True, null=True)
+    ROLE_CHOICES = [
+        ('Admin', 'Admin'),
+        ('Dietitian', 'Dietitian'),
+        ('Therapist', 'Therapist'),
+        ('Guest', 'Guest'),
+        ('', 'default'),
+    ]
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='default')
 
     def __str__(self):
         return '%s' % (self.user)
