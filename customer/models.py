@@ -1,7 +1,10 @@
 from django.db import models
+
 choose_gender = (
     ('Male', ' Male'), ('Female', 'Female'), ('Other', 'Other')
 )
+
+
 # Create your models here.
 
 # Create your models here.
@@ -31,7 +34,7 @@ class Customer(models.Model):
     contact_person = models.CharField(max_length=500, blank=True, default='')
 
     age = models.CharField(max_length=100, blank=True, default='')
-    gender = models.CharField(max_length=100,choices=choose_gender, blank=True, default='')
+    gender = models.CharField(max_length=100, choices=choose_gender, blank=True, default='')
     date_of_birth = models.CharField(max_length=100, blank=True, default='')
     profession = models.CharField(max_length=100, blank=True, default='')
 
@@ -70,7 +73,9 @@ class Customer_Stats(models.Model):
     hip = models.CharField(max_length=100, null=True, blank=True, default='')
     bmi = models.FloatField(max_length=100, null=True, blank=True, default='')
     whr = models.FloatField(max_length=100, null=True, blank=True, default='')
-    entry_date = models.DateField(auto_now_add=True, null=True, blank=True)
+    entry_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    remark = models.CharField(max_length=100, null=True, blank=True, default='')
 
     def __str__(self):
         return self.customer.name

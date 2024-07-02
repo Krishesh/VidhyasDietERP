@@ -23,7 +23,7 @@ s
                     <div class="card card-secondary">
                         <div class="card-header">
                             <h3 class="card-title">Customer Detail</h3>
-                           {% comment %} <div>
+                            {% comment %} <div>
                                 <a href="{% url 'customer:edit_customer' customer.pk %}"
                                    class="btn btn-primary">Edit</a>
                                 <a href="{% url 'customer:customer_list' %}" class="btn btn-secondary">Back to List</a>
@@ -117,10 +117,11 @@ s
                         <div class="card-header">
                             <h3 class="card-title">Inquiry and Registration Details</h3>
                             <div class="card-tools">
-                <button type="button" class="btn btn-tool " data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-plus"></i>
-                </button>
-              </div>
+                                <button type="button" class="btn btn-tool " data-card-widget="collapse"
+                                        title="Collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
                         </div>
                         <!-- /.card-header -->
 
@@ -136,7 +137,7 @@ s
                                     {% endfor %}</td>
 
                                 </tr>
-                                   <tr>
+                                <tr>
                                     <td>Registration List</td>
                                     <td> |{% for registration in registration %}
                                         <a href="{% url 'inquiry:details_inquiry' %}?id={{ registration.id }}">{{ registration.registration_id }} </a>
@@ -153,12 +154,12 @@ s
 
 
                     </div>
-                    <div class="card card-secondary">
+                    <div class="card card-secondary collapsed-card">
                         <div class="card-header">
                             <h3 class="card-title">Customer Stats</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i class="fas fa-minus"></i>
+                                    <i class="fas fa-plus"></i>
                                 </button>
                             </div>
                         </div>
@@ -176,6 +177,7 @@ s
                                     <td>Waist</td>
                                     <td>HIP</td>
                                     <td>WHR</td>
+                                    <td>Remark</td>
                                 </tr>
                                 {% for customer_stats in customer_stats %}
                                     <tr>
@@ -218,6 +220,48 @@ s
                                                 {% endif %}
                                             {% endif %}
                                         </td>
+                                          <td>{{ customer_stats.remark }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-secondary collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer log book</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="table  table-bordered"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <th>Date | Created By</th>
+                                    <th>Client</th>
+                                    <th>After Weight</th>
+                                    <th>Before Weight</th>
+                                    <th>Activity</th>
+                                    <th>Treatment</th>
+                                </tr>
+                                {% for logbook_entries in logbook_entries reversed %}
+                                    <tr>
+                                        <td>{{ logbook_entries.date |date:"d/m/Y H:i" }}
+                                            | {{ logbook_entries.create_by }}</td>
+                                        <td>{{ logbook_entries.client }}</td>
+                                        <td>{{ logbook_entries.after_weight }}</td>
+                                        <td>{{ logbook_entries.before_weight }}</td>
+                                        <td>{{ logbook_entries.activity }}</td>
+                                        <td>{{ logbook_entries.treatment_type }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>

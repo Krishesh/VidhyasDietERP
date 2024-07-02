@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from account.models import Account
 from customer.models import Diet_Plan_Package, Customer
 from humanresource.models import Employee
 from inquiry.models import Inquiry
@@ -44,10 +45,9 @@ def inquiry_to_registration(request):
         registration.client_status = 'Registered'
         registration.registration_status = 'CREATED'
         inquiry = Inquiry.objects.get(id=request.POST.get('inquiry_id'))
+
         customer = inquiry.customer_name
-
         package_booked = Diet_Plan_Package.objects.get(id=request.POST.get('package_booked_select'))
-
         customer.name = request.POST.get('customer_name')
         customer.gender = request.POST.get('customer_gender')
         customer.date_of_birth = request.POST.get('customer_date_of_birth')
@@ -83,6 +83,19 @@ def inquiry_to_registration(request):
         registration.save()
         registration.registration_id = str(inquiry.inquiry_id) + '-' + str(registration.pk) + 'R'
         registration.save()
+
+        account = Account()
+        account.account_created_by = Employee.objects.get(id=request.POST.get('account_by'))
+        account.client = customer
+        account.create_by = request.user
+
+        account.discount = request.POST.get('discount')
+        account.total_amount = request.POST.get('total_amount')
+        account.received_amount = request.POST.get('received_amount')
+        account.due_amount = request.POST.get('due_amount')
+        account.receipt_bill_no = request.POST.get('bill_number')
+        account.account_reference = registration.registration_id
+        account.save()
         return redirect('/registration_list/')
 
 
@@ -129,6 +142,8 @@ def edit_registration(request):
 
         registration.save()
         return redirect('/registration_list/')
+
+
 def registration_to_rebook_form(request):
     context = {
         'registration': Registration.objects.get(id=request.GET.get('id')),
@@ -141,27 +156,25 @@ def registration_to_rebook_form(request):
 
 def registration_to_rebook(request):
     if request.method == 'POST':
-
-        registration = Registration.objects.get(id=request.GET.get('id'))
+        old_registration = Registration.objects.get(id=request.GET.get('id'))
+        registration = Registration()
 
         from datetime import date
         registration.registration_date = date.today()
 
         registration.client_status = 'Re-Booked'
         registration.registration_status = 'CREATED'
-        customer = Customer.objects.get(id=registration.customer.id)
+        customer = Customer.objects.get(id=old_registration.customer.id)
 
         package_booked = Diet_Plan_Package.objects.get(id=request.POST.get('package_booked_select'))
-
 
         customer.diet_plan = package_booked
         customer.save()
 
-
-
+        registration.customer = customer
         registration.employee = request.user.profile.employee
         registration.account_by = Employee.objects.get(id=request.POST.get('account_by'))
-
+        registration.inquiry = old_registration.inquiry
 
         registration.discount_amount = request.POST.get('discount')
         registration.total_amount = request.POST.get('total_amount')
@@ -177,9 +190,21 @@ def registration_to_rebook(request):
         registration.therapy_package_end = request.POST.get('therapy_package_end')
         registration.gym_package_start = request.POST.get('gym_package_start')
         registration.gym_package_end = request.POST.get('gym_package_end')
-        registration.registration_id =registration.registration_id +'-rebooked'
+
+        registration.registration_id = old_registration.registration_id + '-RB'
         registration.save()
-    
+
+        account = Account()
+        account.account_created_by = Employee.objects.get(id=request.POST.get('account_by'))
+        account.client = customer
+        account.create_by = request.user
+
+        account.discount = request.POST.get('discount')
+        account.total_amount = request.POST.get('total_amount')
+        account.received_amount = request.POST.get('received_amount')
+        account.due_amount = request.POST.get('due_amount')
+        account.receipt_bill_no = request.POST.get('bill_number')
+        account.account_reference = registration.registration_id
+        account.save()
+
         return redirect('/registration_list/')
-
-

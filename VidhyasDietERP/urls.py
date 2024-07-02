@@ -12,4 +12,6 @@ urlpatterns = [
     path('', include('index.urls')),             # include index
     path('', include('inquiry.urls')),             # include inquiry
     path('', include('registration.urls')),             # include registration
+    path('', include('account.urls')),             # include account_list
+    path('', include('diet.urls')),             # include diet
 ]

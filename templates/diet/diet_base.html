@@ -6,13 +6,11 @@
         <a href="#" class="nav-link">Home</a>
     </li>{% endcomment %}
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'customer:customer_list' %}" class="nav-link">Customer List</a>
+        <a href="{% url 'diet:create_logbook_and_stats' %}" class="nav-link">Log Book</a>
+    </li>  <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'diet:bmi' %}" class="nav-link">Body Composition</a>
     </li>
-     <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'customer:add_customer' %}" class="nav-link">Add New Customer </a>
-    </li><li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'customer:vidhyas_package' %}" class="nav-link">Vidhyas Package </a>
-    </li>
+
 
 {% endblock top-menu-content %}
 

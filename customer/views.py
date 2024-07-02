@@ -1,13 +1,14 @@
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.shortcuts import render, redirect
 
-from customer.form import CustomerForm
+from customer.form import CustomerForm, PackageForm
 from customer.models import Diet_Plan_Package, Customer, Customer_Stats
 from customer.serializers import Diet_Plan_Package_Serializer, Customer_Serializer
+from diet.models import LogBook
 from inquiry.models import Inquiry
 from registration.models import Registration
 
@@ -29,7 +30,8 @@ def customer_detail(request, pk):
         'customer': customer,
         'inquiry': inquiry,
         'customer_stats': Customer_Stats.objects.filter(customer=customer),
-        'registration': Registration.objects.filter(customer=customer)
+        'registration': Registration.objects.filter(customer=customer),
+        'logbook_entries': LogBook.objects.filter(client=customer)
 
     }
     return render(request, 'customer/customer_detail.html', context)
@@ -142,10 +144,41 @@ class CustomerDetails(APIView):
         serializer = Customer(snippet)
         return Response(serializer.data)
 
-    '''def put(self, request, pk, format=None):
+    def put(self, request, pk, format=None):
         snippet = self.get_object(pk)
-        serializer = Diet_Plan_Package_Serializer(snippet, data=request.data)
+        serializer = Customer_Serializer(snippet, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)'''
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def vidhyas_package(request, pk=None):
+    if pk:
+        diet_Plan_Package = get_object_or_404(Diet_Plan_Package, pk=pk)
+    else:
+        diet_Plan_Package = None
+
+    if request.method == 'POST':
+        if diet_Plan_Package:
+            form = PackageForm(request.POST, instance=diet_Plan_Package)
+        else:
+            form = PackageForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('customer:vidhyas_package')
+        else:
+            print(form.errors)
+    else:
+        form = PackageForm(instance=diet_Plan_Package) if diet_Plan_Package else PackageForm()
+
+    diet_Plan_Package = Diet_Plan_Package.objects.all()
+    return render(request, 'customer/vidhyas_package/vidhyas_package.html',
+                  {'form': form, 'diet_Plan_Package': diet_Plan_Package})
+
+
+def delete_vidhyas_package(request):
+    diet_Plan_Package = get_object_or_404(Diet_Plan_Package, pk=request.POST.get('trash_id'))
+    diet_Plan_Package.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

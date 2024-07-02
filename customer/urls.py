@@ -2,7 +2,7 @@ from django.contrib.auth.views import LoginView
 from django.urls import path
 
 from customer.views import (DietPlanAPI, DietPlanDetails, CustomerAPI, CustomerDetails, customer_list, add_customer,
-                            edit_customer, trash_customer, customer_detail)
+                            edit_customer, trash_customer, customer_detail, vidhyas_package, delete_vidhyas_package)
 
 app_name = 'customer'
 
@@ -18,4 +18,7 @@ urlpatterns = [
     path('add_customer/', add_customer, name='add_customer'),
     path('edit_customer/<int:pk>/', edit_customer, name='edit_customer'),
     path('trash_customer/', trash_customer, name='trash_customer'),
+    path('vidhyas_package/', vidhyas_package, name='vidhyas_package'),
+    path('vidhyas_package/<int:pk>', vidhyas_package, name='edit_vidhyas_package'),
+    path('delete_vidhyas_package/', delete_vidhyas_package, name='delete_vidhyas_package'),
 ]

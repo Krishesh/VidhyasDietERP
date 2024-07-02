@@ -1,0 +1,306 @@
+{% extends 'diet/diet_base.html' %}
+{% load static %}
+{% block page_css %}
+    <!-- DataTables -->
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{% static 'plugins/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-select/css/select.bootstrap4.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-select/css/dataTables.dataTables.css' %}">
+    <style>
+        .dataTables_wrapper .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .dataTables_wrapper .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .dataTables_wrapper .dataTables_length,
+        .dataTables_wrapper .dataTables_filter {
+            margin: 0;
+        }
+
+        .dataTables_wrapper .dt-buttons {
+            margin-left: auto;
+        }
+
+        .dataTables_wrapper .dataTables_paginate,
+        .dataTables_wrapper .dataTables_info {
+            margin: 0;
+        }
+    </style>
+{% endblock page_css %}
+
+{% block sub-content %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Manage LOGBOOK</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">{% if logBook %}Edit{% else %}Create{% endif %} LogBook Entry</h3>
+                        </div>
+                        <form action="
+
+                                {% if form.instance.pk %}{% url 'diet:edit_logbook_and_stats' form.instance.pk %}{% else %}{% url 'diet:create_logbook_and_stats' %}{% endif %}"
+                              method="POST" class="form-horizontal">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                {% if form.non_field_errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ form.non_field_errors }}
+                                    </div>
+                                {% endif %}
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        {% for field in form %}
+                                            {% if forloop.counter0|divisibleby:2 %}
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">{{ field.label_tag }}</label>
+                                                    <div class="col-sm-8">
+                                                        {{ field }}
+                                                        {% if field.errors %}
+                                                            <div class="invalid-feedback d-block">
+                                                                {{ field.errors }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {% for field in form %}
+                                            {% if not forloop.counter0|divisibleby:2 %}
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">{{ field.label_tag }}</label>
+                                                    <div class="col-sm-8">
+                                                        {{ field }}
+                                                        {% if field.errors %}
+                                                            <div class="invalid-feedback d-block">
+                                                                {{ field.errors }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">LogBook List</h3>
+                        </div>
+                        <div class="card-body">
+                            <table id="dtable" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Date | Created By</th>
+                                    <th>Client</th>
+                                    <th>After Weight</th>
+                                    <th>Before Weight</th>
+                                    <th>Activity</th>
+                                    <th>Treatment</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for logbook_entries in logbook_entries reversed %}
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ logbook_entries.date |date:"d/m/Y H:i" }}
+                                            | {{ logbook_entries.create_by }}</td>
+                                        <td>{{ logbook_entries.client }}</td>
+                                        <td>{{ logbook_entries.after_weight }}</td>
+                                        <td>{{ logbook_entries.before_weight }}</td>
+                                        <td>{{ logbook_entries.activity }}</td>
+                                        <td>{{ logbook_entries.treatment_type }}</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                        class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                                        data-toggle="dropdown">Action
+                                                </button>
+                                                <div class="dropdown-menu" role="menu">
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'customer:customer_detail' logbook_entries.client.id %}">Customer
+                                                        Details</a> <a class="dropdown-item"
+                                                                       href="{% url 'diet:edit_logbook_and_stats' logbook_entries.pk %}">Edit</a>
+                                               {% comment %}     <a class="dropdown-item" href="#" data-toggle="modal"
+                                                       data-target="#trash_transaction"
+                                                       data-id="{{ logbook_entries.id }}">Delete</a>{% endcomment %}
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Date</th>
+                                    <th>Client</th>
+                                    <th>After Weight</th>
+                                    <th>Before Weight</th>
+                                    <th>Activity</th>
+                                    <th>Treatment</th>
+                                    <th>Action</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="trash_transaction">
+        <div class="modal-dialog">
+            <div class="modal-content bg-danger">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Department</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="form-horizontal" action="{% url 'humanresource:delete_department' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <label for="trash_id"></label>
+                        <input type="text" hidden class="form-control" id="trash_id" name="trash_id">
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-light">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock sub-content %}
+
+{% block page_script %}
+    <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'plugins/jszip/jszip.min.js' %}"></script>
+    <script src="{% static 'plugins/pdfmake/pdfmake.min.js' %}"></script>
+    <script src="{% static 'plugins/pdfmake/vfs_fonts.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-select/js/dataTables.select.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables-select/js/select.bootstrap4.min.js' %}"></script>
+
+    <!-- Select2 -->
+    <script src="{% static 'plugins/select2/js/select2.full.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+            var table = $('#dtable').DataTable({
+                lengthMenu: [10, 20, 50, 100],
+                responsive: true, lengthChange: false, autoWidth: false,
+                columnDefs: [
+                    {
+                        orderable: false,
+                        className: 'select-checkbox',
+                        targets: 0
+                    }
+                ],
+                select: {
+                    style: 'multi',
+                    selector: 'td:first-child'
+                },
+                dom: '<"top"fB>rt<"bottom"ilp><"clear">',
+                buttons: [
+                    {
+                        text: 'Delete Selected',
+                        className: 'btn btn-primary delete-selected',
+                        action: function () {
+                            var selectedRows = table.rows({selected: true}).data();
+                            var ids = [];
+                            for (var i = 0; i < selectedRows.length; i++) {
+                                ids.push(selectedRows[i][1]); // Assuming the ID is in the second column
+                            }
+                            if (ids.length > 0) {
+                                // Implement your delete logic here
+                                console.log('Delete these IDs:', ids);
+                                // Example: Make an AJAX call to delete
+                                // $.post('/delete-url/', { ids: ids }, function(response) {
+                                //     table.rows('.selected').remove().draw(false);
+                                // });
+                            } else {
+                                alert('No rows selected');
+                            }
+                        },
+                        enabled: false
+                    },
+                ]
+            });
+
+            table.on('select deselect', function () {
+                var selectedRows = table.rows({selected: true}).count();
+                table.button(0).enable(selectedRows > 0);
+                if (selectedRows > 0) {
+                    $('.delete-selected').show();
+                } else {
+                    $('.delete-selected').hide();
+                }
+            });
+
+            // Initially hide the "Delete Selected" button
+            $('.delete-selected').hide();
+
+            $('.select2').select2()
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#trash_transaction').on('show.bs.modal', function (event) {
+                document.getElementById("trash_id").value = $(event.relatedTarget).data('id');
+            });
+        });
+    </script>
+{% endblock page_script %}
