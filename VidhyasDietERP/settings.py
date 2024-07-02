@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-t_4t1q!6cr!s-+)jrjk_#gqos9l&7i2&n28h2(=&p7hmrqo+yo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['system.vidhyas.com.np', 'www.system.vidhyas.com.np']
 
 # Application definition
 
@@ -138,7 +138,7 @@ CONSTANCE_IGNORE_ADMIN_VERSION_CHECK = True
 
 CONSTANCE_CONFIG = {
     'max_discount': (0, _('Max Discount'), int),
-    #'SOCIAL_NETWORKS_YOUTUBE_URL': ('#', _('Social Networks - YOUTUBE'), str),
+    # 'SOCIAL_NETWORKS_YOUTUBE_URL': ('#', _('Social Networks - YOUTUBE'), str),
 
 }
 
