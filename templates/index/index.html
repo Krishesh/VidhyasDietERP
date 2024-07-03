@@ -1,19 +1,271 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block page_css %}
+
+{% endblock page_css %}
 {% block top-menu-content %}
 
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="{% url 'index:index' %}" class="nav-link">Dashboard</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Dashboard</a>
+        <a href="{% url 'inquiry:inquiry_list' %}" class="nav-link">Inquiry</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Reports</a>
+        <a href="{% url 'customer:customer_list' %}" class="nav-link">Customer</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'humanresource:employee_list' %}" class="nav-link">Employee</a>
     </li>
 {% endblock %}
 {% block content %}
 
-    <h1>Login Successful!</h1>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboard</h1>
+                </div><!-- /.col -->
 
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <section class="content">
+        <div class="container-fluid">
+
+
+
+            <div class="row">
+
+                <section class="col-lg-7"><div class="row">
+                <div class="col-lg-6 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <p>New INQUIRY</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="{% url 'inquiry:inquiry_list' %}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-6 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <h3>0<sup style="font-size: 20px"></sup></h3>
+
+                            <p>Registration</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="{% url 'registration:registration_list' %}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-6 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <p>Customer</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="{% url 'customer:customer_list' %}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-6 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Unique Visitors</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>  </section>
+            <section class="col-lg-5 ">
+      <!-- Calendar -->
+                <div class="card ">
+                    <div class="card-header border-0">
+
+                        <h3 class="card-title">
+                            <i class="far fa-calendar-alt"></i>
+                            Calendar
+                        </h3>
+                        <!-- tools card -->
+                        <div class="card-tools">
+                            <!-- button with a dropdown -->
+                            <button type="button" class="btn btn-secondary btn-sm" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            {% comment %} <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>{% endcomment %}
+                        </div>
+                        <!-- /. tools -->
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body pt-0">
+                        <!--The calendar -->
+                        <div id="" style="width: 100%">
+                            <script type="text/javascript">
+
+                                var nc_width = 'responsive';
+                                var nc_height = 220;
+                                var nc_api_id = 5872024073669;
+                            </script>
+                            <script type="text/javascript" src="https://www.ashesh.com.np/calendarlink/nc.js"></script>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </section></div>
+             <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="ion ion-clipboard mr-1"></i>
+                        To Do List
+                    </h3>
+                      <!-- tools card -->
+                <div class="card-tools">
+                  <!-- button with a dropdown -->
+                  <div class="btn-group">
+
+
+                  </div>
+                  <button type="button" class="btn btn-secondary btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div> </div>
+                <!-- /. tools -->
+
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <ul id="todo-list" class="todo-list" data-widget="todo-list">
+                        {% for todo in todos %}
+                            <li id="todo-card-{{ todo.id }}">
+                        <span class="handle">
+                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </span>
+                                <div class="icheck-primary d-inline ml-2">
+                                    <input type="checkbox" value="" name="todo{{ todo.id }}" id="todoCheck{{ todo.id }}"
+                                           {% if todo.completed %}checked{% endif %}
+                                           onclick="toggleCompleted({{ todo.id }})">
+                                    <label for="todoCheck{{ todo.id }}"></label>
+                                </div>
+                                <span class="text">{{ todo.title }}</span>
+                                <div class="tools">
+                                    <i class="fas fa-trash" onclick="trashTodoItem({{ todo.id }})"></i>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix">
+                    <form id="add-todo-form">
+                        <div class="input-group">
+                            <input type="text" id="todo-title" name="title" class="form-control"
+                                   placeholder="Add new to-do">
+                            <span class="input-group-append">
+                            <button type="submit" class="btn btn-secondary"><i class="fas fa-plus"></i> Add item</button>
+                        </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
 {% endblock %}
+
+{% block page_script %}
+<script>
+    function toggleCompleted(todoId) {
+        $.ajax({
+            url: `/toggle/${todoId}/`,
+            method: 'GET',
+            success: function(data) {
+                if (data.success) {
+                    const item = $(`#todo-card-${todoId}`);
+                    item.toggleClass('completed', data.completed);
+                }
+            }
+        });
+    }
+
+    function trashTodoItem(todoId) {
+        $.ajax({
+            url: `/trash/${todoId}/`,
+            method: 'GET',
+            success: function(data) {
+                if (data.success) {
+                    $(`#todo-card-${todoId}`).remove();
+                }
+            }
+        });
+    }
+
+    $('#add-todo-form').on('submit', function(event) {
+        event.preventDefault();
+        const title = $('#todo-title').val();
+        $.ajax({
+            url: `{% url 'todo:add_todo' %}`,
+            method: 'POST',
+            data: {
+                'title': title,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(data) {
+                if (data.success) {
+                    const newItem = `
+                        <li id="todo-card-${data.id}" class="${data.completed ? 'completed' : ''}">
+                            <span class="handle">
+                                <i class="fas fa-ellipsis-v"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </span>
+                            <div class="icheck-primary d-inline ml-2">
+                                <input type="checkbox" value="" name="todo${data.id}" id="todoCheck${data.id}" onclick="toggleCompleted(${data.id})">
+                                <label for="todoCheck${data.id}"></label>
+                            </div>
+                            <span class="text">${data.title}</span>
+                            <div class="tools">
+                                <i class="fas fa-trash" onclick="trashTodoItem(${data.id})"></i>
+                            </div>
+                        </li>`;
+                    $('#todo-list').append(newItem);
+                    $('#todo-title').val('');  // Clear the input field
+                }
+            }
+        });
+    });
+</script>
+
+{% endblock page_script %}

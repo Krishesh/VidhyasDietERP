@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_css %}
+<style>
+
+</style>
+{% endblock page_css %}
+
+{% block content %}
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Test Application</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- TO DO List -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="ion ion-clipboard mr-1"></i>
+                    To Do List
+                </h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul id="todo-list" class="todo-list" data-widget="todo-list">
+                    {% for todo in todos %}
+                    <li id="todo-card-{{ todo.id }}">
+                        <span class="handle">
+                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </span>
+                        <div class="icheck-primary d-inline ml-2">
+                            <input type="checkbox" value="" name="todo{{ todo.id }}" id="todoCheck{{ todo.id }}" {% if todo.completed %}checked{% endif %} onclick="toggleCompleted({{ todo.id }})">
+                            <label for="todoCheck{{ todo.id }}"></label>
+                        </div>
+                        <span class="text">{{ todo.title }}</span>
+                        <div class="tools">
+                            <i class="fas fa-trash" onclick="trashTodoItem({{ todo.id }})"></i>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+                <form id="add-todo-form">
+                    <div class="input-group">
+                        <input type="text" id="todo-title" name="title" class="form-control" placeholder="Add new to-do">
+                        <span class="input-group-append">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add item</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_script %}
+<script>
+    function toggleCompleted(todoId) {
+        $.ajax({
+            url: `/toggle/${todoId}/`,
+            method: 'GET',
+            success: function(data) {
+                if (data.success) {
+                    const item = $(`#todo-card-${todoId}`);
+                    item.toggleClass('completed', data.completed);
+                }
+            }
+        });
+    }
+
+    function trashTodoItem(todoId) {
+        $.ajax({
+            url: `/trash/${todoId}/`,
+            method: 'GET',
+            success: function(data) {
+                if (data.success) {
+                    $(`#todo-card-${todoId}`).remove();
+                }
+            }
+        });
+    }
+
+    $('#add-todo-form').on('submit', function(event) {
+        event.preventDefault();
+        const title = $('#todo-title').val();
+        $.ajax({
+            url: `{% url 'todo:add_todo' %}`,
+            method: 'POST',
+            data: {
+                'title': title,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(data) {
+                if (data.success) {
+                    const newItem = `
+                        <li id="todo-card-${data.id}" class="${data.completed ? 'completed' : ''}">
+                            <span class="handle">
+                                <i class="fas fa-ellipsis-v"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </span>
+                            <div class="icheck-primary d-inline ml-2">
+                                <input type="checkbox" value="" name="todo${data.id}" id="todoCheck${data.id}" onclick="toggleCompleted(${data.id})">
+                                <label for="todoCheck${data.id}"></label>
+                            </div>
+                            <span class="text">${data.title}</span>
+                            <div class="tools">
+                                <i class="fas fa-trash" onclick="trashTodoItem(${data.id})"></i>
+                            </div>
+                        </li>`;
+                    $('#todo-list').append(newItem);
+                    $('#todo-title').val('');  // Clear the input field
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

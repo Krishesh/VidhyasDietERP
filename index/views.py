@@ -4,14 +4,17 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 import sqlite3
 
+from todo.models import TodoItem
+
 
 # Create your views here.
 @login_required(login_url='/login')
 def index(request):
-    # Trying the same code snippet again to fetch duplicates from the database
-
+    context = {
+        'todos': TodoItem.objects.filter(completed=False)
+    }
     # merge_duplicate_customers()
-    return render(request, 'index/index.html')
+    return render(request, 'index/index.html', context)
 
 
 def merge_duplicate_customers():
@@ -73,3 +76,12 @@ def merge_duplicate_customers():
     conn.commit()
     conn.close()
     print("Duplicates merged successfully.")
+
+
+def test(request):
+    # Trying the same code snippet again to fetch duplicates from the database
+    context = {
+        'todos': TodoItem.objects.filter(trashed=False)
+    }
+    # merge_duplicate_customers()
+    return render(request, 'index/test.html', context)
