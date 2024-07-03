@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     "humanresource",
     "registration",
     "account.apps.AccountConfig",
-    "diet.apps.DietConfig"
+    "diet.apps.DietConfig",
+    "todo.apps.TodoConfig"
 ]
 
 MIDDLEWARE = [

@@ -14,4 +14,5 @@ urlpatterns = [
     path('', include('registration.urls')),             # include registration
     path('', include('account.urls')),             # include account_list
     path('', include('diet.urls')),             # include diet
+    path('', include('todo.urls')),             # include diet
 ]
