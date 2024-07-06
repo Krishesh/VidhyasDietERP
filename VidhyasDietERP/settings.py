@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-t_4t1q!6cr!s-+)jrjk_#gqos9l&7i2&n28h2(=&p7hmrqo+yo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['system.vidhyas.com.np', 'www.system.vidhyas.com.np']
+ALLOWED_HOSTS = ['system.vidhyas.com.np', 'www.system.vidhyas.com.np', 'localhost']
 
 # Application definition
 
@@ -88,7 +88,7 @@ WSGI_APPLICATION = "VidhyasDietERP.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db_local.sqlite3",
+        "NAME": BASE_DIR / "db_system.sqlite3",
     }
 }
 
