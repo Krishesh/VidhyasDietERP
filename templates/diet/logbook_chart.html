@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logbook Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns"></script>
+</head>
+<body>
+    <h1>Logbook Chart for Client</h1>
+    <div class="chart">
+        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example data, replace this with your actual data
+            var logbookData = [
+                { date: '2023-01-01', before_weight: 70, after_weight: 68 },
+                { date: '2023-02-01', before_weight: 68, after_weight: 67 },
+                { date: '2023-03-01', before_weight: 67, after_weight: 65 }
+            ];
+
+            var dates = logbookData.map(entry => new Date(entry.date));
+            var beforeWeights = logbookData.map(entry => entry.before_weight);
+            var afterWeights = logbookData.map(entry => entry.after_weight);
+
+            var ctx = document.getElementById('lineChart').getContext('2d');
+
+            var lineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Before Weight',
+                            data: beforeWeights,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        },
+                        {
+                            label: 'After Weight',
+                            data: afterWeights,
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Weight (kg)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

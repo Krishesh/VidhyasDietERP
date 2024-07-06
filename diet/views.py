@@ -173,3 +173,16 @@ def diet_plan_preview(request,pk):
     }
     return render(request, 'diet/diet_plan/vidhyas_diet_plan_preview.html', context)
 
+
+def chart(request,client_id):
+    log_entries = LogBook.objects.filter(client_id=client_id).order_by('date')
+    dates = [entry.date.strftime('%Y-%m-%d') for entry in log_entries]
+    before_weights = [entry.before_weight for entry in log_entries]
+    after_weights = [entry.after_weight for entry in log_entries]
+
+    context = {
+        'dates': dates,
+        'before_weights': before_weights,
+        'after_weights': after_weights
+    }
+    return render(request, 'diet/logbook_chart.html', context)

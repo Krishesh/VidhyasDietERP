@@ -88,7 +88,7 @@ WSGI_APPLICATION = "VidhyasDietERP.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db_system.sqlite3",
+        "NAME": BASE_DIR / "db_local.sqlite3",
     }
 }
 

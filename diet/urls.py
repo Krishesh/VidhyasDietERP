@@ -2,7 +2,8 @@ from django.contrib.auth.views import LoginView
 from django.urls import path
 
 from diet.views import (create_logbook_and_stats, body_composition, create_diet_plan_new, create_diet_plan,
-                        edit_diet_plan, diet_plan_list,diet_plan_print_nepali,diet_plan_print_english,diet_plan_trash,diet_plan_preview)
+                        edit_diet_plan, diet_plan_list, diet_plan_print_nepali, diet_plan_print_english,
+                        diet_plan_trash, diet_plan_preview,chart)
 
 app_name = 'diet'
 
@@ -24,5 +25,8 @@ urlpatterns = [
     path('diet_plan_print_nepali/<int:pk>/', diet_plan_print_nepali, name='diet_plan_print_nepali'),
     path('diet_plan_print_english/<int:pk>/', diet_plan_print_english, name='diet_plan_print_english'),
     path('diet_plan_trash/', diet_plan_trash, name='diet_plan_trash'),
+
+
+    path('chart/<int:client_id>/', chart, name='chart'),
 
 ]
