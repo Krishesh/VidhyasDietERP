@@ -7,8 +7,15 @@
     </li>{% endcomment %}
     <li class="nav-item d-none d-sm-inline-block">
         <a href="{% url 'diet:create_logbook_and_stats' %}" class="nav-link">Log Book</a>
-    </li>  <li class="nav-item d-none d-sm-inline-block">
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
         <a href="{% url 'diet:bmi' %}" class="nav-link">Body Composition</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'diet:diet_plan_list' %}" class="nav-link">Diet Plan List </a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'diet:create_diet_plan' %}" class="nav-link">Add New Diet Plan </a>
     </li>
 
 

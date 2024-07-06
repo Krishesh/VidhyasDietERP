@@ -11,7 +11,7 @@ from todo.models import TodoItem
 @login_required(login_url='/login')
 def index(request):
     context = {
-        'todos': TodoItem.objects.filter(completed=False)
+        'todos': TodoItem.objects.filter(trashed=False)
     }
     # merge_duplicate_customers()
     return render(request, 'index/index.html', context)

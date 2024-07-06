@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 from customer.form import CustomerForm, PackageForm
 from customer.models import Diet_Plan_Package, Customer, Customer_Stats
 from customer.serializers import Diet_Plan_Package_Serializer, Customer_Serializer
-from diet.models import LogBook
+from diet.models import LogBook, DietPlan
 from inquiry.models import Inquiry
 from registration.models import Registration
 
@@ -31,7 +31,8 @@ def customer_detail(request, pk):
         'inquiry': inquiry,
         'customer_stats': Customer_Stats.objects.filter(customer=customer),
         'registration': Registration.objects.filter(customer=customer),
-        'logbook_entries': LogBook.objects.filter(client=customer)
+        'logbook_entries': LogBook.objects.filter(client=customer),
+        'diet_plan': DietPlan.objects.filter(customer=customer)
 
     }
     return render(request, 'customer/customer_detail.html', context)

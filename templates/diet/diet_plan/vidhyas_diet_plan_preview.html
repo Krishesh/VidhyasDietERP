@@ -1,0 +1,446 @@
+{% extends 'diet/diet_base.html' %}
+{% load static %}
+
+{% block sub-content %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h4>Customer Name : {{ diet_plan.customer.name }}</h4>
+                    <h4>Created By : {{ diet_plan.created_by }}</h4>
+                    <h4>Created Date : {{ diet_plan.created_date }}</h4>
+                    <h4>For : {{ diet_plan.day }}</h4>
+                </div>
+                <div class="col-sm-4">
+                    <div class=" float-sm-right">
+                        <div class="btn-group">
+                            <button type="button"
+                                    class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                    data-toggle="dropdown">Action
+                            </button>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item"
+                                   href="{% url 'customer:customer_detail' diet_plan.customer.id %}">Customer
+                                    Details</a>
+                                <a class="dropdown-item"
+                                   href="{% url 'diet:edit_diet_plan' diet_plan.pk %}">Edit</a>
+                                <a class="dropdown-item"
+                                   href="{% url 'diet:diet_plan_print_nepali' diet_plan.pk %}"
+                                   target="_blank">Print Nepali</a>
+                                <a class="dropdown-item"
+                                   href="{% url 'diet:diet_plan_print_english' diet_plan.pk %}"
+                                   target="_blank">Print
+                                    English</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <!DOCTYPE  html >
+            <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <meta name="author" content="user"/>
+                <style>
+
+
+                    #page-size-div {
+                        size: 21cm 29.7cm;
+                        position: relative;
+
+                    }
+
+                    #page-size-div header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                    }
+
+                    #page-size-div header .logo {
+                        width: 100%;
+                    }
+
+                    #page-size-div .container-page {
+                        margin-left: 30px;
+                        margin-right: 30px;
+                    }
+
+                    #page-size-div h1 {
+                        font-size: 18px;
+                        margin: 0;
+                        text-align: center;
+                    }
+
+                    #page-size-div h2 {
+                        font-size: 16px;
+                        margin: 0;
+                        text-align: center;
+                        font-weight: normal;
+                    }
+
+
+                    #page-size-div h3 {
+                        font-size: 18px;
+                        margin: 0;
+
+                    }
+
+                    #page-size-div table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 2px;
+
+                    }
+
+                    #page-size-div th, td {
+                        border: 1px solid #000;
+                        padding-left: 10px;
+
+                    }
+
+                    #page-size-div tr {
+                        text-align: left;
+                    }
+
+                    #page-size-div th {
+                        text-align: left;
+                    }
+
+                    #page-size-div .top-table td {
+                        text-align: center;
+                    }
+
+                    #page-size-div .top-table th {
+                        text-align: center;
+                    }
+
+                    #page-size-div .left-table {
+                        width: 85%;
+                        border-collapse: collapse;
+                        margin-bottom: 2px;
+                        margin-top: 5px;
+
+                    }
+
+
+                    #page-size-div .left-table th {
+                        width: 45%;
+                    }
+
+
+                    #page-size-div .right-content {
+                        padding-top: 50px;
+                    }
+
+                    #page-size-div .right-table td {
+                        border: none;
+                        width: 50%;
+                    }
+
+                    #page-size-div .right-table th {
+                        border: none;
+                        width: 50%;
+                        padding-top: 20px;
+                    }
+
+
+                    #page-size-div .selly-row {
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+
+
+                    }
+
+                    #page-size-div .col-md-8 {
+                        -ms-flex: 0 0 66.666667%;
+                        flex: 0 0 66.666667%;
+                        max-width: 66.666667%;
+                    }
+
+                    #page-size-div .col-md-4 {
+                        -ms-flex: 0 0 33.333333%;
+                        flex: 0 0 33.333333%;
+                        max-width: 33.333333%;
+                    }
+                </style>
+
+
+            </head>
+            <body>
+            <div id="page-size-div" style="">
+                <header>
+                    <img src="/../static/dist/img/company/letterhead.jpeg" alt="Logo" class="logo">
+                </header>
+                <div class="container-page">
+                    <h1>Diet Plan Chart</h1>
+                    <h2>Food groups served for {{ diet_plan.customer }} for {{ diet_plan.day }}</h2>
+                    <table class="top-table">
+                        <thead>
+                        <tr>
+                            <th>Cereals, Pulses,<br>Starched and Legumes</th>
+                            <th>Vegetables</th>
+                            <th>Fruits</th>
+                            <th>Meet Egg and <br>other substitutes</th>
+                            <th>Milk and its Product</th>
+                            <th>Fat oil and its Product</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{ diet_plan.cereals_pulses }}</td>
+                            <td>{{ diet_plan.vegetables }}</td>
+                            <td>{{ diet_plan.fruits }}</td>
+                            <td>{{ diet_plan.meat_eggs }}</td>
+                            <td>{{ diet_plan.milk_products }}</td>
+                            <td>{{ diet_plan.fat_oil_products }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="selly-row">
+                        <div class="col-md-8">
+
+                            <table class="left-table">
+                                <thead>
+                                <tr>
+                                    <th>BreakFast</th>
+                                    <td>{{ diet_plan.breakfast_time }}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Chapatti - {{ diet_plan.breakfast_chapatti_select }}
+                                    </td>
+                                    <td>{{ diet_plan.breakfast_chapatti }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Dry Bread :</td>
+                                    <td>{{ diet_plan.breakfast_dry_bread }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Rolled oats / Other cereals :</td>
+                                    <td>{{ diet_plan.breakfast_oats_cereals }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Boiled/Fried EGG :</td>
+                                    <td>{{ diet_plan.breakfast_egg }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Boiled Vegetables :</td>
+                                    <td>{{ diet_plan.breakfast_vegetables }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="left-table">
+                                <thead>
+                                <tr>
+                                    <th>Mid Morning Snacks</th>
+                                    <td>{{ diet_plan.mid_morning_snack_time }}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Cut Fruits</td>
+                                    <td>{{ diet_plan.mid_morning_fruits }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ diet_plan.mid_morning_yogurt_select }} :</td>
+                                    <td>{{ diet_plan.mid_morning_yogurt }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="left-table">
+                                <thead>
+                                <tr>
+                                    <th>Lunch</th>
+                                    <td>{{ diet_plan.lunch_time }}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ diet_plan.lunch_rice_select }}:</td>
+                                    <td>{{ diet_plan.lunch_rice }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Sukka Roti :</td>
+                                    <td>{{ diet_plan.lunch_roti }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Lentils/Pulses :</td>
+                                    <td>{{ diet_plan.lunch_lentils }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Vegetables curry :</td>
+                                    <td>{{ diet_plan.lunch_vegetable_curry }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Leafy/Raw vegetables :</td>
+                                    <td>{{ diet_plan.lunch_leafy_vegetables }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ diet_plan.lunch_meat_select }} :</td>
+                                    <td>{{ diet_plan.lunch_meat_tofu }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Fish (palm size) :</td>
+                                    <td>{{ diet_plan.lunch_fish }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="left-table">
+                                <thead>
+                                <tr>
+                                    <th>Afternoon Snack</th>
+                                    <td>{{ diet_plan.afternoon_snack_time }}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Sandwich :</td>
+                                    <td>{{ diet_plan.afternoon_snack_sandwich }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Dry Bread/Bread Roll :</td>
+                                    <td>{{ diet_plan.afternoon_snack_bread_roll }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Beaten rice :</td>
+                                    <td>{{ diet_plan.afternoon_snack_beaten_rice }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Roasted/Puffed Corn :</td>
+                                    <td>{{ diet_plan.afternoon_snack_roasted_corn }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Pulses :</td>
+                                    <td>{{ diet_plan.afternoon_snack_pulses }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Raw vegetables :</td>
+                                    <td>{{ diet_plan.afternoon_snack_raw_vegetables }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class=" right-content col-md-4">
+                            <h3>Calories and grams <br> of a day</h3>
+                            <table class="right-table" style="">
+                                <thead>
+                                <tr>
+                                    <th><u> Carbohydrates</u></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> Calories:</td>
+                                    <td>{{ diet_plan.carbohydrates_calories }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Grams:</td>
+                                    <td>{{ diet_plan.carbohydrates_grams }}</td>
+                                </tr>
+                                </tbody>
+                                <thead>
+                                <tr>
+                                    <th><u>Proteins</u></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> Calories :</td>
+                                    <td>{{ diet_plan.proteins_calories }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Grams :</td>
+                                    <td>{{ diet_plan.proteins_grams }}</td>
+                                </tr>
+                                </tbody>
+                                <thead>
+                                <tr>
+                                    <th><u>Fat</u></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Calories :</td>
+                                    <td>{{ diet_plan.fat_calories }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Grams :</td>
+                                    <td>{{ diet_plan.fat_grams }}</td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td style="padding-top: 25px">Total Calories :</td>
+                                    <td style="padding-top: 25px">{{ diet_plan.total_calories }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Activity Level :</td>
+                                    <td>{{ diet_plan.activity_level }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <h3 style="margin-top: 20px">Remarks:</h3>
+                            <h4> {{ diet_plan.remarks }}</h4>
+                        </div>
+                    </div>
+                    <div class="selly-row">
+                        <div class="col-md-8">
+                            <table class="left-table">
+
+                                <thead>
+                                <tr>
+                                    <th>Dinner</th>
+                                    <td>{{ diet_plan.dinner_time }}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ diet_plan.dinner_rice_dhindo_select }}</td>
+                                    <td>{{ diet_plan.dinner_rice_dhindo }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Dry Bread</td>
+                                    <td>{{ diet_plan.dinner_dry_bread }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Lentils/Pulses</td>
+                                    <td>{{ diet_plan.dinner_lentils }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Vegetables</td>
+                                    <td>{{ diet_plan.dinner_vegetables }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class=" col-md-4">
+                            <h3>Created Date : {{ diet_plan.created_date }}</h3>
+                            <h3>Day : {{ diet_plan.day }}</h3>
+                            <h3>Created By : {{ diet_plan.created_by }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </body>
+            </html>
+
+        </div>
+    </section>
+
+
+{% endblock sub-content %}
+
+{% block page_script %}
+
+{% endblock page_script %}

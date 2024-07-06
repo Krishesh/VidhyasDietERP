@@ -60,9 +60,9 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card card-secondary">
-                     <div class="card-header">
-                                <h3 class="card-title">Customer List</h3>
-                            </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Customer List</h3>
+                        </div>
 
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -103,8 +103,11 @@
                                                        data-id="{{ customer.id }}">Trash
 
                                                     </a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:create_diet_plan_new' customer.id %}">Create
+                                                        Diet Chart</a>
 
-                                                  {% comment %}  <div class="dropdown-divider"></div>
+                                                    {% comment %}  <div class="dropdown-divider"></div>
                                                     <a class="dropdown-item"
                                                        href="{% url 'registration:inquiry_to_registration_form' %}?id={{ inquiry.id }}">Register
                                                         to Client</a>{% endcomment %}
@@ -121,7 +124,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                   <th></th>
+                                    <th></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Contact</th>
@@ -149,7 +152,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="{% url 'customer:trash_customer'  %}" method="POST">
+                <form class="form-horizontal" action="{% url 'customer:trash_customer' %}" method="POST">
                     {% csrf_token %}
                     <div class="modal-body">
                         <label for="trash_id"> </label><input type="text" hidden class="form-control" id="trash_id"

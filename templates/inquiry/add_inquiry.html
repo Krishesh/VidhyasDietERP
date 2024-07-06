@@ -60,11 +60,11 @@
                 <div class="col-sm-12">
                     <h1>Inquiry Form </h1>
 
-                    <h4> {% if messages %}
-                        {% for message in messages %}
-                            Message: Customer already registered.<br>
-                            <a href="{% url 'customer:customer_detail'  message %}">Check Customer Details</a>
-                        {% endfor %}
+                    <h4> {% if customer_id %}
+
+                        Message: Customer already registered.<br>
+                        <a href="{% url 'customer:customer_detail'  customer_id %}">Check Customer Details</a>
+
                     {% endif %}</h4>
 
 
@@ -83,6 +83,13 @@
                         <div class="card card-secondary">
                             <div class="card-header">
                                 <h3 class="card-title">Basic Info</h3>
+                                <div class="card-tools">
+                                    <label>
+                                        <input class='form-control' type="date" name="entry_date"
+                                               value="{{ today | safe }}">
+                                    </label>
+
+                                </div>
                             </div>
                             <!-- /.card-header -->
 

@@ -10,7 +10,32 @@ s
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+
                 </div>
+                <div class="col-sm-4">
+                    <div class=" float-sm-right">
+                        <div class="btn-group">
+                            <button type="button"
+                                    class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                    data-toggle="dropdown">Action
+                            </button>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item"
+                                   href="{% url 'diet:create_diet_plan_new' customer.id %}">Create Diet Chart</a>
+                                <a class="dropdown-item"
+                                   href="{% url 'customer:edit_customer'  customer.id%}">Edit</a>
+                          
+                           
+                                <a class="dropdown-item"
+                                   href="#" data-toggle="modal"
+                                   data-target="#trash_transaction"
+                                   data-id="{{ diet_plan.id }}">Trash
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div><!-- /.container-fluid -->
@@ -220,7 +245,7 @@ s
                                                 {% endif %}
                                             {% endif %}
                                         </td>
-                                          <td>{{ customer_stats.remark }}</td>
+                                        <td>{{ customer_stats.remark }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -262,6 +287,61 @@ s
                                         <td>{{ logbook_entries.before_weight }}</td>
                                         <td>{{ logbook_entries.activity }}</td>
                                         <td>{{ logbook_entries.treatment_type }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-secondary collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer Diet plan</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="table  table-bordered"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <th>Date | Created By</th>
+                                    <th>Day</th>
+                                    <th>Action</th>
+                                </tr>
+                                {% for diet_plan in diet_plan reversed %}
+                                    <tr>
+                                        <td>{{ diet_plan.created_date |date:"d/m/Y" }}
+                                            | {{ diet_plan.created_by }}</td>
+                                        <td>{{ diet_plan.day }}</td>
+                                        <td>{{ diet_plan.day }}</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                        class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                                        data-toggle="dropdown">Action
+                                                </button>
+                                                <div class="dropdown-menu" role="menu">
+
+
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_print_nepali' diet_plan.pk %}"
+                                                       target="_blank">Print Nepali</a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_print_english' diet_plan.pk %}"
+                                                       target="_blank">Print
+                                                        English</a>
+
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
