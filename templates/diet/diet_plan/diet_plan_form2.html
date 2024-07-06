@@ -1,0 +1,404 @@
+{% extends 'diet/diet_base.html' %}
+{% load static %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'plugins/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+{% endblock page_css %}
+
+{% block sub-content %}
+
+    <html>
+    <head>
+        <style>
+
+
+            #page-size-div {
+                size: 21cm 29.7cm;
+                position: relative;
+            }
+
+            #page-size-div header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #page-size-div header .logo {
+                width: 100%;
+            }
+
+            #page-size-div .container-page {
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
+            #page-size-div h1 {
+                font-size: 35px;
+                margin: 0;
+                text-align: center;
+                padding: 25px;
+            }
+
+            #page-size-div h2 {
+                font-size: 16px;
+                margin: 0;
+                text-align: center;
+                font-weight: normal;
+            }
+
+            #page-size-div h3 {
+                font-size: 18px;
+                margin: 0;
+            }
+
+            #page-size-div table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            #page-size-div th, td {
+                border: 1px solid #000;
+                padding: 10px;
+            }
+
+            #page-size-div tr {
+                text-align: left;
+            }
+
+            #page-size-div th {
+                text-align: left;
+            }
+
+            #page-size-div .top-table td {
+                text-align: center;
+            }
+
+            #page-size-div .top-table th {
+                text-align: center;
+            }
+
+            #page-size-div .left-table {
+                width: 85%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                margin-top: 5px;
+            }
+
+            #page-size-div .left-table th {
+                width: 45%;
+            }
+
+            #page-size-div .right-content {
+                padding-top: 50px;
+            }
+
+            #page-size-div .right-table td {
+                border: none;
+                width: 50%;
+            }
+
+            #page-size-div .right-table th {
+                border: none;
+                width: 50%;
+                padding-top: 20px;
+            }
+
+            #page-size-div .selly-row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #page-size-div .col-md-8 {
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #page-size-div .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="page-size-div">
+
+        <div class="container-page">
+
+            <form action="{% url 'diet:create_diet_plan' customer.id %}" method="POST">
+                {% csrf_token %}
+
+                <h1>Create Diet Plan Chart</h1>
+                <h2>for <strong>{{ customer }}</strong> created by {{ created_by }} in {{ created_date }}</h2>
+
+                {{ form.hidden_field }}
+                {{ form.customer }}
+                {{ form.created_by }}
+                {{ form.created_date }}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <table class="top-table">
+                    <thead>
+                    <tr>
+                        <th>Cereals, Pulses,<br>Starched and Legumes</th>
+                        <th>Vegetables</th>
+                        <th>Fruits</th>
+                        <th>Meat Egg and <br>other substitutes</th>
+                        <th>Milk and its Product</th>
+                        <th>Fat oil and its Product</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ form.cereals_pulses }}</td>
+                        <td>{{ form.vegetables }}</td>
+                        <td>{{ form.fruits }}</td>
+                        <td>{{ form.meat_eggs }}</td>
+                        <td>{{ form.milk_products }}</td>
+                        <td>{{ form.fat_oil_products }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="selly-row">
+                    <div class="col-md-8">
+                        <table class="left-table">
+                            <thead>
+                            <tr>
+                                <th>BreakFast</th>
+                                <td>{{ form.breakfast_time }}</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Chapatti {{ form.breakfast_chapatti_select }}</td>
+                                <td>{{ form.breakfast_chapatti }}</td>
+                            </tr>
+                            <tr>
+                                <td>Dry Bread</td>
+                                <td>{{ form.breakfast_dry_bread }}</td>
+                            </tr>
+                            <tr>
+                                <td>Rolled oats / Other cereals</td>
+                                <td>{{ form.breakfast_oats_cereals }}</td>
+                            </tr>
+                            <tr>
+                                <td>Boiled/Fried EGG</td>
+                                <td>{{ form.breakfast_egg }}</td>
+                            </tr>
+                            <tr>
+                                <td>Boiled Vegetables</td>
+                                <td>{{ form.breakfast_vegetables }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="left-table">
+                            <thead>
+                            <tr>
+                                <th>Mid Morning Snacks</th>
+                                <td>{{ form.mid_morning_snack_time }}</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Cut Fruits</td>
+                                <td>{{ form.mid_morning_fruits }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.mid_morning_yogurt_select }}</td>
+                                <td>{{ form.mid_morning_yogurt }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="left-table">
+                            <thead>
+                            <tr>
+                                <th>Lunch</th>
+                                <td>{{ form.lunch_time }}</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ form.lunch_rice_select }}</td>
+                                <td>{{ form.lunch_rice }}</td>
+                            </tr>
+                            <tr>
+                                <td>Sukka Roti</td>
+                                <td>{{ form.lunch_roti }}</td>
+                            </tr>
+                            <tr>
+                                <td>Lentils/Pulses</td>
+                                <td>{{ form.lunch_lentils }}</td>
+                            </tr>
+                            <tr>
+                                <td>Vegetables curry</td>
+                                <td>{{ form.lunch_vegetable_curry }}</td>
+                            </tr>
+                            <tr>
+                                <td>Leafy/Raw vegetables</td>
+                                <td>{{ form.lunch_leafy_vegetables }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.lunch_meat_select }}</td>
+                                <td>{{ form.lunch_meat_tofu }}</td>
+                            </tr>
+                            <tr>
+                                <td>Fish (palm size)</td>
+                                <td>{{ form.lunch_fish }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="left-table">
+                            <thead>
+                            <tr>
+                                <th>Afternoon Snack</th>
+                                <td>{{ form.afternoon_snack_time }}</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Sandwich</td>
+                                <td>{{ form.afternoon_snack_sandwich }}</td>
+                            </tr>
+                            <tr>
+                                <td>Dry Bread/Bread Roll</td>
+                                <td>{{ form.afternoon_snack_bread_roll }}</td>
+                            </tr>
+                            <tr>
+                                <td>Beaten rice</td>
+                                <td>{{ form.afternoon_snack_beaten_rice }}</td>
+                            </tr>
+                            <tr>
+                                <td>Roasted/Puffed Corn</td>
+                                <td>{{ form.afternoon_snack_roasted_corn }}</td>
+                            </tr>
+                            <tr>
+                                <td>Pulses</td>
+                                <td>{{ form.afternoon_snack_pulses }}</td>
+                            </tr>
+                            <tr>
+                                <td>Raw vegetables</td>
+                                <td>{{ form.afternoon_snack_raw_vegetables }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="left-table">
+
+                            <thead>
+                            <tr>
+                                <th>Dinner</th>
+                                <td>{{ form.dinner_time }}</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ form.dinner_rice_dhindo_select }}</td>
+                                <td>{{ form.dinner_rice_dhindo }}</td>
+                            </tr>
+                            <tr>
+                                <td>Dry Bread</td>
+                                <td>{{ form.dinner_dry_bread }}</td>
+                            </tr>
+                            <tr>
+                                <td>Lentils/Pulses</td>
+                                <td>{{ form.dinner_lentils }}</td>
+                            </tr>
+                            <tr>
+                                <td>Vegetables</td>
+                                <td>{{ form.dinner_vegetables }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=" right-content col-md-4">
+                        <h3>Calories and grams <br> of a day</h3>
+                        <table class="right-table" style="">
+                            <thead>
+                            <tr>
+                                <th><u> Carbohydrates</u></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td> Calories:</td>
+                                <td>{{ form.carbohydrates_calories }}</td>
+                            </tr>
+                            <tr>
+                                <td>Grams:</td>
+                                <td>{{ form.carbohydrates_grams }}</td>
+                            </tr>
+                            </tbody>
+                            <thead>
+                            <tr>
+                                <th><u>Proteins</u></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td> Calories :</td>
+                                <td>{{ form.proteins_calories }}</td>
+                            </tr>
+                            <tr>
+                                <td>Grams :</td>
+                                <td>{{ form.proteins_grams }}</td>
+                            </tr>
+                            </tbody>
+                            <thead>
+                            <tr>
+                                <th><u>Fat</u></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Calories :</td>
+                                <td>{{ form.fat_calories }}</td>
+                            </tr>
+                            <tr>
+                                <td>Grams :</td>
+                                <td>{{ form.fat_grams }}</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td style="padding-top: 25px">Total Calories :</td>
+                                <td style="padding-top: 25px">{{ form.total_calories }}</td>
+                            </tr>
+                            <tr>
+                                <td>Activity Level :</td>
+                                <td>{{ form.activity_level }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="right-table">
+                            <tbody>
+
+                            <tr>
+                                <th>Remarks</th>
+                                <td>{{ form.remarks }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+    </body>
+    </html>
+
+
+{% endblock sub-content %}
+
+{% block page_script %}
+    <script src="{% static 'plugins/select2/js/select2.full.min.js' %}"></script>s
+    <script>
+        $(document).ready(function () {
+
+            $('.select2').select2()
+        });
+    </script>
+{% endblock page_script %}

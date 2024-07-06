@@ -2,24 +2,16 @@
 {% load static %}
 {% block page_css %}
     <!-- DataTables -->
-    <!-- Select2 -->
-    <link rel="stylesheet" href="{% static 'plugins/select2/css/select2.min.css' %}">
-    <link rel="stylesheet" href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
-
     <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/datatables-select/css/select.bootstrap4.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/datatables-select/css/dataTables.dataTables.css' %}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{% static 'plugins/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
     <style>
-        .dataTables_wrapper .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-        }
-
-        .dataTables_wrapper .bottom {
+        .dataTables_wrapper .top, .dataTables_wrapper .bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,17 +19,14 @@
         }
 
         .dataTables_wrapper .dataTables_length,
-        .dataTables_wrapper .dataTables_filter {
+        .dataTables_wrapper .dataTables_filter,
+        .dataTables_wrapper .dataTables_paginate,
+        .dataTables_wrapper .dataTables_info {
             margin: 0;
         }
 
         .dataTables_wrapper .dt-buttons {
             margin-left: auto;
-        }
-
-        .dataTables_wrapper .dataTables_paginate,
-        .dataTables_wrapper .dataTables_info {
-            margin: 0;
         }
     </style>
 {% endblock page_css %}
@@ -47,11 +36,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Manage Body Composition</h1>
+
                 </div>
             </div>
         </div>
     </section>
+
 
     <section class="content">
         <div class="container-fluid">
@@ -59,73 +49,7 @@
                 <div class="col-sm-12">
                     <div class="card card-secondary">
                         <div class="card-header">
-                            <h3 class="card-title">{% if logBook %}Edit{% else %}Create{% endif %} BMI Entry</h3>
-                        </div>
-                        <form action="
-
-                                {% if form.instance.pk %}{% url 'diet:edit_bmi' form.instance.pk %}{% else %}{% url 'diet:bmi' %}{% endif %}"
-                              method="POST" class="form-horizontal">
-                            {% csrf_token %}
-                            <div class="card-body">
-                                {% if form.non_field_errors %}
-                                    <div class="alert alert-danger" role="alert">
-                                        {{ form.non_field_errors }}
-                                    </div>
-                                {% endif %}
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        {% for field in form %}
-                                            {% if forloop.counter0|divisibleby:2 %}
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4 col-form-label">{{ field.label_tag }}</label>
-                                                    <div class="col-sm-8">
-                                                        {{ field }}
-                                                        {% if field.errors %}
-                                                            <div class="invalid-feedback d-block">
-                                                                {{ field.errors }}
-                                                            </div>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                    <div class="col-sm-6">
-                                        {% for field in form %}
-                                            {% if not forloop.counter0|divisibleby:2 %}
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4 col-form-label">{{ field.label_tag }}</label>
-                                                    <div class="col-sm-8">
-                                                        {{ field }}
-                                                        {% if field.errors %}
-                                                            <div class="invalid-feedback d-block">
-                                                                {{ field.errors }}
-                                                            </div>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-secondary">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">BMI Entry List</h3>
+                            <h3 class="card-title">Diet Plan List</h3>
                         </div>
                         <div class="card-body">
                             <table id="dtable" class="table table-bordered table-hover">
@@ -134,30 +58,18 @@
                                     <th></th>
                                     <th>Date | Created By</th>
                                     <th>Client</th>
-                                    <th>Weight</th>
-                                    <th>Muscle mass</th>
-                                    <th>Fat</th>
-                                    <th>Bone Density</th>
-                                    <th>BMR</th>
-                                    <th>BIM</th>
-                                    <th>Body Water</th>
+                                    <th>Day</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for bodyComposition in bodyComposition reversed %}
+                                {% for diet_plan in diet_plans reversed %}
                                     <tr>
                                         <td></td>
-                                        <td>{{ bodyComposition.recorded_at |date:"d/m/Y H:i" }}
-                                            | {{ bodyComposition.create_by }}</td>
-                                        <td>{{ bodyComposition.client }}</td>
-                                        <td>{{ bodyComposition.weight }}</td>
-                                        <td>{{ bodyComposition.muscle_mass }}</td>
-                                        <td>{{ bodyComposition.fat_percentage }} %</td>
-                                        <td>{{ bodyComposition.bone_density }}</td>
-                                        <td>{{ bodyComposition.bmr }}</td>
-                                        <td>{{ bodyComposition.bmi }}</td>
-                                        <td>{{ bodyComposition.body_water }}</td>
+                                        <td>{{ diet_plan.created_date|date:"d/m/Y " }}
+                                            | {{ diet_plan.created_by }}</td>
+                                        <td>{{ diet_plan.customer }}</td>
+                                        <td>{{ diet_plan.day }}</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button type="button"
@@ -166,12 +78,25 @@
                                                 </button>
                                                 <div class="dropdown-menu" role="menu">
                                                     <a class="dropdown-item"
-                                                       href="{% url 'customer:customer_detail' bodyComposition.client.id %}">Customer
-                                                        Details</a> <a class="dropdown-item"
-                                                                       href="{% url 'diet:edit_bmi' bodyComposition.pk %}">Edit</a>
-                                               {% comment %}     <a class="dropdown-item" href="#" data-toggle="modal"
+                                                       href="{% url 'customer:customer_detail' diet_plan.customer.id %}">Customer
+                                                        Details</a>   <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_preview' diet_plan.id %}">
+                                                    Preview
+                                                        Diet Chart</a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:edit_diet_plan' diet_plan.pk %}">Edit</a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_print_nepali' diet_plan.pk %}"
+                                                       target="_blank">Print Nepali</a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_print_english' diet_plan.pk %}"
+                                                       target="_blank">Print
+                                                        English</a>
+                                                      <a class="dropdown-item"
+                                                       href="#" data-toggle="modal"
                                                        data-target="#trash_transaction"
-                                                       data-id="{{ logbook_entries.id }}">Delete</a>{% endcomment %}
+                                                       data-id="{{ diet_plan.id }}">Trash
+                                                      </a>
                                                 </div>
                                             </div>
                                         </td>
@@ -183,14 +108,7 @@
                                     <th></th>
                                     <th>Date | Created By</th>
                                     <th>Client</th>
-                                    <th>Weight</th>
-                                    <th>Muscle mass</th>
-                                    <th>Fat</th>
-                                    <th>Bone Density</th>
-                                    <th>BMR</th>
-                                    <th>BIM</th>
-                                    <th>Body Water</th>
-
+                                    <th>Day</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
@@ -200,23 +118,21 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
     <div class="modal fade" id="trash_transaction">
         <div class="modal-dialog">
             <div class="modal-content bg-danger">
                 <div class="modal-header">
-                    <h4 class="modal-title">Delete Department</h4>
+                    <h4 class="modal-title">Trash Diet Plan</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form-horizontal" action="{% url 'humanresource:delete_department' %}" method="POST">
+                <form class="form-horizontal" action="{% url 'diet:diet_plan_trash' %}" method="POST">
                     {% csrf_token %}
                     <div class="modal-body">
-                        <label for="trash_id"></label>
-                        <input type="text" hidden class="form-control" id="trash_id" name="trash_id">
+                        <input type="hidden" id="trash_id" name="trash_id">
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
@@ -229,6 +145,7 @@
 {% endblock sub-content %}
 
 {% block page_script %}
+    <!-- DataTables -->
     <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
     <script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
     <script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
@@ -243,7 +160,6 @@
     <script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
     <script src="{% static 'plugins/datatables-select/js/dataTables.select.min.js' %}"></script>
     <script src="{% static 'plugins/datatables-select/js/select.bootstrap4.min.js' %}"></script>
-
     <!-- Select2 -->
     <script src="{% static 'plugins/select2/js/select2.full.min.js' %}"></script>
 
@@ -253,11 +169,7 @@
                 lengthMenu: [10, 20, 50, 100],
                 responsive: true, lengthChange: false, autoWidth: false,
                 columnDefs: [
-                    {
-                        orderable: false,
-                        className: 'select-checkbox',
-                        targets: 0
-                    }
+                    {orderable: false, className: 'select-checkbox', targets: 0}
                 ],
                 select: {
                     style: 'multi',
@@ -300,13 +212,10 @@
                 }
             });
 
-            // Initially hide the "Delete Selected" button
             $('.delete-selected').hide();
-
-            $('.select2').select2()
+            $('.select2').select2();
         });
-    </script>
-    <script>
+
         $(function () {
             $('#trash_transaction').on('show.bs.modal', function (event) {
                 document.getElementById("trash_id").value = $(event.relatedTarget).data('id');

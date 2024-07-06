@@ -15,7 +15,9 @@ def inquiry_list(request):
 
 
 def add_inquiry_form(request):
-    return render(request, 'inquiry/add_inquiry.html')
+    from datetime import date
+    today = date.today()
+    return render(request, 'inquiry/add_inquiry.html', {'today': today})
 
 
 def edit_inquiry_form(request):
@@ -36,9 +38,13 @@ def add_inquiry(request):
         print(existing_customer)
         if existing_customer:
             # Show toast message
-
-            messages.error(request, existing_customer.id)
-            return redirect("inquiry:add_inquiry_form")
+            from datetime import date
+            today = date.today()
+            context = {
+                'customer_id': existing_customer.id,
+                'today': today
+            }
+            return redirect("inquiry:add_inquiry_form", context)
         # create customer First
         customer = Customer()
         customer.name = request.POST.get('customer_name')
@@ -86,7 +92,7 @@ def add_inquiry(request):
 
         today = date.today()
         print(today)
-        inquiry.created_date = today
+        inquiry.created_date = request.POST.get('entry_date')
 
         inquiry.customer_health_state = request.POST.get('customer_health_state')
         inquiry.customer_any_prescription = request.POST.get('customer_any_prescription')

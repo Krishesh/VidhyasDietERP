@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 from customer.form import CustomerForm, PackageForm
 from customer.models import Diet_Plan_Package, Customer, Customer_Stats
 from customer.serializers import Diet_Plan_Package_Serializer, Customer_Serializer
-from diet.models import LogBook
+from diet.models import LogBook, DietPlan
 from inquiry.models import Inquiry
 from registration.models import Registration
 
@@ -22,16 +22,31 @@ def customer_list(request):
     return render(request, 'customer/customer_list.html', context)
 
 
+import json
+
+
 def customer_detail(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
     inquiry = Inquiry.objects.all().filter(customer_name=customer)
     print(Inquiry.objects.filter(customer_name__pk=customer.pk))
+
+    log_entries = LogBook.objects.filter(client_id=customer).order_by('date')
+    dates = [entry.date.strftime('%Y-%m-%d') for entry in log_entries]
+    before_weights = [entry.before_weight for entry in log_entries]
+    after_weights = [entry.after_weight for entry in log_entries]
+    print(dates)
+    print(before_weights)
+    print(after_weights)
     context = {
         'customer': customer,
         'inquiry': inquiry,
         'customer_stats': Customer_Stats.objects.filter(customer=customer),
         'registration': Registration.objects.filter(customer=customer),
-        'logbook_entries': LogBook.objects.filter(client=customer)
+        'logbook_entries': LogBook.objects.filter(client=customer),
+        'diet_plan': DietPlan.objects.filter(customer=customer),
+        'dates': json.dumps(dates),
+        'beforeWeights': json.dumps(before_weights),
+        'afterWeights': json.dumps(after_weights),
 
     }
     return render(request, 'customer/customer_detail.html', context)

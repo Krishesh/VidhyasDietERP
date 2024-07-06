@@ -1,7 +1,12 @@
 {% extends 'customer/customer_base.html' %}
 {% load static %}
 
-s
+{% block page_css %}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns"></script>
+{% endblock page_css %}
 {% block sub-content %}
     <!-- Content Wrapper. Contains page content -->
 
@@ -10,7 +15,32 @@ s
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+
                 </div>
+                <div class="col-sm-4">
+                    <div class=" float-sm-right">
+                        <div class="btn-group">
+                            <button type="button"
+                                    class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                    data-toggle="dropdown">Action
+                            </button>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item"
+                                   href="{% url 'diet:create_diet_plan_new' customer.id %}">Create Diet Chart</a>
+                                <a class="dropdown-item"
+                                   href="{% url 'customer:edit_customer'  customer.id %}">Edit</a>
+
+
+                                <a class="dropdown-item"
+                                   href="#" data-toggle="modal"
+                                   data-target="#trash_transaction"
+                                   data-id="{{ diet_plan.id }}">Trash
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div><!-- /.container-fluid -->
@@ -220,7 +250,7 @@ s
                                                 {% endif %}
                                             {% endif %}
                                         </td>
-                                          <td>{{ customer_stats.remark }}</td>
+                                        <td>{{ customer_stats.remark }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -271,15 +301,158 @@ s
 
 
                     </div>
+                    <div class="card card-secondary collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer Diet plan</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+                            <table class="table  table-bordered"
+                                   style="background: #F4FAFF">
+                                <tbody>
+                                <tr>
+                                    <th>Date | Created By</th>
+                                    <th>Day</th>
+                                    <th>Action</th>
+                                </tr>
+                                {% for diet_plan in diet_plan reversed %}
+                                    <tr>
+                                        <td>{{ diet_plan.created_date |date:"d/m/Y" }}
+                                            | {{ diet_plan.created_by }}</td>
+                                        <td>{{ diet_plan.day }}</td>
+                                        <td>{{ diet_plan.day }}</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                        class="btn btn-block btn-outline-secondary dropdown-toggle"
+                                                        data-toggle="dropdown">Action
+                                                </button>
+                                                <div class="dropdown-menu" role="menu">
+
+
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_print_nepali' diet_plan.pk %}"
+                                                       target="_blank">Print Nepali</a>
+                                                    <a class="dropdown-item"
+                                                       href="{% url 'diet:diet_plan_print_english' diet_plan.pk %}"
+                                                       target="_blank">Print
+                                                        English</a>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="card card-secondary ">
+                        <div class="card-header">
+                            <h3 class="card-title">Customer Graph of Log Book </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+
+                            <div class="chart">
+                                <canvas id="lineChart"
+                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var ctx = document.getElementById('lineChart').getContext('2d');
+
+                                    // Parse JSON strings into JavaScript arrays
+                                    var dates = JSON.parse('{{ dates|escapejs }}');
+                                    var beforeWeights = JSON.parse('{{ beforeWeights|escapejs }}');
+                                    var afterWeights = JSON.parse('{{ afterWeights|escapejs }}');
+                                    console.log(dates)
+                                    console.log(beforeWeights)
+                                    console.log(afterWeights)
+                                    var lineChart = new Chart(ctx, {
+                                        type: 'line',
+                                        data: {
+                                            labels: dates,
+                                            datasets: [
+                                                {
+                                                    label: 'Before Weight',
+                                                    data: beforeWeights,
+                                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                                    borderWidth: 2,
+                                                    fill: false,
+                                                    tension: 0.1
+                                                },
+                                                {
+                                                    label: 'After Weight',
+                                                    data: afterWeights,
+                                                    borderColor: 'rgba(153, 102, 255, 1)',
+                                                    borderWidth: 2,
+                                                    fill: false,
+                                                    tension: 0.1
+                                                }
+                                            ]
+                                        },
+                                        options: {
+                                            scales: {
+                                                x: {
+                                                    type: 'time',
+                                                    time: {
+                                                        unit: 'day',
+                                                        tooltipFormat: 'yyyy-MM-dd',
+                                                        displayFormats: {
+                                                            day: 'yyyy-MM-dd'
+                                                        }
+                                                    },
+                                                    title: {
+                                                        display: true,
+                                                        text: 'Date'
+                                                    },
+                                                    ticks: {
+                                                        autoSkip: true,
+                                                        maxTicksLimit: 20
+                                                    }
+                                                },
+                                                y: {
+                                                    title: {
+                                                        display: true,
+                                                        text: 'Weight (kg)'
+                                                    },
+                                                    beginAtZero: false,
+                                                    min: 40
+                                                }
+                                            }
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-
-
-
 {% endblock sub-content %}
+
+
+{% block page_script %}
+
+
+{% endblock page_script %}

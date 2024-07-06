@@ -11,7 +11,7 @@ from todo.models import TodoItem
 @login_required(login_url='/login')
 def index(request):
     context = {
-        'todos': TodoItem.objects.filter(completed=False)
+        'todos': TodoItem.objects.filter(trashed=False)
     }
     # merge_duplicate_customers()
     return render(request, 'index/index.html', context)
@@ -20,7 +20,7 @@ def index(request):
 def merge_duplicate_customers():
     # Define the database path
     BASE_DIR = Path(__file__).resolve().parent.parent
-    db_path = BASE_DIR / "db_system.sqlite3"
+    db_path = BASE_DIR / "db_local.sqlite3"
 
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
