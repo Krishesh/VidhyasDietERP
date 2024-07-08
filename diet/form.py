@@ -8,7 +8,7 @@ from diet.models import LogBook, BodyComposition, DietPlan
 class LogBookForm(forms.ModelForm):
     class Meta:
         model = LogBook
-        fields = ['client', 'create_by', 'after_weight', 'before_weight', 'activity', 'treatment_type']
+        fields = ['client', 'create_by', 'before_weight', 'after_weight', 'activity', 'treatment_type']
 
         widgets = {
             'create_by': forms.Select(attrs={'class': 'form-control'}),
