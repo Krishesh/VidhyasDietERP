@@ -37,26 +37,30 @@ def add_inquiry(request):
         print(customer_contact_number)
         print(existing_customer)
         if existing_customer:
-            # Show toast message
-            from datetime import date
-            today = date.today()
-            context = {
-                'customer_id': existing_customer.id,
-                'today': today
-            }
-            return redirect("inquiry:add_inquiry_form", context)
-        # create customer First
-        customer = Customer()
-        customer.name = request.POST.get('customer_name')
-        customer.age = request.POST.get('customer_age')
-        customer.gender = request.POST.get('customer_gender')
-        customer.profession = request.POST.get('customer_profession')
-        customer.contact_number = request.POST.get('customer_contact_number')
-        customer.social_number = request.POST.get('customer_social_number')
-        customer.address = request.POST.get('customer_address')
-        customer.email = request.POST.get('customer_email')
-        customer.annual_income = request.POST.get('customer_annual_income')
-        customer.save()
+            customer = existing_customer
+            customer.name = request.POST.get('customer_name')
+            customer.age = request.POST.get('customer_age')
+            customer.gender = request.POST.get('customer_gender')
+            customer.profession = request.POST.get('customer_profession')
+            customer.contact_number = request.POST.get('customer_contact_number')
+            customer.social_number = request.POST.get('customer_social_number')
+            customer.address = request.POST.get('customer_address')
+            customer.email = request.POST.get('customer_email')
+            customer.annual_income = request.POST.get('customer_annual_income')
+            customer.save()
+        else:
+            # create customer First
+            customer = Customer()
+            customer.name = request.POST.get('customer_name')
+            customer.age = request.POST.get('customer_age')
+            customer.gender = request.POST.get('customer_gender')
+            customer.profession = request.POST.get('customer_profession')
+            customer.contact_number = request.POST.get('customer_contact_number')
+            customer.social_number = request.POST.get('customer_social_number')
+            customer.address = request.POST.get('customer_address')
+            customer.email = request.POST.get('customer_email')
+            customer.annual_income = request.POST.get('customer_annual_income')
+            customer.save()
 
         # customer stats
         customer_Stats = Customer_Stats()
