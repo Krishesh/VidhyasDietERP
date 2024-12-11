@@ -17,8 +17,8 @@ class LogBookForm(forms.ModelForm):
             'activity': forms.TextInput(attrs={'class': '  form-control'}),
             'treatment_type': forms.TextInput(attrs={'class': '  form-control'}),
         }
-
     client = forms.ModelChoiceField(queryset=Customer.objects.all(), label='Customer')
+
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
@@ -138,7 +138,6 @@ class DietPlanForm(forms.ModelForm):
             'total_calories': forms.TextInput(attrs={'class': 'form-control'}),
             'activity_level': forms.TextInput(attrs={'class': 'form-control'}),
             'remarks': forms.TextInput(attrs={'class': 'form-control'}),
-            'follow_up_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
 
         }
 
