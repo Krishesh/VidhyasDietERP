@@ -196,6 +196,7 @@ class DietPlan(models.Model):
     activity_level = models.CharField(max_length=100, default='1')
 
     remarks = models.TextField(blank=True, null=True)
+    follow_up_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return f'Diet Plan for {self.customer.name}'
