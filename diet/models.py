@@ -9,15 +9,15 @@ from customer.models import Customer, Customer_Stats
 
 # Body Composition model
 class BodyComposition(models.Model):
-    weight = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    muscle_mass = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    fat_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    bone_density = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    bmr = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    bmi = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    body_water = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    protein = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    total_intake_calories = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    weight = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    muscle_mass = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    fat_percentage = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    bone_density = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    bmr = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    bmi = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    body_water = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    protein = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total_intake_calories = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     recorded_at = models.DateTimeField(auto_now_add=True)
 
