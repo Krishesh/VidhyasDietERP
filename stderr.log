@@ -1,3 +1,62 @@
+Not Found: /login/favicon.ico
+Not Found: /ads.txt
+Not Found: /login/favicon.ico
+Not Found: /ads.txt
+Not Found: /login/favicon.ico
+Not Found: /login/favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2025-05-18 00:00:00) while time zone support is active.
+  warnings.warn(
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2025-05-18 00:00:00) while time zone support is active.
+  warnings.warn(
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Pratiba Kunwar
+9765675953
+None
+2025-05-18
+['Diabetes']
+<constance.base.Config object at 0x7fce06e4ea10>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+<QueryDict: {'csrfmiddlewaretoken': ['DC7pMhEDGzKO56f8dmYxwgE3jQimSZHDUid1ciWMWwiZP9ubanPp3yhNfID47Du9'], 'customer': ['723'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['10'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['4'], 'milk_products': ['2'], 'fat_oil_products': ['3'], 'breakfast_time': ['8.00 am'], 'breakfast_chapatti_select': ['Buckwheat'], 'breakfast_chapatti': ['2 pcs. Or'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja'], 'breakfast_egg': ['1 pc'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi '], 'mid_morning_snack_time': ['10.30 am'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi'], 'lunch_time': ['1.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1 bowl rice'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl dal'], 'lunch_vegetable_curry': ['1 bowl veg.curry'], 'lunch_leafy_vegetables': ['1/2 CUP'], 'lunch_meat_select': ['Paneer'], 'lunch_meat_tofu': ['6-7 pcs'], 'lunch_fish': ['0'], 'afternoon_snack_time': ['5.00 pm'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['1/2 cup (or)'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['1/2 cup chenna or peanuts'], 'afternoon_snack_raw_vegetables': ['1/2 cup'], 'dinner_time': ['8:00 PM'], 'dinner_rice_dhindo_select': ['Chakla'], 'dinner_rice_dhindo': ['1/2 CUP or'], 'dinner_dry_bread': ['2 pcs'], 'dinner_lentils': ['1/2 CUP + 4-5 pcs paneer or tofu'], 'dinner_vegetables': ['1 CUP + 1 cup milk 9.30 pm iron supplements'], 'carbohydrates_calories': ['825'], 'carbohydrates_grams': ['206'], 'proteins_calories': ['345'], 'proteins_grams': ['86'], 'fat_calories': ['330'], 'fat_grams': ['37'], 'total_calories': ['1500'], 'activity_level': ['2'], 'remarks': ['6.00 am 1 glass water + 1 hr after 1 glass luke warm water + almonds- 6 pcs or walnuts - 8 pcs or cashews - 5 pcs + 1/2 an apple + 3 ltrs water per day'], 'follow_up_date': ['2025-06-17']}>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2025-05-18 00:00:00) while time zone support is active.
+  warnings.warn(
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2025-05-18 00:00:00) while time zone support is active.
+  warnings.warn(
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Rishi Kathiawada
+9856056770
+None
+2025-05-18
+['Diabetes', 'Hypertension']
+<constance.base.Config object at 0x7f4beae00910>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+<QueryDict: {'csrfmiddlewaretoken': ['loyy4wndAa1Xgym877cPidS3plVwnMv1C4EauxFmQ7z80BBb483HPvvNldgeCqix'], 'customer': ['724'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['10'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['4'], 'milk_products': ['2'], 'fat_oil_products': ['3'], 'breakfast_time': ['8.20 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja'], 'breakfast_egg': ['1 pc'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi + pumpkin seeds -15 pcs'], 'mid_morning_snack_time': ['11.00 am '], 'mid_morning_fruits': ['1 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi'], 'lunch_time': ['2.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1 bowl rice'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl dal'], 'lunch_vegetable_curry': ['1 bowl veg.curry'], 'lunch_leafy_vegetables': ['1/2 CUP'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['4-5 pcs or 7-8 pcs paneer or tofu dices sized or'], 'lunch_fish': ['2 pcs (no fry) + hytic- probiotic -1'], 'afternoon_snack_time': ['5.00 pm'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['1/2 cup (or)'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['1/2 cup chenna or peanuts or pea or rajmah'], 'afternoon_snack_raw_vegetables': ['1/2 cup + albumin - 1/2 scoop + water - 1/2 glass'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Chakla'], 'dinner_rice_dhindo': ['1/2 CUP'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/2 CUP'], 'dinner_vegetables': ['1 CUP + 1 cup milk + 2-3 pcs paneer'], 'carbohydrates_calories': ['825'], 'carbohydrates_grams': ['206'], 'proteins_calories': ['345'], 'proteins_grams': ['86'], 'fat_calories': ['330'], 'fat_grams': ['37'], 'total_calories': ['1500'], 'activity_level': ['2'], 'remarks': ['5.00 am 1 glass water  + 1 hr after 1 glass luke warm water + cashews - 5 pcs + 2 ltrs water per day'], 'follow_up_date': ['2025-06-17']}>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+[UID:1381][2131858] Child process with pid: 2132272 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
@@ -6,65 +65,193 @@ Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 vidhyas artist
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-01 00:00:00) while time zone support is active.
-  warnings.warn(
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-01 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Malati BK
-9806670676
-None
-2024-12-01
-['Thyroid']
-<constance.base.Config object at 0x7f85b45cb7d0>
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['Rlu5LpSvYtTYSxIol9zdvnTYySuV7zB2pAN0jR8CQxN7sbMKzalqCjPARihmz5ii'], 'customer': ['621'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['8'], 'vegetables': ['7'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['8.00 am'], 'breakfast_chapatti_select': ['Buckwheat'], 'breakfast_chapatti': ['1 pc'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup cooked'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1 cup fruits + Almonds - 6 pcs + 1/2 cup milk coffee'], 'mid_morning_snack_time': ['0'], 'mid_morning_fruits': ['0'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['0'], 'lunch_time': ['12.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup quinoa cooked'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 pcs or'], 'lunch_fish': ['2 pcs palm sized'], 'afternoon_snack_time': ['3.00 pm'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['1 cup'], 'afternoon_snack_pulses': ['1/2 cup roasted chenna/ peanut/ soybean/ rajmah/peas'], 'afternoon_snack_raw_vegetables': ['1/2 cup'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Chakla'], 'dinner_rice_dhindo': ['POHA- 1/2 CUP'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/4 cup + 2 tsp saatu(sometimes)'], 'dinner_vegetables': ['1/2 cup + 1/2 cup milk'], 'carbohydrates_calories': ['715'], 'carbohydrates_grams': ['179'], 'proteins_calories': ['299'], 'proteins_grams': ['75'], 'fat_calories': ['286'], 'fat_grams': ['32'], 'total_calories': ['1300'], 'activity_level': ['2'], 'remarks': ['4.00 am 62.5 mcg thyronorm + 7 am 1 glass luke warm water + 3 ltrs water per day']}>
-Not Found: /api/.env
-Not Found: /api/.env
 Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-02 00:00:00) while time zone support is active.
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2025-05-19 00:00:00) while time zone support is active.
   warnings.warn(
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Ritika Baral
-9825193286
+purnima pun
+9804117051
 None
-2024-12-02
+2025-05-19
 []
-<constance.base.Config object at 0x7feb812d5d10>
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-02 00:00:00) while time zone support is active.
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+[UID:1381][510763] Child process with pid: 554247 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2025-05-19 00:00:00) while time zone support is active.
   warnings.warn(
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['YiAVhucnGFd7zaDuz7fW3Ln0myBcfb0NwxTQPWsuyJ7g9OHQN819aHjCFYoDHHH3'], 'customer': ['622'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['6'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['8.50 am'], 'breakfast_chapatti_select': ['Buckwheat'], 'breakfast_chapatti': ['2 pc'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['museli = half cup'], 'breakfast_egg': ['0'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi'], 'mid_morning_snack_time': ['3.30 pm'], 'mid_morning_fruits': ['1 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1 cup'], 'lunch_time': ['11.30 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['food at vidhyas diet'], 'lunch_roti': ['0'], 'lunch_lentils': ['0'], 'lunch_vegetable_curry': ['0'], 'lunch_leafy_vegetables': ['0'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['0'], 'lunch_fish': ['0'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['6.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['1 cup'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/2 cup'], 'dinner_vegetables': ['1 cup + 2-3 pcs meat/6-7 diced paneer'], 'carbohydrates_calories': ['715'], 'carbohydrates_grams': ['180'], 'proteins_calories': ['299'], 'proteins_grams': ['75'], 'fat_calories': ['286'], 'fat_grams': ['32'], 'total_calories': ['1300'], 'activity_level': ['1'], 'remarks': ['5.30 am 1 glass luke warm water + 6. 15 am =6 pcs almonds  + 1/2 a banana or 1/2 an apple +  1 egg boiled + 2.5 ltrs water per day']}>
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-[UID:1381][4076265] Child process with pid: 4105116 was killed by signal: 15, core dumped: no
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-02 00:00:00) while time zone support is active.
+Shsrmila singh stha
+9846055132
+None
+2025-05-19
+['Diabetes', 'Hypertension', 'Arthritis', 'Depression', 'Asthma', 'Insomnia', 'Menstrual Issues', 'Anemia', 'Allergies', 'Kidney Problem']
+Amrita shrestha
+9846055137
+None
+2025-05-19
+[]
+<constance.base.Config object at 0x7f9d3b911b10>
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2025-05-19 00:00:00) while time zone support is active.
   warnings.warn(
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-02 00:00:00) while time zone support is active.
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+<constance.base.Config object at 0x7fa855be2fd0>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+<QueryDict: {'csrfmiddlewaretoken': ['7XLfIxz00SUeunUQXSGxp8CbTkYuoXZcoDRR8yR9gPspeq9TUTxpWqfVPcjcDBMI'], 'customer': ['726'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['8'], 'vegetables': ['7'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['3'], 'breakfast_time': ['8.30 am'], 'breakfast_chapatti_select': ['Buckwheat'], 'breakfast_chapatti': ['1 pc (or)'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja'], 'breakfast_egg': ['1 pc'], 'breakfast_vegetables': ['1/2 cup'], 'mid_morning_snack_time': ['4.00 pm'], 'mid_morning_fruits': ['1 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1 cup (no sweet) + peanuts - 15 -20 pcs + 15 pcs pumpkin seeds -15 pcs'], 'lunch_time': ['1.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['meal @ vidhyas diet'], 'lunch_roti': ['0'], 'lunch_lentils': ['0'], 'lunch_vegetable_curry': ['0'], 'lunch_leafy_vegetables': ['0'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['0'], 'lunch_fish': ['0'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['7.00 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['1/2 CUP'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/2 CUP'], 'dinner_vegetables': ['1 CUP + 1 cup milk + 5-6 pcs chicken or 7-8 paneer or tofu or fish palm sized - 2 pcs'], 'carbohydrates_calories': ['715'], 'carbohydrates_grams': ['179'], 'proteins_calories': ['299'], 'proteins_grams': ['75'], 'fat_calories': ['286'], 'fat_grams': ['32'], 'total_calories': ['1300'], 'activity_level': ['2'], 'remarks': ['7.00 am thyronorm 50 mcg + 1 hr after 1 glass warm water + 1 hr after almonds - 6 pcs  + 1/2 an banana + 3 ltrs per day'], 'follow_up_date': ['2025-06-18']}>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+<QueryDict: {'csrfmiddlewaretoken': ['lMbEanMuG1CZqrS7uWuIulgPhvtLxn1YCshgAo4DWYaaau7arXlA1DTzdnOtM1Ou'], 'customer': ['727'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['6'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['3'], 'breakfast_time': ['8.00 am'], 'breakfast_chapatti_select': ['Buckwheat'], 'breakfast_chapatti': ['1 pc (or)'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja'], 'breakfast_egg': ['1 pc'], 'breakfast_vegetables': ['1 bowl'], 'mid_morning_snack_time': ['3.30 pm'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1 cup (no sweet) + chenna / peanuts - 1 handfistfull'], 'lunch_time': ['12.30'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup (or)'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl dal'], 'lunch_vegetable_curry': ['1 bowl veg.curry'], 'lunch_leafy_vegetables': ['1/2 CUP'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 or 6-7 pcs tofu or paneer or'], 'lunch_fish': ['1 pc'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['6.00 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['2 pcs sukka roti or 2 pcs ghelo roti or rolled oats = 1/2 cup cooked '], 'dinner_lentils': ['1/2 CUP + 4-5 pcs paneer or tofu or 3-4 pcs chicken or 2 fish palm sized'], 'dinner_vegetables': ['1 CUP + 1 cup milk'], 'carbohydrates_calories': ['660'], 'carbohydrates_grams': ['165'], 'proteins_calories': ['276'], 'proteins_grams': ['69'], 'fat_calories': ['264'], 'fat_grams': ['29'], 'total_calories': ['1200'], 'activity_level': ['2'], 'remarks': ['6.00 am 1 glass water + 1/2 an hour 1 glass luke warm water + almonds- 6 pcs+ pumpkin- 15 pcs + 1/2 an apple + 2.5 ltrs water per day'], 'follow_up_date': ['2025-06-18']}>
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+[UID:1381][1580259] Child process with pid: 1580399 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+[UID:1381][1998710] Child process with pid: 1998770 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+[UID:1381][190634] Child process with pid: 192061 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 190738 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 192171 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 192231 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 191876 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 192083 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 192466 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 192623 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 192828 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193143 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193233 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193334 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193439 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193596 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193635 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193719 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193815 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193840 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193857 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193895 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193959 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 193996 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 194078 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 194097 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 194204 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 194467 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 194625 was killed by signal: 15, core dumped: no
+[UID:1381][190634] Child process with pid: 194658 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+[UID:1381][1067896] Child process with pid: 1068003 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+[UID:1381][1067896] Child process with pid: 1068127 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2025-05-20 00:00:00) while time zone support is active.
+  warnings.warn(
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+BIPANA SUBEDI
+9866011721
+None
+2025-05-20
+[]
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+[UID:1381][1518947] Child process with pid: 1519512 was killed by signal: 15, core dumped: no
+[UID:1381][1518947] Child process with pid: 1520327 was killed by signal: 15, core dumped: no
+[UID:1381][1518947] Child process with pid: 1520377 was killed by signal: 15, core dumped: no
+[UID:1381][1518947] Child process with pid: 1520508 was killed by signal: 15, core dumped: no
+[UID:1381][1518947] Child process with pid: 1520712 was killed by signal: 15, core dumped: no
+[UID:1381][1518947] Child process with pid: 1520770 was killed by signal: 15, core dumped: no
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2025-05-21 00:00:00) while time zone support is active.
   warnings.warn(
 Internal Server Error: /inquiry_to_registration/
 Traceback (most recent call last):
@@ -121,81 +308,46 @@ Traceback (most recent call last):
     raise exceptions.ValidationError(
 django.core.exceptions.ValidationError: ['\u201c\u201d value must be a decimal number.']
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Purnima Lama Gurung
-9806506557
-None
-2024-12-02
-[]
-<constance.base.Config object at 0x7f46a5b77b90>
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['v2choPOHCJ9GDvEDiXybYc12CKM28TxU3hvcWh4OuN3Pd9IZwYko58XEVaztApea'], 'customer': ['623'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['6'], 'vegetables': ['6'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['0'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['0'], 'breakfast_egg': ['0'], 'breakfast_vegetables': ['0'], 'mid_morning_snack_time': ['12.00 pm'], 'mid_morning_fruits': ['1 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1 cup'], 'lunch_time': ['8.45 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 pcs or'], 'lunch_fish': ['1 pc fish palm sized(not fried)'], 'afternoon_snack_time': ['3.30 pm'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['1 cup'], 'afternoon_snack_pulses': ['1/2 cup roasted chenna/ peanut/ soybean'], 'afternoon_snack_raw_vegetables': ['1/2 cup'], 'dinner_time': ['7.00 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['1 pc'], 'dinner_lentils': ['1/2 cup'], 'dinner_vegetables': ['1/2 cup + 1/2 cup milk'], 'carbohydrates_calories': ['660'], 'carbohydrates_grams': ['165'], 'proteins_calories': ['276'], 'proteins_grams': ['69'], 'fat_calories': ['264'], 'fat_grams': ['29'], 'total_calories': ['1200'], 'activity_level': ['1'], 'remarks': ['6 am 2 glasses luke warm water + almonds - 6 pcs(soaked overnight) + 1/2a banana or 1/2 an apple + 1 egg boiled  and walking for 40 minutes+ whole day 2.5 ltrs water']}>
-Not Found: /favicon.ico
-[UID:1381][3295278] Child process with pid: 3296139 was killed by signal: 15, core dumped: no
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+<constance.base.Config object at 0x7f10386ec810>
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-[UID:1381][1889886] Child process with pid: 1901986 was killed by signal: 15, core dumped: no
-[UID:1381][1889886] Child process with pid: 1902126 was killed by signal: 15, core dumped: no
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
+<QueryDict: {'csrfmiddlewaretoken': ['Yt9hKkESTAmR13H6Vuhxedej2tkzj1UAf9fTalW19xU2L6W9Sv8pLvR3YlFhyFH6'], 'customer': ['728'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['4'], 'breakfast_time': ['7.00 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja / chewra'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi '], 'mid_morning_snack_time': ['4.00 pm'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi(no sweet) + pumpkin seeds-15 pcs'], 'lunch_time': ['9.30 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup '], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl dal'], 'lunch_vegetable_curry': ['1 bowl veg.curry'], 'lunch_leafy_vegetables': ['1/2 CUP'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 or 6-7 pcs tofu or paneer or'], 'lunch_fish': ['1 pc'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['2 pcs sukka roti or 2 pcs ghelo roti or rolled oats = 1/2 cup cooked '], 'dinner_lentils': ['1/2 CUP'], 'dinner_vegetables': ['1 CUP + 1 cup milk + 2-3 pcs paneer + ezotol 03 - once daily'], 'carbohydrates_calories': ['770'], 'carbohydrates_grams': ['193'], 'proteins_calories': ['322'], 'proteins_grams': ['81'], 'fat_calories': ['308'], 'fat_grams': ['34'], 'total_calories': ['1400'], 'activity_level': ['2'], 'remarks': ['5.00 AM  1 glass water + 1/2 an hour  1 glass luke warm water + cashews - 5 pcs + 1/2 an apple + 3 ltrs water per day'], 'follow_up_date': ['2025-06-20']}>
+<ul class="errorlist"><li>created_by<ul class="errorlist"><li>Select a valid choice. That choice is not one of the available choices.</li></ul></li></ul>
+<QueryDict: {'csrfmiddlewaretoken': ['Yt9hKkESTAmR13H6Vuhxedej2tkzj1UAf9fTalW19xU2L6W9Sv8pLvR3YlFhyFH6'], 'customer': ['728'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['4'], 'breakfast_time': ['7.00 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja / chewra'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi '], 'mid_morning_snack_time': ['4.00 pm'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi(no sweet) + pumpkin seeds-15 pcs'], 'lunch_time': ['9.30 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup '], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl dal'], 'lunch_vegetable_curry': ['1 bowl veg.curry'], 'lunch_leafy_vegetables': ['1/2 CUP'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 or 6-7 pcs tofu or paneer or'], 'lunch_fish': ['1 pc'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['2 pcs sukka roti or 2 pcs ghelo roti or rolled oats = 1/2 cup cooked '], 'dinner_lentils': ['1/2 CUP'], 'dinner_vegetables': ['1 CUP + 1 cup milk + 2-3 pcs paneer + ezotol 03 - once daily'], 'carbohydrates_calories': ['770'], 'carbohydrates_grams': ['193'], 'proteins_calories': ['322'], 'proteins_grams': ['81'], 'fat_calories': ['308'], 'fat_grams': ['34'], 'total_calories': ['1400'], 'activity_level': ['2'], 'remarks': ['5.00 AM  1 glass water + 1/2 an hour  1 glass luke warm water + cashews - 5 pcs + 1/2 an apple + 3 ltrs water per day'], 'follow_up_date': ['2025-06-20']}>
+<ul class="errorlist"><li>created_by<ul class="errorlist"><li>Select a valid choice. That choice is not one of the available choices.</li></ul></li></ul>
+<QueryDict: {'csrfmiddlewaretoken': ['Yt9hKkESTAmR13H6Vuhxedej2tkzj1UAf9fTalW19xU2L6W9Sv8pLvR3YlFhyFH6'], 'customer': ['728'], 'created_by': ['3'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['4'], 'breakfast_time': ['7.00 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup or 1/2 cup popcorn/ bhuja / chewra'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi '], 'mid_morning_snack_time': ['4.00 pm'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi(no sweet) + pumpkin seeds-15 pcs'], 'lunch_time': ['9.30 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup '], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl dal'], 'lunch_vegetable_curry': ['1 bowl veg.curry'], 'lunch_leafy_vegetables': ['1/2 CUP'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 or 6-7 pcs tofu or paneer or'], 'lunch_fish': ['1 pc'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['2 pcs sukka roti or 2 pcs ghelo roti or rolled oats = 1/2 cup cooked '], 'dinner_lentils': ['1/2 CUP'], 'dinner_vegetables': ['1 CUP + 1 cup milk + 2-3 pcs paneer + ezotol 03 - once daily'], 'carbohydrates_calories': ['770'], 'carbohydrates_grams': ['193'], 'proteins_calories': ['322'], 'proteins_grams': ['81'], 'fat_calories': ['308'], 'fat_grams': ['34'], 'total_calories': ['1400'], 'activity_level': ['2'], 'remarks': ['5.00 AM  1 glass water + 1/2 an hour  1 glass luke warm water + cashews - 5 pcs + 1/2 an apple + 3 ltrs water per day'], 'follow_up_date': ['2025-06-20']}>
+<ul class="errorlist"><li>created_by<ul class="errorlist"><li>Select a valid choice. That choice is not one of the available choices.</li></ul></li></ul>
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 vidhyas artist
+<QueryDict: {'csrfmiddlewaretoken': ['4hUDB6jptTFr8AUS0jKmarN8aolaxXWORbFziZJEtGSHWCWIyYgIjXSGzOlxEE0F'], 'customer': ['728'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['3'], 'breakfast_time': ['7.30 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup cooked or 1/2 cup chewra/ bhuja/ popcorn'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi'], 'mid_morning_snack_time': ['4.00 pm'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi (no sugar) + pumpkin seeds - 15 pcs'], 'lunch_time': ['9.30 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 bowl'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['3-4 pcs or tofu /paneer = 6-7 pcs dices sized or'], 'lunch_fish': ['1'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['2 pcs or ghelo roti - 2 pcs or oats cooked - 1/2 cup'], 'dinner_lentils': ['1/2 cup + 3-4 pcs paneer'], 'dinner_vegetables': ['1 cup + 1 cup milk + omega 3 1000 mg(ezotol o3)'], 'carbohydrates_calories': ['770'], 'carbohydrates_grams': ['193'], 'proteins_calories': ['322'], 'proteins_grams': ['81'], 'fat_calories': ['308'], 'fat_grams': ['34'], 'total_calories': ['1400'], 'activity_level': ['2'], 'remarks': ['5.00 am 1 glass luke warm water + 1/2 an hour after 1 glass luke warm water +cashew - 5 pcs + 1/2 an apple + 10 glasses of water'], 'follow_up_date': ['2025-06-20']}>
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /favicon.ico
+[UID:1381][1209231] Child process with pid: 1209709 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1209915 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210024 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1209303 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210161 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210258 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210350 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210450 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210485 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210529 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210618 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1210655 was killed by signal: 15, core dumped: no
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+[UID:1381][1209231] Child process with pid: 1213286 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1213415 was killed by signal: 15, core dumped: no
+[UID:1381][1209231] Child process with pid: 1213508 was killed by signal: 15, core dumped: no
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
@@ -208,365 +360,25 @@ Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+roshni 9804185934k
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-06 00:00:00) while time zone support is active.
-  warnings.warn(
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-06 00:00:00) while time zone support is active.
+/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2025-05-22 00:00:00) while time zone support is active.
   warnings.warn(
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Rajendra Nepali
-9856023277
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
+UNIKA THAPA
+9702139275
 None
-2024-12-06
+2025-05-22
 []
-<constance.base.Config object at 0x7f6e7bf06f90>
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['XcnbSK3TbzY6hE0TmLClDWzMCZhBuLuRvrG6qcj03DSfRi4fAMoyKSvoVp42Whb7'], 'customer': ['624'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['6'], 'vegetables': ['8'], 'fruits': ['2'], 'meat_eggs': ['5'], 'milk_products': ['1'], 'fat_oil_products': ['6'], 'breakfast_time': ['8.30 am to 9.00 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['0'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['mixed juice - 300 ml'], 'mid_morning_snack_time': ['10.00 am'], 'mid_morning_fruits': ['black coffee'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['0'], 'lunch_time': ['12.00 to 1.00 pm'], 'lunch_rice_select': ['Dhindo'], 'lunch_rice': ['1/2 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup + 1/2 cup dahi/ mohi'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['6-7 pcs'], 'lunch_fish': ['3'], 'afternoon_snack_time': ['4.30 pm'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['1/2 cup roasted chenna/ peanut/ soybean'], 'afternoon_snack_raw_vegetables': ['1 cup'], 'dinner_time': ['6.30 pm'], 'dinner_rice_dhindo_select': ['Chakla'], 'dinner_rice_dhindo': ['1/2 cup cooked'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/4 cup'], 'dinner_vegetables': ['1 cup + 1/2 cup milk (9.00 pm omega-3-1000 mg)'], 'carbohydrates_calories': ['675'], 'carbohydrates_grams': ['169'], 'proteins_calories': ['450'], 'proteins_grams': ['113'], 'fat_calories': ['375'], 'fat_grams': ['42'], 'total_calories': ['1500'], 'activity_level': ['2'], 'remarks': ['7.00 am 2 glasses luke warm water + walnuts- 3 pcs  + raisins - 10 pcs  +  treadmill- half an hour']}>
-Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-06 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-06 00:00:00) while time zone support is active.
-  warnings.warn(
-Internal Server Error: /inquiry_to_registration/
-Traceback (most recent call last):
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1741, in to_python
-    decimal_value = decimal.Decimal(value)
-                    ^^^^^^^^^^^^^^^^^^^^^^
-decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/SystemVidhyasDietV2/registration/views.py", line 98, in inquiry_to_registration
-    account.save()
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
-    self.save_base(
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
-    updated = self._save_table(
-              ^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/base.py", line 1020, in _save_table
-    results = self._do_insert(
-              ^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/base.py", line 1061, in _do_insert
-    return manager._insert(
-           ^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 1805, in _insert
-    return query.get_compiler(using=using).execute_sql(returning_fields)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1821, in execute_sql
-    for sql, params in self.as_sql():
-                       ^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1745, in as_sql
-    value_rows = [
-                 ^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1746, in <listcomp>
-    [
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1747, in <listcomp>
-    self.prepare_value(field, self.pre_save_val(field, obj))
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1686, in prepare_value
-    return field.get_db_prep_save(value, connection=self.connection)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1760, in get_db_prep_save
-    self.to_python(value), self.max_digits, self.decimal_places
-    ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1743, in to_python
-    raise exceptions.ValidationError(
-django.core.exceptions.ValidationError: ['\u201c\u201d value must be a decimal number.']
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Anju mukhiya
-9815150295
-None
-2024-12-06
-[]
-<constance.base.Config object at 0x7f5522695490>
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['8iKxHV8Jejl0Kuwt1BdJHD5ZYyPsLddmGx3sfnoQ6nf9k8APfCZWOz1BhYCTdJUC'], 'customer': ['625'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['6'], 'vegetables': ['7'], 'fruits': ['2'], 'meat_eggs': ['4'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['0'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['0'], 'breakfast_egg': ['0'], 'breakfast_vegetables': ['0'], 'mid_morning_snack_time': ['3.00 PM'], 'mid_morning_fruits': ['1 CUP'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1 cup'], 'lunch_time': ['11.00 am'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['4-6 pcs'], 'lunch_fish': ['2 pcs palm sized'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['6.30 pm'], 'dinner_rice_dhindo_select': ['Chakla'], 'dinner_rice_dhindo': ['1/2 cup cooked or'], 'dinner_dry_bread': ['2 pcs'], 'dinner_lentils': ['1/2 cup'], 'dinner_vegetables': ['1 cup + 1/2 cup mohi (9.00 pm omega-3-1000 mg)'], 'carbohydrates_calories': ['715'], 'carbohydrates_grams': ['179'], 'proteins_calories': ['299'], 'proteins_grams': ['75'], 'fat_calories': ['286'], 'fat_grams': ['32'], 'total_calories': ['1300'], 'activity_level': ['2'], 'remarks': ['6.00 am 2 glass luke warm water + chia seeds - 1tsp  + 3 ltrs water / day']}>
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-09 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Dr. Rohit Nepal
-9848204427
-None
-2024-12-09
-[]
-<constance.base.Config object at 0x7fb51c746410>
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-09 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['9tFd6CwDzgQ4diHrrEdvlihSNjgkouuSHIY8E4MKrkKdNWLNFFZIsedu6J3LQ0b8'], 'customer': ['626'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['12'], 'vegetables': ['9'], 'fruits': ['2'], 'meat_eggs': ['4'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['8.30 am to 9.00 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['museli = one cup'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi'], 'mid_morning_snack_time': ['12.00 pm'], 'mid_morning_fruits': ['1/2 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi'], 'lunch_time': ['1.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1 cup or '], 'lunch_roti': ['3 pcs'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1/2 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['4-6 pcs or'], 'lunch_fish': ['2 pcs palm sized'], 'afternoon_snack_time': ['5.00'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['1 cup'], 'afternoon_snack_pulses': ['1 handfistfull'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['8.00'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/2 cup + saatu- 4tsp'], 'dinner_vegetables': ['1/2 cup + 1 cup + 2 hours omega 3 1000 mg'], 'carbohydrates_calories': ['1100'], 'carbohydrates_grams': ['275'], 'proteins_calories': ['460'], 'proteins_grams': ['115'], 'fat_calories': ['440'], 'fat_grams': ['49'], 'total_calories': ['2000'], 'activity_level': ['1'], 'remarks': ['5.30 am 1 glass luke water + half an hour 1 glass luke warm water + cashews - 5 pcs + 1/2 an apple or 1/2 banana + 3.5 ltrs water for whole day']}>
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-10 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-10 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-laxmi pahari
-9846081040
-None
-2024-12-10
-[]
-<constance.base.Config object at 0x7fe26e190390>
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['n00pZ4tfzpjAPk4EylutSRbpJTS1EEhbVfjkxwJmrtdJpY80MmgGZN712jFs6aYr'], 'customer': ['402'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['6'], 'vegetables': ['5'], 'fruits': ['1'], 'meat_eggs': ['3'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['8.00 am'], 'breakfast_chapatti_select': ['Buckwheat'], 'breakfast_chapatti': ['1 pc'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['0'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + 1/2 cup dahi'], 'mid_morning_snack_time': ['10.00 am'], 'mid_morning_fruits': ['0'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1/2 cup dahi'], 'lunch_time': ['2.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1/2 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['4-6 pcs or'], 'lunch_fish': ['2 pcs palm sized'], 'afternoon_snack_time': ['0'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['0'], 'afternoon_snack_pulses': ['0'], 'afternoon_snack_raw_vegetables': ['0'], 'dinner_time': ['6.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['1/2 cup cooked'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/2 cup'], 'dinner_vegetables': ['1/2 cup + 1/2 cup milk'], 'carbohydrates_calories': ['715'], 'carbohydrates_grams': ['179'], 'proteins_calories': ['299'], 'proteins_grams': ['75'], 'fat_calories': ['286'], 'fat_grams': ['32'], 'total_calories': ['1300'], 'activity_level': ['2'], 'remarks': ['5.00 am 2 glasses luke warm water + cashew - 5 pcs + 1/2 an apple or banana= 1/2 + 2.2 ltrs water per day']}>
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['aGJi5Ua9gN5m7suKuuNZEPd29hJgFdJlIV2dDmqg8RZvH6y6IvzcLL9EsHwH7JqB'], 'customer': ['401'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['7'], 'vegetables': ['6'], 'fruits': ['2'], 'meat_eggs': ['4'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['8.00 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['1 pc or'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup cooked'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['1/2 cup + almonds- 6 pcs'], 'mid_morning_snack_time': ['10.00 am'], 'mid_morning_fruits': ['1 cup'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['1 cup'], 'lunch_time': ['2.30 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['4-6 pcs or'], 'lunch_fish': ['2 pcs palm sized'], 'afternoon_snack_time': ['5.00'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['2 handfistfull'], 'afternoon_snack_pulses': ['1/2 cup roasted chenna/ peanut/ soybean'], 'afternoon_snack_raw_vegetables': ['1/2 cup'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Chakla'], 'dinner_rice_dhindo': ['1/4 cup cooked'], 'dinner_dry_bread': ['0'], 'dinner_lentils': ['1/2 cup'], 'dinner_vegetables': ['1 cup + 1/2 cup milk'], 'carbohydrates_calories': ['770'], 'carbohydrates_grams': ['193'], 'proteins_calories': ['322'], 'proteins_grams': ['81'], 'fat_calories': ['308'], 'fat_grams': ['34'], 'total_calories': ['1400'], 'activity_level': ['1'], 'remarks': ['7.00 am 2 glasses warm water ']}>
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1595: RuntimeWarning: DateTimeField Inquiry.created_date received a naive datetime (2024-12-10 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1535: RuntimeWarning: DateTimeField Registration.registration_date received a naive datetime (2024-12-10 00:00:00) while time zone support is active.
-  warnings.warn(
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Puja Bastola
-9816688866
-None
-2024-12-10
-[]
-<constance.base.Config object at 0x7f51d40fa5d0>
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-<QueryDict: {'csrfmiddlewaretoken': ['Czo1ezGjzddUrKkwEA5X766dyBnQ6YwaaOHWM1Wqrh731ooSSBRae22PR1ahyudq'], 'customer': ['628'], 'created_by': ['1'], 'day': ['Everyday'], 'cereals_pulses': ['6'], 'vegetables': ['5'], 'fruits': ['2'], 'meat_eggs': ['4'], 'milk_products': ['2'], 'fat_oil_products': ['5'], 'breakfast_time': ['8.00 am to 8.30 am'], 'breakfast_chapatti_select': ['Wheat'], 'breakfast_chapatti': ['0'], 'breakfast_dry_bread': ['0'], 'breakfast_oats_cereals': ['1/2 cup cooked'], 'breakfast_egg': ['1'], 'breakfast_vegetables': ['fruits = 1/2 cup + 1/2 cup dahi'], 'mid_morning_snack_time': ['0'], 'mid_morning_fruits': ['0'], 'mid_morning_yogurt_select': ['Yogurt/Curd'], 'mid_morning_yogurt': ['0'], 'lunch_time': ['12.00 pm'], 'lunch_rice_select': ['Rice'], 'lunch_rice': ['1/2 cup'], 'lunch_roti': ['0'], 'lunch_lentils': ['1/2 cup'], 'lunch_vegetable_curry': ['1 cup'], 'lunch_leafy_vegetables': ['1/2 cup'], 'lunch_meat_select': ['Meat'], 'lunch_meat_tofu': ['4-6 pcs or paneer or tofu'], 'lunch_fish': ['0'], 'afternoon_snack_time': ['5.00'], 'afternoon_snack_sandwich': ['0'], 'afternoon_snack_bread_roll': ['0'], 'afternoon_snack_beaten_rice': ['0'], 'afternoon_snack_roasted_corn': ['1 handfistfull'], 'afternoon_snack_pulses': ['1/2 cup roasted chenna/ peanut/ soybean'], 'afternoon_snack_raw_vegetables': ['1/2 cup'], 'dinner_time': ['7.30 pm'], 'dinner_rice_dhindo_select': ['Rice'], 'dinner_rice_dhindo': ['0'], 'dinner_dry_bread': ['1 pc'], 'dinner_lentils': ['1/2 cup'], 'dinner_vegetables': ['1 cup + 1/2 cup milk'], 'carbohydrates_calories': ['605'], 'carbohydrates_grams': ['151'], 'proteins_calories': ['253'], 'proteins_grams': ['63'], 'fat_calories': ['242'], 'fat_grams': ['27'], 'total_calories': ['1100'], 'activity_level': ['2'], 'remarks': ['6.00 am 1 glass luke warm water + 1 hr 1 glass luke warm water + cashews - 5 pcs + 1/2 banana or 1/2 an apple + 2.5 ltrs / day']}>
-Not Found: /favicon.ico
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
-Internal Server Error: /diet_plan_list/
-Traceback (most recent call last):
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such column: diet_dietplan.follow_up_date
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/SystemVidhyasDietV2/diet/views.py", line 141, in diet_plan_list
-    return render(request, 'diet/diet_plan/diet_plan_list.html', context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
-    len_values = len(values)
-                 ^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
-    self._fetch_all()
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
-    results = compiler.execute_sql(
-              ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
-    cursor.execute(sql, params)
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
-    with self.db.wrap_database_errors:
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
-    raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/sellynep/virtualenv/SystemVidhyasDietV2/3.11/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
-    return super().execute(query, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-django.db.utils.OperationalError: no such column: diet_dietplan.follow_up_date
-Not Found: /favicon.ico
-Not Found: /favicon.ico
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
 Not Found: /static/plugins/datatables-select/css/dataTables.dataTables.css
